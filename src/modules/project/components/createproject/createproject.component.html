@@ -1,0 +1,144 @@
+<sb-layout-dashboard>
+    <sb-dashboard-head title="프로젝트 등록" [hideBreadcrumbs]="false"></sb-dashboard-head>
+
+    <form class="form-horizontal" method="post">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <label class="col-sm-3 control-label ir">프로젝트 정보</label>
+                        <hr class="m-t-0 m-b-1000">
+
+                        <div class="content p-4">
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 control-label ir">주관부서</label>
+                                <select class="form-control col-sm-2">
+                                    <option>1</option>
+                                </select>
+                                <select class="form-control col-sm-2">
+                                    <option>1</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 control-label ir">프로젝트명</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" name="pj_name" id="pj_name" maxlength="10">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 control-label ir">기간</label>
+                                <div class="col-sm-4">
+                                    <sb-range-date-picker></sb-range-date-picker>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 control-label ir">팀원</label>
+                                <div class="col-sm-4">
+                                    <button class="btn btn-primary" (click)="open(content)">찾기</button>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 control-label ir">현재단계</label>
+                                <select class="form-control col-sm-1 ml-2">
+                                    <option>1</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="card-footer clearfix">
+                        <a href="project" class="btn btn-secondary">목록</a>
+                        <button type="button" id="upbtn" (click)="modify()"
+                            class="btn btn-primary float-right cus-upbtn" style="display:inline-block">저장</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="m-t-0 m-b-40">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">구성단계</h4>
+                        <h6 class="card-subtitle">+버튼을 클릭하여 단계를 추가하세요</h6>
+                        <hr>
+
+                        <table class="table col-sm-12 table-bordered">
+                            <thead>
+                                <tr>
+                                    <th style="width:30px"></th>
+                                    <th style="width:100px">단계</th>
+                                    <th scope="col-sm-8">타이틀</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>1단계</td>
+                                    <td>시작</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">+</th>
+                                    <td>2단계</td>
+                                    <td>시작</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+</sb-layout-dashboard>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">팀원찾기</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form class="form-horizontal ml-4" method="GET">
+        <div class="form-group row">
+          <label class="control-label ir col-sm-2 mt-2">소속</label>
+          <select class="form-control col-sm-3">
+            <option>1</option>
+            </select>
+          <label class="control-label ir col-sm-2 mt-2">부서</label>
+          <select class="form-control col-sm-3">
+            <option>1</option>
+            </select>
+        </div>
+        <div class="form-group row">
+          <label class="control-label ir col-sm-2 mt-2">이름</label>
+        	<input type="text" class="form-control col-sm-8" name="pj_name" id="pj_name" maxlength="10">
+        </div>
+        <div class="form-group row">
+          <label class="control-label ir col-sm-2 mt-2"></label>
+        	<button type="button" class="btn btn-primary col-sm-8" style="display:inline-block">팀원찾기</button>
+        </div>
+				<div class="form-group row">
+					<label class="control-label ir col-sm-2 mt-2"></label>
+					<div class="card col-sm-8">
+						<div class="card-body">
+
+						</div>
+					</div>
+				</div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>
+  </ng-template>

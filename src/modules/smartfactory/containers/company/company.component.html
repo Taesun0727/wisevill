@@ -1,0 +1,108 @@
+<sb-layout-dashboard>
+  <sb-dashboard-head title="스마트팩토리 기본정보 관리" [hideBreadcrumbs]="false"></sb-dashboard-head>
+
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+
+            <form class="form-horizontal" name="" method="get">
+              <div class="form-body">
+
+                <div class="form-group row">
+                  <div class="col-sm-12">
+                    <div class="row">
+                      <select class="form-control col-sm-1 ml-2">
+                        <option>구분</option>
+                      </select>
+                      <input type="text" class="form-control col-sm-2 ml-2" name="am_name" id="am_name" maxlength="10">
+                      <button type="button" class="btn btn-primary">검색</button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-3 mt-3">
+      <div class="col-md-4 align-self-center">
+        <a href="" class="btn btn-xs btn-secondary" onclick="">검색초기화</a>
+         Total 
+        <span class="">0</span>
+         건
+        <span class="">0</span>
+         /
+        <span class="">0</span>
+         Page
+      </div>
+      <div class="col-md-8 align-self-center text-right">
+        <a href="/smartfactory/company/createcompany" class="btn btn-primary cus-inbtn" style="display: inline-block;">프로젝트 등록</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="card mb-3 col-12">
+        <div class="card-body">
+          <table class="table col-lg-12 table-bordered" style="text-align:center">
+            <thead class="table-info">
+              <tr>
+                <th scope="col"><input type="checkbox" [checked]="isAllCheckBoxChecked()" (change)="checkAllCheckBox($event)" class="mr-1" aria-label="Checkbox for following text input">NO</th>
+                <th scope="col">회사명</th>
+                <th scope="col">대표</th>
+                <th scope="col">주소</th>
+                <th scope="col">담당자</th>
+                <th scope="col">연락처</th>
+                <th scope="col">사업기간</th>
+                <th scope="col">서버</th>
+                <th scope="col">DB</th>
+                <th scope="col">관리</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let company of companies">
+                <td scope="row"><input type="checkbox" value="{{company.id}}" [(ngModel)]="company.checked" aria-label="Checkbox for following text input"></td>
+                <td>{{ company.id }}</td>
+                <td>{{ company.name }}</td>
+                <td>{{ company.boss }}</td>
+                <td>{{ company.address }}</td>
+                <td>{{ company.rname }}</td>
+                <td>{{ company.contact }}</td>
+                <td>{{ company.businpariod }}</td>
+                <td><button type="button" class="btn btn-secondary btn-sm">바로가기</button></td>
+                <td><button type="button" class="btn btn-secondary btn-sm">바로가기</button></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="d-flex justify-content-between p-2">
+            <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshCountries()">
+            </ngb-pagination>
+          
+            <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshCountries()">
+              <option [ngValue]="2">2 items per page</option>
+              <option [ngValue]="4">4 items per page</option>
+              <option [ngValue]="6">6 items per page</option>
+            </select>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 align-self-center text-right">
+        <button type="button" class="btn btn-primary btn-flat mr-2" (click)="open(content)">스마트팩토리등록</button>
+      </div>
+    </div>
+
+  </div>
+
+</sb-layout-dashboard>

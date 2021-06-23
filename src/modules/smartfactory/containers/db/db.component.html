@@ -1,0 +1,101 @@
+<sb-layout-dashboard>
+  <sb-dashboard-head title="데이터베이스관리" [hideBreadcrumbs]="false"></sb-dashboard-head>
+
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+
+            <form class="form-horizontal" name="" method="get">
+              <div class="form-body">
+
+                <div class="form-group row">
+                  <div class="col-sm-12">
+                    <div class="row">
+                      <select class="form-control col-sm-1 ml-2">
+                        <option>구분</option>
+                      </select>
+                      <select class="form-control col-sm-2 ml-2">
+                        <option>종류</option>
+                      </select>
+                      <select class="form-control col-sm-2 ml-2">
+                        <option>선택</option>
+                      </select>
+                      <input type="text" class="form-control col-sm-2 ml-2" name="" id="" maxlength="10">
+                      <button type="button" class="btn btn-primary">검색</button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-3 mt-3">
+      <div class="col-md-4 align-self-center">
+        <a href="" class="btn btn-xs btn-secondary" onclick="">검색초기화</a>
+         Total 
+        <span class="">0</span>
+         건
+        <span class="">0</span>
+         /
+        <span class="">0</span>
+         Page
+      </div>
+      <div class="col-md-8 align-self-center text-right">
+        <a href="/smartfactory/db/createdb" class="btn btn-primary cus-inbtn" style="display: inline-block;">DB 등록</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="card mb-3 col-12">
+        <div class="card-body">
+          <table class="table col-lg-12 table-bordered" style="text-align:center">
+            <thead class="table-info">
+              <tr>
+                <th scope="col">NO</th>
+                <th scope="col">회사명</th>
+                <th scope="col">구분</th>
+                <th scope="col">연결서버</th>
+                <th scope="col">DB명</th>
+                <th scope="col">DB호스트</th>
+                <th scope="col">포트</th>
+                <th scope="col">종류</th>
+                <th scope="col">연결서버</th>
+                <th scope="col">관리</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><input type="checkbox" aria-label="Checkbox for following text input"></th>
+                <td>와이즈빌</td>
+                <td>테스트용</td>
+                <td>forj.wisevill.co.kr</td>
+                <td>testdb1</td>
+                <td>192.168.0.1</td>
+                <td>3306</td>
+                <td>Oracle</td>
+                <td><button type="button" class="btn btn-secondary btn-sm">바로가기</button></td>
+                <td><button type="button" class="btn btn-secondary btn-sm">보기</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 align-self-center text-right">
+        <a href="/smartfactory/db/createdb" class="btn btn-primary cus-inbtn" style="display: inline-block;">DB 등록</a>
+      </div>
+    </div>
+
+  </div>
+</sb-layout-dashboard>

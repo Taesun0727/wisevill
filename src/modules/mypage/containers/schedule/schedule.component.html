@@ -1,0 +1,44 @@
+<sb-layout-dashboard>
+  <sb-dashboard-head title="일정기록" [hideBreadcrumbs]="false"></sb-dashboard-head>
+  <full-calendar [options]="calendarOptions"></full-calendar>
+</sb-layout-dashboard>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">일정등록</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="form-horizontal ml-4" method="POST">
+      <div class="form-group row">
+        <label class="control-label ir col-sm-3 mt-2">이름 :</label>
+        <label class="control-label ir col-sm-3 mt-2">개미</label>
+        <label class="control-label ir col-sm-3 mt-2">부서 :</label>
+        <label class="control-label ir col-sm-3 mt-2">개발팀</label>
+      </div>
+      <div class="form-group row">
+        <label class="control-label ir col-sm-3 mt-2">날짜</label>
+        <sb-my-date-picker></sb-my-date-picker>
+      </div>
+      <div class="form-group row">
+        <label class="control-label ir col-sm-3 mt-2">시간</label>
+        <sb-timepicker class="mr-2"></sb-timepicker>
+        ~
+        <sb-timepicker class="ml-2"></sb-timepicker>
+      </div>
+      <div class="form-group row">
+        <label class="control-label ir col-sm-3 mt-2">근무시간</label>
+        <input type="text" class="form-control col-4" name="" id="" maxlength="10">
+      </div>
+      <div class="form-group row">
+        <label class="control-label ir col-sm-3 mt-2">설명</label>
+        <textarea class="form-control col-sm-8" rows="2" placeholder=""></textarea>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
