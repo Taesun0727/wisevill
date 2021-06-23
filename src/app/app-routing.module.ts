@@ -30,6 +30,31 @@ const routes: Routes = [
             import('modules/error/error-routing.module').then(m => m.ErrorRoutingModule),
     },
     {
+        path: 'mypage',
+        loadChildren: () =>
+            import('modules/mypage/mypage-routing.module').then(m => m.MypageRoutingModule),
+    },
+	{
+		path: 'notice',
+		loadChildren: () =>
+			import('modules/notice/notice-routing.module').then(m => m.NoticeRoutingModule),
+	},
+	{
+		path: 'project',
+		loadChildren: () =>
+			import('modules/project/project-routing.module').then(m => m.ProjectRoutingModule),
+	},
+	{
+		path: 'management',
+		loadChildren: () =>
+			import('modules/management/management-routing.module').then(m => m.ManagementRoutingModule),
+	},
+    {
+        path: 'smartfactory',
+        loadChildren: () =>
+            import('modules/smartfactory/smartfactory-routing.module').then(m => m.SmartfactoryRoutingModule),
+    },
+    {
         path: 'tables',
         loadChildren: () =>
             import('modules/tables/tables-routing.module').then(m => m.TablesRoutingModule),
