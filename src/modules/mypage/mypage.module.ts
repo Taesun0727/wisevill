@@ -15,11 +15,12 @@ import interactionPlugin from '@fullcalendar/interaction'; // a plugin
 
 /* Containers */
 import * as MypageContainers from './containers';
+/* Components */
+import * as MypageComponents from './components';
 
 
 
 import { IconsModule } from '../icons/icons.module';
-import { SendComponent } from './components/send/send.component';
 
 
 
@@ -42,7 +43,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
       UtilityModule
   ],
   providers: [],
-  declarations: [...MypageContainers.containers, SendComponent],
+  declarations: [...MypageContainers.containers, ...MypageComponents.components ],
   exports: [...MypageContainers.containers],
 })
 export class MypageModule { }
