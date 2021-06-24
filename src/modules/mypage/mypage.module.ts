@@ -15,10 +15,14 @@ import interactionPlugin from '@fullcalendar/interaction'; // a plugin
 
 /* Containers */
 import * as MypageContainers from './containers';
+/* Components */
+import * as MypageComponents from './components';
 
 
 
-import { IconsModule } from '../icons/icons.module'
+import { IconsModule } from '../icons/icons.module';
+
+
 
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
@@ -39,7 +43,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
       UtilityModule
   ],
   providers: [],
-  declarations: [...MypageContainers.containers],
+  declarations: [...MypageContainers.containers, ...MypageComponents.components ],
   exports: [...MypageContainers.containers],
 })
 export class MypageModule { }

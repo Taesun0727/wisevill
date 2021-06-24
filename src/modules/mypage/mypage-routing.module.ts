@@ -8,6 +8,9 @@ import { MypageModule } from './mypage.module';
 
 /* Containers */
 import * as MypageContainers from './containers';
+/* Components */
+import * as MypageComponents from './components';
+
 
 
 /* Routes */
@@ -70,21 +73,41 @@ export const ROUTES: Routes = [
   },
   {
     path: 'memo',
-    canActivate: [],
-    component: MypageContainers.MemoComponent,
-    data: {
-      title: 'Tables - SB Admin Angular',
-      breadcrumbs: [
-          {
-              text: '마이페이지',
-          },
-          {
-              text: '내 쪽지',
-              active: true,
-          },
-      ],
-    } as SBRouteData,
-  }
+    children: [
+      {
+        path: '',
+        component: MypageContainers.MemoComponent,
+        data: {
+          title: 'Tables - SB Admin Angular',
+          breadcrumbs: [
+              {
+                  text: '마이페이지',
+              },
+              {
+                  text: '내 쪽지',
+                  active: true,
+              },
+          ],
+        } as SBRouteData,
+      },
+      {
+        path: 'send',
+        component: MypageComponents.SendComponent,
+        data: {
+          title: 'Tables - SB Admin Angular',
+          breadcrumbs: [
+              {
+                  text: '내 쪽지',
+              },
+              {
+                  text: '보낸쪽지',
+                  active: true,
+              },
+          ],
+        } as SBRouteData,
+      },
+    ],
+  },
 ];
 
 @NgModule({
