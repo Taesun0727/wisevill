@@ -21,6 +21,7 @@ import * as dashboardGuards from './guards';
 
 /* Services */
 import * as dashboardServices from './services';
+import { SmartfactoryCardComponent } from './components/smartfactory-card/smartfactory-card.component';
 
 @NgModule({
     imports: [
@@ -34,7 +35,7 @@ import * as dashboardServices from './services';
         TablesModule,
     ],
     providers: [...dashboardServices.services, ...dashboardGuards.guards],
-    declarations: [...dashboardContainers.containers, ...dashboardComponents.components],
+    declarations: [...dashboardContainers.containers, ...dashboardComponents.components, SmartfactoryCardComponent],
     exports: [...dashboardContainers.containers, ...dashboardComponents.components],
 })
 export class DashboardModule {}

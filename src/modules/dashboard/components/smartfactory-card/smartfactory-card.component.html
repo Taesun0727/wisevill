@@ -1,0 +1,54 @@
+<div class="row col-sm-12">
+    <ng-container *ngIf="true">
+      <div class="row col-sm-6 mb-4 mr-2" *ngFor="let company of companies">
+        <div class="card col-sm-8">
+          <div class="card-body">
+            <div class="form-group row">
+              <h3 class="col-sm-12 text-center">{{company.name}}</h3>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-4 control-label ir">주 서버:</label>
+              <button type="button" class="btn btn-primary col-sm-3">Primary</button>
+              <div class="col-sm-1"></div>
+              <a href="" class="btn btn-secondary col-sm-3" style="display: inline-block;">바로가기</a>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-4 control-label ir">테스트 서버:</label>
+              <button type="button" class="btn btn-primary col-sm-3">Primary</button>
+              <div class="col-sm-1"></div>
+              <a href="" class="btn btn-secondary col-sm-3" style="display: inline-block;">바로가기</a>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-4 control-label ir">작동중:</label>
+              <button type="button" class="btn btn-primary col-sm-7">Primary</button>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-4 control-label ir">미작동:</label>
+              <button type="button" class="btn btn-primary col-sm-7">Primary</button>
+            </div>
+            <div class="form-group row float-none justify-content-center">
+              <a href="" class="btn btn-primary col-sm-4" style="display: inline-block;">모니터링</a>
+            </div>
+          </div>
+        </div>
+          <div class="card bg-secondary col-sm-4">
+            <ngb-carousel>
+              <ng-template ngbSlide *ngFor="let device of devices">
+                <div class="form-group">
+                  <h5 class="col-sm-12 text-center mt-4 text-white">{{device.name}}</h5>
+                  <div class="card col-sm-12" style="width: 18rem; height: 10rem;">
+                    <img src="" class="card-img-top" alt="...">
+                  </div>
+                  <label class="col-sm-12 control-label ir text-center mt-3 text-white">{{device.ex}}</label>
+                  <div class="row mt-3 mb-5">
+                    <button type="button" class="btn btn-success col-sm-4 ml-4">ON</button>
+                    <div class="col-sm-2"></div>
+                    <button type="button" class="btn btn-danger col-sm-4">OFF</button>
+                  </div>
+                </div>
+              </ng-template>
+            </ngb-carousel>
+        </div>
+      </div>
+    </ng-container>
+</div>
