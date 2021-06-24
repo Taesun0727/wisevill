@@ -24,8 +24,6 @@ import { SendComponent } from './components/send/send.component';
 
 
 
-
-
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
   interactionPlugin,
@@ -44,7 +42,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
       UtilityModule
   ],
   providers: [],
-  declarations: [...MypageContainers.containers, SendComponent, ],
+  declarations: [...MypageContainers.containers, SendComponent],
   exports: [...MypageContainers.containers],
 })
 export class MypageModule { }
