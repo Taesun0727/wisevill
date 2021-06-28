@@ -32,7 +32,7 @@ export class ScheduleComponent implements OnInit {
     
   };
   handleDateClick(info : any) {
-    this.modalService.open(this.content, {ariaDescribedBy: 'modal-basic-title', centered: true}).result.then((result) => {
+    this.modalService.open(this.content, {ariaDescribedBy: 'modal-basic-title', centered: true, size: 'lg'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
@@ -48,5 +48,8 @@ export class ScheduleComponent implements OnInit {
       return `with: ${reason}`;
     }
   }
+  
+
+
 
 }

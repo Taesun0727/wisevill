@@ -1,5 +1,5 @@
-<sb-layout-dashboard
-    ><sb-dashboard-head title="쪽지함" [hideBreadcrumbs]="true"></sb-dashboard-head>
+<sb-layout-dashboard>
+  <sb-dashboard-head title="쪽지함" [hideBreadcrumbs]="true"></sb-dashboard-head>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item "><a href="#">마이페이지</a></li>
@@ -44,7 +44,8 @@
          <div class="col-8 align-self-center">Total <span class="data_cnt">0</span>건 <span
                  class="data_page_num">1</span> / <span class="data_page_num_t">0</span> page</div>
          <div class="col-4 align-self-center text-right cbtn-wrap"><a 
-                 class="btn btn-sm bg-gradient-info"(click)="open(content)">쪽지보내기</a><button type="button" class="btn btn-danger btn-sm ml-1"
+                 class="btn btn-primary btn-flat btn-sm bg-gradient-info"(click)="open(content)">쪽지보내기</a>
+                 <button type="button" class="btn btn-danger btn-sm ml-1"
                  onclick="listDelSubmit('list','')">선택목록 삭제</button></div>
      </div>
      <div class="row datalist_tb">
@@ -58,7 +59,7 @@
                                      <div class="icheck-primary d-inline"><input type="checkbox" name="memo_check_all"
                                              id="memo_check_all"
                                              onchange="checkBoxAllChkFunc('memo_check_all','memo_check')"><label
-                                             for="memo_check_all"></label>번호</div>
+                                             for="memo_check_all"></label>No</div>
                                  </th>
                                  <th style="min-width:200px;">내용</th>
                                  <th style="width:200px;">보낸사람</th>
@@ -80,9 +81,9 @@
          </div>
      </div>
      
-     <div class="row">
+     <div class="row mt-2 mb-0">
          <div class="col-8" id="page"></div>
-         <div class="col-4 text-right cbtn-wrap"><a href="./write/" class="btn btn-sm bg-gradient-info">쪽지보내기</a><button
+         <div class="col-4 text-right cbtn-wrap"><a class="btn btn-primary btn-flat btn-sm bg-gradient-info" (click)="open(content)">쪽지보내기</a><button
                  type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록 삭제</button>
          </div>
      </div>
@@ -124,7 +125,12 @@
 
                 <div class="form-group row">
                   <label class="control-label ir col-sm-2 mt-1">받는 사람</label>
-                  <textarea class="form-control col-sm-3 ml-3" rows="1" placeholder=""></textarea>
+                  <select class="form-control col-sm-3 ml-3">
+                    <option>::선택::</option>
+                    <option>000</option>
+                    <option>000</option>
+                    <option>000</option>
+                  </select>
                   <div class="col-sm-5">
                   <div class="icheck-primary d-inline"><input type="checkbox" name="memo_check_all"
                     id="memo_check_all"
