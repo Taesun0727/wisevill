@@ -1,44 +1,93 @@
 <sb-layout-dashboard>
-  <sb-dashboard-head title="일정기록" [hideBreadcrumbs]="false"></sb-dashboard-head>
-  <full-calendar [options]="calendarOptions"></full-calendar>
+  <sb-dashboard-head title="일정관리" [hideBreadcrumbs]="true"></sb-dashboard-head>
+  <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item "><a href="#">마이페이지</a></li>
+          <li class="breadcrumb-item active " aria-current="page">내 일정 관리</li>
+      </ol>
+  </nav>
+    <full-calendar [options]="calendarOptions"></full-calendar>
 </sb-layout-dashboard>
 
 <ng-template #content let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">일정등록</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <form class="form-horizontal ml-4" method="POST">
-      <div class="form-group row">
-        <label class="control-label ir col-sm-3 mt-2">이름 :</label>
-        <label class="control-label ir col-sm-3 mt-2">개미</label>
-        <label class="control-label ir col-sm-3 mt-2">부서 :</label>
-        <label class="control-label ir col-sm-3 mt-2">개발팀</label>
-      </div>
-      <div class="form-group row">
-        <label class="control-label ir col-sm-3 mt-2">날짜</label>
-        <sb-my-date-picker></sb-my-date-picker>
-      </div>
-      <div class="form-group row">
-        <label class="control-label ir col-sm-3 mt-2">시간</label>
-        <sb-timepicker class="mr-2"></sb-timepicker>
-        ~
-        <sb-timepicker class="ml-2"></sb-timepicker>
-      </div>
-      <div class="form-group row">
-        <label class="control-label ir col-sm-3 mt-2">근무시간</label>
-        <input type="text" class="form-control col-4" name="" id="" maxlength="10">
-      </div>
-      <div class="form-group row">
-        <label class="control-label ir col-sm-3 mt-2">설명</label>
-        <textarea class="form-control col-sm-8" rows="2" placeholder=""></textarea>
-      </div>
-    </form>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
-  </div>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">일정등록</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        <form class="form-horizontal ml-4" method="POST">
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <label class="control-label ir col-sm-2 mt-2">구분</label>
+                        <select class="form-control col-sm-3 ml-3">
+                            <option>::업무/휴가::</option>
+                            <option>업무</option>
+                            <option>휴가</option>
+                        </select>
+                        <select class="form-control col-sm-4 ml-3">
+                            <option>::연가/조퇴/반차/출장/외근::</option>
+                            <option>연가</option>
+                            <option>조퇴</option>
+                            <option>반차</option>
+                            <option>출장</option>
+                            <option>외근</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-11 text-center" >
+                      <div class="icheck-primary d-inline mr-3"><input type="radio" name="layout" id="layout_0"
+                              value="sidebar-mini layout-fixed layout-navbar-fixed" checked="checked"><label
+                              for="layout_0">선택안함</label></div>
+                      <div class="icheck-primary d-inline mr-3"><input type="radio" name="layout" id="layout_1"
+                              value="sidebar-mini layout-navbar-fixed"><label for="layout_1">하루종일</label></div>
+                      <div class="icheck-primary d-inline mr-3"><input type="radio" name="layout" id="layout_2"
+                              value="sidebar-mini layout-boxed"><label for="layout_2">오전</label></div>
+                      <div class="icheck-primary d-inline mr-3"><input type="radio" name="layout" id="layout_3"
+                              value="layout-top-nav"><label for="layout_3">오후</label></div>
+                  </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label ir col-sm-2 mt-2">시작</label>
+                <sb-my-date-picker></sb-my-date-picker>
+                <sb-timepicker></sb-timepicker>
+              </div>
+
+            <div class="form-group row">
+                <label class="control-label ir col-sm-2 mt-2">종료</label>
+                <sb-my-date-picker></sb-my-date-picker>
+                
+                  <sb-timepicker></sb-timepicker>
+                 
+                  
+                   
+          
+          </div>
+
+            <div class="form-group row">
+                <label class="control-label ir col-sm-2 mt-1">제목</label>
+                <textarea class="form-control col-sm-8 ml-3" rows="1" placeholder=""></textarea>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label ir col-sm-2 mt-1">장소</label>
+                <textarea class="form-control col-sm-8 ml-3" rows="1" placeholder=""></textarea>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label ir col-sm-2 mt-1">설명</label>
+                <textarea class="form-control col-sm-8 ml-3" rows="1" placeholder="내용을 입력해주세요"></textarea>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">저장</button>
+    </div>
 </ng-template>
