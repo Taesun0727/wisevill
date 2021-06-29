@@ -41,7 +41,17 @@ let COMPANIES: company[] = [
 		on_device : "",
 		off_device : "",
 		monitor_link : ""
-	}
+	},
+	{
+		name : "헤이헤이",
+		mserver_status : true,
+		mserver_link : "",
+		tserver_status : true,
+		tserver_link : "",
+		on_device : "",
+		off_device : "",
+		monitor_link : ""
+	},
 ]
 
 let DEVICES: device[] = [
@@ -68,7 +78,21 @@ export class SmartfactoryCardComponent implements OnInit {
 
   devices = DEVICES;
 	companies = COMPANIES;
-  constructor() { }
+	
+	// pagination 부분 변수
+	page = 1;
+  pageSize = 4;
+  collectionSize = COMPANIES.length;
+
+	constructor() { 
+		this.refreshCountries();
+	}
+
+	refreshCountries() {
+    this.companies = COMPANIES
+      .map((company, i) => ({id: i + 1, ...company}))
+      .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
+  }
 
   ngOnInit(): void {
   }
