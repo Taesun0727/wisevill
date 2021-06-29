@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+
 
 /* Third Party */
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -24,7 +24,7 @@ import * as appCommonServices from './services';
 import * as authServices from '@modules/auth/services';
 
 @NgModule({
-    imports: [CommonModule, RouterModule, ...thirdParty,NgxMaterialTimepickerModule],
+    imports: [CommonModule, RouterModule, ...thirdParty,],
     providers: [...appCommonServices.services, ...authServices.services, ...appCommonGuards.guards],
     declarations: [...appCommonContainers.containers, ...appCommonComponents.components],
     exports: [...appCommonContainers.containers, ...appCommonComponents.components, ...thirdParty],
