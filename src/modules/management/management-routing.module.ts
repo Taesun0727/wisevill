@@ -22,7 +22,7 @@ export const ROUTES: Routes = [
     },
     {
         path: 'member',
-        canActivate: [
+        children: [
           {
             path:'',
             component:authContainers.MemberComponent,

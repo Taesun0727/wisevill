@@ -33,7 +33,7 @@
                         <div class="form-group row">
                             <label class="col-sm-2 control-label ir">입/퇴사일</label>
                             <div class="col-sm-4">
-                                <sb-range-date-picker [Gfromdate]="Gfromdate" [Gtodate]="Gtodate" (newItemEvent)="Gfromdatechange($event)" (ItemEvent)="Gtodatechange($event)"></sb-range-date-picker>
+                                <sb-range-date-picker></sb-range-date-picker>
                             </div>
                             <label class="control-label ir col-sm-2 mt-2">소속</label>
                             <select class="form-control col-sm-2 ml-2">
@@ -55,7 +55,7 @@
                             </div>
                             <label class="col-sm-2 control-label ir">생년원일</label>
                             <div class="col-sm-4">
-                                <sb-my-date-picker [item]="bdate" (datechange)="changedate($event)"></sb-my-date-picker>
+                                <sb-my-date-picker></sb-my-date-picker>
                             </div>
                         </div>
 
