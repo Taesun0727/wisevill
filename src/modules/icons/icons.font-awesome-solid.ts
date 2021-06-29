@@ -21,6 +21,8 @@ import {
     faSearchPlus,
     faScroll,
     faAddressCard,
+    faEnvelope,
+    faBell,
 } from '@fortawesome/free-solid-svg-icons';
 
 export const fontAwesomeSolidIcons = {
@@ -44,4 +46,6 @@ export const fontAwesomeSolidIcons = {
     faSearchPlus,
     faScroll,
     faAddressCard,
+    faEnvelope,
+    faBell,
 };

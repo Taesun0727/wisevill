@@ -8,6 +8,7 @@ import { ManagementModule } from './management.module';
 
 /* Containers */
 import * as authContainers from './containers';
+import { EnrollComponent } from './components';
 
 /* Guards */
 
@@ -21,21 +22,41 @@ export const ROUTES: Routes = [
     },
     {
         path: 'member',
-        canActivate: [],
-        component: authContainers.MemberComponent,
-        data: {
-            title: 'Pages Login - SB Admin Angular',
-            breadcrumbs: [
-              {
-                  text: '공통정보관리',
+        canActivate: [
+          {
+            path:'',
+            component:authContainers.MemberComponent,
+            data: {
+              title: 'Pages Login - SB Admin Angular',
+              breadcrumbs: [
+                {
+                    text: '공통정보관리',
+                    active: true,
+                },
+                {
+                  text: '사원관리',
                   active: true,
               },
-              {
-                text: '사원관리',
-                active: true,
-            },
-          ],
-        } as SBRouteData,
+            ],
+          } as SBRouteData,
+      },
+        {
+          path: 'enroll',
+          component: EnrollComponent,
+          data: {
+            title: 'Tables - SB Admin Angular',
+            breadcrumbs: [
+                {
+                    text: '사원관리',
+                },
+                {
+                    text: '등록',
+                    active: true,
+                },
+            ],
+          } as SBRouteData,
+        },
+      ],
     },
     {
         path: 'company',
