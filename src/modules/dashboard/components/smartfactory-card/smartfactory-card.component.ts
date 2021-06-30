@@ -88,6 +88,7 @@ export class SmartfactoryCardComponent implements OnInit {
 		this.refreshCountries();
 	}
 
+	//페이지네이션 작동 함수
 	refreshCountries() {
     this.companies = COMPANIES
       .map((company, i) => ({id: i + 1, ...company}))

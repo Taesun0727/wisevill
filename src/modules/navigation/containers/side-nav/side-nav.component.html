@@ -1,8 +1,8 @@
 <nav class="sb-sidenav accordion" id="sidenavAccordion" [ngClass]="sidenavStyle">
-    <div class="sb-sidenav-footer" style="background: url(../../../../assets/img/bg-test1.jpg)">
+    <div class="sb-sidenav-header" style="background: url(../../../../assets/img/bg-test1.jpg)">
         <div class="row">
             <div class="col text-center">
-                <img src="../../../../assets/img/1.jpg" class="img-thumbnail" alt="userimg">
+                <img src="../../../../assets/img/1.jpg" class="img-thumbnail" style="width:191px; height:191px" alt="userimg">
                 <span *ngIf="userService.user$ | async as user">{{user.firstName}} {{user.lastName}}</span>
                 <div class="small">출근중</div>
                 <button class="btn btn-primary btn-sm" type="submit">Button</button>
