@@ -1,5 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { Work } from 'modules/management/models/work'
+
+let WORKS : Work[] = [
+  {
+    date: "2021-04-22",
+    name: "홍길동",
+    department: "개발팀",
+    time: "8시간",
+    remark: "체크",
+    checked: false
+  },
+  {
+    date: "2021-04-23",
+    name: "홍길동",
+    department: "개발팀",
+    time: "8시간",
+    remark: "체크",
+    checked: false
+  },
+
+]
 
 @Component({
   selector: 'sb-work',
@@ -9,6 +30,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 export class WorkComponent implements OnInit {
   closeResult = '';
   constructor(private modalService: NgbModal) { }
+  works = WORKS;
 
   ngOnInit(): void {
   }
@@ -30,5 +52,13 @@ export class WorkComponent implements OnInit {
     } else {
       return `with: ${reason}`;
     }
+  }
+
+  checkAllCheckBox(ev:any) {
+    this.works.forEach(x => x.checked = ev.target.checked)
+  }
+
+  isAllCheckBoxChecked() {
+    return this.works.every(p => p.checked);
   }
 }

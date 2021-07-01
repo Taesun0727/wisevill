@@ -52,7 +52,7 @@
                     <table class="table col-lg-12 table-bordered" style="text-align:center">
                       <thead class="table-info">
                         <tr>
-                          <th scope="col"><input type="checkbox" class="mr-1" aria-label="Checkbox for following text input">전체선택</th>
+                          <th scope="col"><input type="checkbox" [checked]="isAllCheckBoxChecked()" (change)="checkAllCheckBox($event)" class="mr-1" aria-label="Checkbox for following text input">전체선택</th>
                           <th scope="col">소속</th>
                           <th scope="col">부서</th>
                           <th scope="col">직급</th>
@@ -63,24 +63,14 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <th scope="row"><input type="checkbox" aria-label="Checkbox for following text input"></th>
-                          <td>와이즈빌</td>
-                          <td>개발팀</td>
-                          <td>사원</td>
-                          <td>홍길동</td>
-                          <td>개발</td>
-                          <td>관리자</td>
-                          <td><a href="" class="btn btn-secondary">보기</a></td>
-                        </tr>
-                        <tr>
-                          <th scope="row"><input type="checkbox" aria-label="Checkbox for following text input"></th>
-                          <td>와이즈빌</td>
-                          <td>설비팀</td>
-                          <td>인턴</td>
-                          <td>홍길동</td>
-                          <td>설비</td>
-                          <td>사용자</td>
+                        <tr *ngFor="let member of members">
+                          <td scope="row"><input type="checkbox" value="{{member.id}}" [(ngModel)]="member.checked" aria-label="Checkbox for following text input"></td>
+                          <td>{{member.company}}</td>
+                          <td>{{member.department}}</td>
+                          <td>{{member.rank}}</td>
+                          <td>{{member.name}}</td>
+                          <td>{{member.task}}</td>
+                          <td>{{member.auth}}</td>
                           <td><a href="" class="btn btn-secondary">보기</a></td>
                         </tr>
                       </tbody>

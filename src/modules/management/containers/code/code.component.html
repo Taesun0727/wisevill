@@ -51,7 +51,7 @@
                   <table class="table col-lg-12 table-bordered" style="text-align:center">
                     <thead class="table-info">
                       <tr>
-                        <th scope="col"><input type="checkbox" aria-label="Checkbox for following text input">전체선택</th>
+                        <th scope="col"><input type="checkbox" [checked]="isAllCheckBoxChecked()" (change)="checkAllCheckBox($event)" class="mr-1" aria-label="Checkbox for following text input">전체선택</th>
                         <th scope="col">관련컬럼ID</th>
                         <th scope="col">분류명</th>
                         <th scope="col">상세코드</th>
@@ -60,21 +60,13 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row"><input type="checkbox" aria-label="Checkbox for following text input"></th>
-                        <td>인턴</td>
-                        <td>권한코드</td>
-                        <td>dlsxjs</td>
-                        <td>INTERN</td>
-                        <td>인턴코드</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><input type="checkbox" aria-label="Checkbox for following text input"></th>
-                        <td>관리자</td>
-                        <td>권한코드</td>
-                        <td>rhksflwk</td>
-                        <td>ADMIN</td>
-                        <td>관리자코드</td>
+                      <tr *ngFor="let code of codes">
+                        <td scope="row"><input type="checkbox" value="{{code.id}}" [(ngModel)]="code.checked" aria-label="Checkbox for following text input"></td>
+                        <td>{{ code.id }}</td>
+                        <td>{{ code.typename }}</td>
+                        <td>{{ code.datailcode }}</td>
+                        <td>{{ code.codename }}</td>
+                        <td>{{ code.nickname }}</td>
                       </tr>
                     </tbody>
                   </table>

@@ -1,5 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { Company } from 'modules/management/models/company'
+
+let COMPANIES : Company[] = [
+  {
+    company: "와이즈빌",
+    ceo: "홍길동",
+    number: "000-0000-0000",
+    checked: false
+  },
+  {
+    company: "와이즈빌",
+    ceo: "홍길동",
+    number: "000-0000-0000",
+    checked: false
+  },
+  {
+    company: "와이즈빌",
+    ceo: "홍길동",
+    number: "000-0000-0000",
+    checked: false
+  }
+]
 
 @Component({
   selector: 'sb-company',
@@ -9,6 +31,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 export class CompanyComponent implements OnInit {
   closeResult = '';
   constructor(private modalService: NgbModal) { }
+  companies = COMPANIES;
 
   ngOnInit(): void {
   }
@@ -29,6 +52,14 @@ export class CompanyComponent implements OnInit {
     } else {
       return `with: ${reason}`;
     }
+  }
+
+  checkAllCheckBox(ev:any) {
+    this.companies.forEach(x => x.checked = ev.target.checked)
+  }
+
+  isAllCheckBoxChecked() {
+    return this.companies.every(p => p.checked);
   }
 
 }

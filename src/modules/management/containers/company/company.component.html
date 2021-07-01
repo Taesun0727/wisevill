@@ -51,7 +51,7 @@
                   <table class="table col-lg-12 table-bordered" style="text-align:center">
                     <thead class="table-info">
                       <tr>
-                        <th scope="col"><input type="checkbox" class="mr-1" aria-label="Checkbox for following text input">전체선택</th>
+                        <th scope="col"><input type="checkbox" [checked]="isAllCheckBoxChecked()" (change)="checkAllCheckBox($event)" class="mr-1" aria-label="Checkbox for following text input">전체선택</th>
                         <th scope="col">소속</th>
                         <th scope="col">회사대표</th>
                         <th scope="col">회사번호</th>
@@ -59,18 +59,11 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row"><input type="checkbox" aria-label="Checkbox for following text input"></th>
-                        <td>와이즈빌</td>
-                        <td>홍길동</td>
-                        <td>000-0000-0000</td>
-                        <td><a href="" class="btn btn-secondary">보기</a></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><input type="checkbox" aria-label="Checkbox for following text input"></th>
-                        <td>와이즈빌</td>
-                        <td>홍길동</td>
-                        <td>000-0000-0000</td>
+                      <tr *ngFor="let company of companies">
+                        <td scope="row"><input type="checkbox" value="{{company.id}}" [(ngModel)]="company.checked" aria-label="Checkbox for following text input"></td>
+                        <td>{{company.company}}</td>
+                        <td>{{company.ceo}}</td>
+                        <td>{{company.number}}</td>
                         <td><a href="" class="btn btn-secondary">보기</a></td>
                       </tr>
                     </tbody>

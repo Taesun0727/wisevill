@@ -51,7 +51,7 @@
                   <table class="table col-lg-12 table-bordered" style="text-align:center">
                     <thead class="table-info">
                       <tr>
-                        <th scope="col"><input type="checkbox" class="mr-1" aria-label="Checkbox for following text input">전체선택</th>
+                        <th scope="col"><input type="checkbox" [checked]="isAllCheckBoxChecked()" (change)="checkAllCheckBox($event)" class="mr-1" aria-label="Checkbox for following text input">전체선택</th>
                         <th scope="col">소속</th>
                         <th scope="col">부서</th>
                         <th scope="col">부서약어</th>
@@ -60,20 +60,12 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row"><input type="checkbox" aria-label="Checkbox for following text input"></th>
-                        <td>와이즈빌</td>
-                        <td>개발팀</td>
-                        <td>개발</td>
-                        <td>사용</td>
-                        <td><a href="" class="btn btn-secondary">보기</a></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><input type="checkbox" aria-label="Checkbox for following text input"></th>
-                        <td>와이즈빌</td>
-                        <td>설비팀</td>
-                        <td>설비</td>
-                        <td>미사용</td>
+                      <tr *ngFor="let department of departments">
+                        <td scope="row"><input type="checkbox" value="{{department.id}}" [(ngModel)]="department.checked" aria-label="Checkbox for following text input"></td>
+                        <td>{{department.company}}</td>
+                        <td>{{department.department}}</td>
+                        <td>{{department.abb}}</td>
+                        <td>{{department.use}}</td>
                         <td><a href="" class="btn btn-secondary">보기</a></td>
                       </tr>
                     </tbody>

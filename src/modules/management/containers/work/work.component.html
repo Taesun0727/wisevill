@@ -75,7 +75,7 @@
           <table class="table col-lg-12 table-bordered" style="text-align:center">
             <thead class="table-info">
               <tr>
-                <th scope="col"><input type="checkbox" class="mr-1" aria-label="Checkbox for following text input">전체선택</th>
+                <th scope="col"><input type="checkbox" [checked]="isAllCheckBoxChecked()" (change)="checkAllCheckBox($event)" class="mr-1" aria-label="Checkbox for following text input">전체선택</th>
                 <th scope="col">날짜</th>
                 <th scope="col">사원명</th>
                 <th scope="col">부서</th>
@@ -84,13 +84,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row"><input type="checkbox" aria-label="Checkbox for following text input"></th>
-                <td>2021-04-22</td>
-                <td>홍길동</td>
-                <td>개발팀</td>
-                <td>8시간</td>
-                <td>미체크</td>
+              <tr *ngFor="let work of works">
+                <td scope="row"><input type="checkbox" value="{{work.id}}" [(ngModel)]="work.checked" aria-label="Checkbox for following text input"></td>
+                <td>{{work.date}}</td>
+                <td>{{work.name}}</td>
+                <td>{{work.department}}</td>
+                <td>{{work.time}}</td>
+                <td>{{work.remark}}</td>
               </tr>
             </tbody>
           </table>
