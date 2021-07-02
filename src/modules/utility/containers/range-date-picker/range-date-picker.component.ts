@@ -14,8 +14,13 @@ export class RangeDatePickerComponent implements OnInit {
   @Output() ItemEvent = new EventEmitter<NgbDate | any>();
 
   ngOnInit(): void {
-    this.fromDate = this.Gfromdate;
-    this.toDate = this.Gtodate;
+    if(this.Gfromdate != null && this.Gtodate != null){
+      this.fromDate = this.Gfromdate;
+      this.toDate = this.Gtodate;
+    } else {
+      this.fromDate = this.calendar.getToday();
+      this.toDate = this.calendar.getToday();
+    }
   }
 
   ngDoCheck() {
@@ -31,7 +36,6 @@ export class RangeDatePickerComponent implements OnInit {
   toDate!: NgbDate | null;
 
   constructor(private calendar: NgbCalendar, public formatter: NgbDateParserFormatter) {
-
   }
 
   onDateSelection(date: NgbDate) {
