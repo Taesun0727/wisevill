@@ -4,6 +4,6 @@ export interface Workrecord {
     end: any;
     workroad: any;
     check: any;
-    checked?: boolean;
+   
   }
   

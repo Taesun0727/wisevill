@@ -8,7 +8,7 @@ let WORKRECORDS: Workrecord[] = [
     end: "18:00",
     workroad: "8",
     check: "",
-    checked: false,
+    
   },
   {
     date: "2021.06.24",
@@ -16,7 +16,7 @@ let WORKRECORDS: Workrecord[] = [
     end: "18:00",
     workroad: "8",
     check: "",
-    checked: false,
+   
   },
   {
     date: "2021.06.25",
@@ -24,7 +24,7 @@ let WORKRECORDS: Workrecord[] = [
     end: "18:00",
     workroad: "8",
     check: "",
-    checked: false,
+    
   },
 ]
 
