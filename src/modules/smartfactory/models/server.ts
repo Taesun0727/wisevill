@@ -3,5 +3,6 @@ export interface server {
   type: string,
   domain: string,
   ip: string,
-  webtype: string
+  webtype: string,
+  checked?: boolean;
 }
