@@ -1,4 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { server } from '@modules/smartfactory/models/server';
+
+let SERVER: server[] = [
+  {
+    name: "포제이",
+    type: "테스트용",
+    domain: "http://",
+    ip: "192.000.000.000",
+    webtype: "NGINX"
+  },
+  
+  {
+    name: "지프라임",
+    type: "테스트용",
+    domain: "http://",
+    ip: "192.000.000.000",
+    webtype: "NGINX"
+  }
+]
 
 @Component({
   selector: 'sb-server',
@@ -6,8 +25,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./server.component.scss']
 })
 export class ServerComponent implements OnInit {
+  servers = SERVER;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

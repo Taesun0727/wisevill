@@ -1,9 +1,9 @@
 <sb-layout-dashboard>
-    <sb-dashboard-head title="내 정보 수정" [hideBreadcrumbs]="true"></sb-dashboard-head>
+    <sb-dashboard-head title="사원관리" [hideBreadcrumbs]="true"></sb-dashboard-head>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item "><a href="#">마이페이지</a></li>
-                <li class="breadcrumb-item active " aria-current="page">내 정보</li>
+                <li class="breadcrumb-item "><a href="#">공통정보관리</a></li>
+                <li class="breadcrumb-item active " aria-current="page">사원관리</li>
             </ol>
         </nav>
 
@@ -15,19 +15,37 @@
                     <div class="card-body">
 
                         <div class="form-group row">
-                            <label class="col-sm-2 control-label ir">근무상태</label>
-                            <label class="col-sm-4" id ="am_working"></label>
-                            <label class="col-sm-2 control-label ir">기본/추가연차</label>
-                            <label class="col-sm-4">10일/2일</label>
+                            <label class="control-label ir col-sm-2 mt-2">근무상태</label>
+                            <select class="form-control col-sm-4 ml-2">
+                                <option>재직</option>
+                                <option>휴직</option>
+                                <option>퇴사</option>
+                            </select>
+                            <label class="control-label ir col-sm-2 mt-2">기본/연차추가</label>
+                            <select class="form-control col-sm-1 ml-2">
+                                <option>기본</option>
+                              </select>
+                              <select class="form-control col-sm-1 ml-2">
+                                <option>연차추가</option>
+                              </select>
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-sm-2 control-label ir">입/퇴사일</label>
-                            <div class="col-sm-4">
-                                <sb-range-date-picker [Gfromdate]="Gfromdate" [Gtodate]="Gtodate" (newItemEvent)="Gfromdatechange($event)" (ItemEvent)="Gtodatechange($event)"></sb-range-date-picker>
+                            <label class="control-label ir col-sm-2 mt-2">입/퇴사일</label>
+                            <div class="col-sm-4 ml-2">
+                                <sb-range-date-picker></sb-range-date-picker>
                             </div>
-                            <label class="col-sm-2 control-label ir">소속</label>
-                            <label class="col-sm-4">와이즈빌 > 개발팀</label>
+                            <label class="control-label ir col-sm-2 mt-2">소속</label>
+                            <select class="form-control col-sm-1 ml-2">
+                                <option>와이즈빌</option>
+                                <option>와이즈빌2</option>
+                                <option>와이즈빌3</option>
+                              </select>
+                              <select class="form-control col-sm-1 ml-2">
+                                <option>개발팀</option>
+                                <option>회계팀</option>
+                                <option>인사팀</option>
+                              </select>
                         </div>
 
                         <div class="form-group row">
@@ -37,7 +55,7 @@
                             </div>
                             <label class="col-sm-2 control-label ir">생년원일</label>
                             <div class="col-sm-4">
-                                <sb-my-date-picker [item]="bdate" (datechange)="changedate($event)"></sb-my-date-picker>
+                                <sb-my-date-picker></sb-my-date-picker>
                             </div>
                         </div>
 
@@ -54,7 +72,12 @@
 
                         <div class="form-group row">
                             <label class="col-sm-2 control-label ir">직급</label>
-                            <label class="col-sm-4">사원</label>
+                            <select class="form-control col-sm-4">
+                                <option>대표</option>
+                                <option>이사</option>
+                                <option>사원</option>
+                                <option>인턴</option>
+                            </select>
                             <label class="col-sm-2 control-label ir">내선번호</label>
                             <div class="col-sm-4">
                                 <input type="text" class="form-control" name="am_extension" id="am_extension"
@@ -91,6 +114,20 @@
 
                         <hr class="m-t-0 m-b-40">
 
+                        <div class="form-group row">
+                            <label class="control-label ir col-sm-2 mt-2">권한등급</label>
+                            <select class="form-control col-sm-3 ml-3">
+                                <option>슈퍼관리자</option>
+                                <option>관리자</option>
+                                <option>대표</option>
+                                <option>이사</option>
+                                <option>사원</option>
+                                <option>인턴</option>
+                            </select>
+                            </div>
+
+                            <hr class="m-t-0 m-b-40">
+
 
                         <div class="form-group row">
                             <label class="col-sm-2 control-label ir ">사진</label>
@@ -113,13 +150,12 @@
                     </div>
                 </div>
 
-                <div class="card-footer text-right">
-                    <button type="button" id="upbtn" (click)="modify()" class="btn btn-info float-right cus-upbtn"style="display:inline-block">수정</button>
-                    <button type="button" class="btn btn-danger btn-flat mr-2" onclick="">취소</button>
-                      </div>
+                <div class="card-footer clearfix">
+                    <button type="button" id="upbtn" (click)="modify()" class="btn btn-info float-right cus-upbtn"
+                        style="display:inline-block">수정</button>
                 </div>
             </div>
         </div>
-  
+    </div>
 
 </sb-layout-dashboard>

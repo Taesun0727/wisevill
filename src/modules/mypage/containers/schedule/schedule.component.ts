@@ -50,6 +50,18 @@ export class ScheduleComponent implements OnInit {
   }
   
 
+ 
+  
+	Schedules: Array<any> = [
+		{ name: '업무', dayoffs: [  '출장','외근', ] },
+		{ name: '휴가', dayoffs: [  '월차','연차','오전반차','오후반차','외출','조퇴','병가','생리휴가','출산휴가'  ] }
+	];
+    
+	dayoffs: Array<any> | undefined; 
 
+	changeSchedule(schedule: any) { 
+		
+		this.dayoffs = this.Schedules.find((scd: any) => scd.name == schedule).dayoffs; //Angular 11
+	}
 
 }

@@ -14,39 +14,41 @@
                             <div class="form-body">
                                 <div class="form-group row">
 
-																	<div class="col-sm-6 row">
-																		<label class="col-sm-3 control-label">진행상태</label>
-																		<div class="col-sm-9">
-																				<div class="btn-group" role="group" id="">
-																						<button type="button" class="btn btn-primary" onclick="">전체</button>
-																						<button type="button" class="btn btn-secondary" onclick="">진행중</button>
-																						<button type="button" class="btn btn-secondary" onclick="">완료</button>
-																						<button type="button" class="btn btn-secondary" onclick="">취소</button>
-																				</div>
-																		</div>
-																	</div>
+                                    <div class="col-sm-6 row">
+                                        <label class="col-sm-3 control-label">진행상태</label>
+                                        <div class="col-sm-9">
+                                            <div class="btn-group" role="group" id="">
+                                                <button type="button" class="btn btn-secondary" onclick="">전체</button>
+                                                <button type="button" class="btn btn-secondary" onclick="">진행중</button>
+                                                <button type="button" class="btn btn-secondary" onclick="">완료</button>
+                                                <button type="button" class="btn btn-secondary" onclick="">취소</button>
+                                            </div>
+                                        </div>
+                                    </div>
 
-																	<div class="col-sm-6 row">
-                                  	<label class="col-sm-2 control-label">기간</label>
-                                  	<div class="col-sm-10">
-																			<sb-range-date-picker></sb-range-date-picker>
-                                  	</div>
-																	</div>
+                                    <div class="col-sm-6 row">
+                                        <label class="col-sm-2 control-label">기간</label>
+                                        <div class="col-sm-10">
+                                            <sb-range-date-picker></sb-range-date-picker>
+                                        </div>
+                                    </div>
 
                                 </div>
 
                                 <div class="form-group row">
 
-                                  <label class="col-sm-1 control-label mr-5">검색</label>
-																	<div class="col-10 row">
-																		<select class="form-control col-sm-2 ml-4">
-																			<option>1</option>
-																		</select>
-																		<input type="text" class="form-control col-sm-6" name="am_name" id="am_name" maxlength="10">
-																		<div class="input-group-append">
-																			<button type="button" class="btn btn-primary btn-flat" onclick="">검색</button>
-																		</div>
-																	</div>
+                                    <label class="col-sm-1 control-label mr-5">검색</label>
+                                    <div class="col-10 row">
+                                        <select class="form-control col-sm-2 ml-4">
+                                            <option>1</option>
+                                        </select>
+                                        <input type="text" class="form-control col-sm-6" name="am_name" id="am_name"
+                                            maxlength="10">
+                                        <div class="input-group-append">
+                                            <button type="button" class="btn btn-dark btn-flat"
+                                                onclick="">검색</button>
+                                        </div>
+                                    </div>
 
 
                                 </div>
@@ -57,68 +59,70 @@
                     </div>
                 </div>
 
-								<div class="row mb-3 mt-3">
-									<div class="col-md-4 align-self-center">
-										<a href="" class="btn btn-xs btn-secondary" onclick="">검색초기화</a>
-										 Total 
-										<span class="">0</span>
-										 건
-										<span class="">0</span>
-										 /
-										<span class="">0</span>
-										 Page
-									</div>
-									<div class="col-md-8 align-self-center text-right">
-										<a href="/project/createproject" class="btn btn-primary cus-inbtn" style="display: inline-block;">프로젝트 등록</a>
-									</div>
-								</div>
+                <div class="row mb-3 mt-3">
+                    <div class="col-md-4 align-self-center">
+                        <a href="" class="btn btn-xs btn-secondary" onclick="">검색초기화</a>
+                        Total
+                        <span class="">0</span>
+                        건
+                        <span class="">0</span>
+                        /
+                        <span class="">0</span>
+                        Page
+                    </div>
+                    <div class="col-md-8 align-self-center text-right">
+                        <a href="/project/createproject" class="btn btn-primary cus-inbtn"
+                            style="display: inline-block;">프로젝트 등록</a>
+                    </div>
+                </div>
 
-								<div class="row">
-									<div class="col-12">
-										<div class="card mb-3">
-											<div class="card-body">
-												<table class="table col-lg-12 table-bordered">
-													<thead class="table-info">
-														<tr>
-															<th scope="col">번호</th>
-															<th scope="col">프로젝트명</th>
-															<th scope="col">기간</th>
-															<th scope="col">주관부서</th>
-															<th scope="col">참여인원</th>
-															<th scope="col">진행단계</th>
-															<th scope="col">관리</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<th scope="row">1</th>
-															<td>알림</td>
-															<td>2021-04-22~2021.04.22</td>
-															<td>개발팀</td>
-															<td>관리자외 5명</td>
-															<td>시작</td>
-															<td><button class="btn btn-primary btn-flat" onclick="">보기</button></td>
-														</tr>
-														<tr>
-															<th scope="row">2</th>
-															<td>알림</td>
-															<td>2021-04-22~2021.04.22</td>
-															<td>개발팀</td>
-															<td>관리자외 5명</td>
-															<td>시작</td>
-															<td><button class="btn btn-primary btn-flat" onclick="">보기</button></td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-										</div>
-									</div>
-								</div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <table class="table col-lg-12 table-bordered" style="text-align:center">
+                                    <thead class="table-info">
+                                        <tr>
+                                            <th scope="col">번호</th>
+                                            <th scope="col">프로젝트명</th>
+                                            <th scope="col">기간</th>
+                                            <th scope="col">주관부서</th>
+                                            <th scope="col">참여인원</th>
+                                            <th scope="col">진행단계</th>
+                                            <th scope="col">관리</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>알림</td>
+                                            <td>2021-04-22~2021.04.22</td>
+                                            <td>개발팀</td>
+                                            <td>관리자외 5명</td>
+                                            <td>시작</td>
+                                            <td><button class="btn btn-secondary btn-flat" onclick="">보기</button></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>알림</td>
+                                            <td>2021-04-22~2021.04.22</td>
+                                            <td>개발팀</td>
+                                            <td>관리자외 5명</td>
+                                            <td>시작</td>
+                                            <td><button class="btn btn-secondary btn-flat" onclick="">보기</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
-						<div class="col-lg-12 align-self-center text-right">
-							<a href="project/createproject" class="btn btn-primary cus-inbtn" style="display: inline-block;">프로젝트 등록</a>
-						</div>
+            <div class="col-lg-12 align-self-center text-right">
+                <a href="project/createproject" class="btn btn-primary cus-inbtn" style="display: inline-block;">프로젝트
+                    등록</a>
+            </div>
         </div>
     </div>
 

@@ -23,25 +23,20 @@
                 <div class="col-sm-12">
                     <div class="row">
                         <label class="control-label ir col-sm-2 mt-2">구분</label>
-                        <select class="form-control col-sm-3 ml-3">
-                            <option>::업무/휴가::</option>
-                            <option>업무</option>
-                            <option>휴가</option>
-                        </select>
-                        <select class="form-control col-sm-4 ml-3">
-                            <option>::연가/조퇴/반차/출장/외근::</option>
-                            <option>연가</option>
-                            <option>조퇴</option>
-                            <option>반차</option>
-                            <option>출장</option>
-                            <option>외근</option>
+                        <select (change)="changeSchedule($event.target.value)">
+                            <option selected disabled hidden>::업무/휴가::</option>
+                            <option *ngFor ="let schedule of Schedules">{{schedule.name}} </option>
+                            </select>
+                        <select placeholder="dayoff" class="form-control col-sm-4 ml-3">
+                            <option selected disabled hidden>::출장/외근/연차/반차::</option>
+                            <option *ngFor ="let dayoff of dayoffs">{{dayoff}} </option>
                         </select>
                     </div>
                 </div>
             </div>
-
+            
             <div class="form-group row">
-                <div class="col-sm-11 text-center" >
+                <div class="col-sm-12 text-center" >
                       <div class="icheck-primary d-inline mr-3"><input type="radio" name="layout" id="layout_0"
                               value="sidebar-mini layout-fixed layout-navbar-fixed" checked="checked"><label
                               for="layout_0">선택안함</label></div>
@@ -51,39 +46,38 @@
                               value="sidebar-mini layout-boxed"><label for="layout_2">오전</label></div>
                       <div class="icheck-primary d-inline mr-3"><input type="radio" name="layout" id="layout_3"
                               value="layout-top-nav"><label for="layout_3">오후</label></div>
-                  </div>
+                </div>
             </div>
 
             <div class="form-group row">
                 <label class="control-label ir col-sm-2 mt-2">시작</label>
+                <div class="col-sm-4 ml-1">
                 <sb-my-date-picker></sb-my-date-picker>
-                <sb-timepicker></sb-timepicker>
+                </div>
+                <sb-timepicker class="ml-3"></sb-timepicker>
               </div>
 
             <div class="form-group row">
                 <label class="control-label ir col-sm-2 mt-2">종료</label>
+                <div class="col-sm-4 ml-1">
                 <sb-my-date-picker></sb-my-date-picker>
-                
-                  <sb-timepicker></sb-timepicker>
-                 
-                  
-                   
-          
-          </div>
+                </div>
+                <sb-timepicker class="ml-3"></sb-timepicker>
+            </div>
 
             <div class="form-group row">
                 <label class="control-label ir col-sm-2 mt-1">제목</label>
-                <textarea class="form-control col-sm-8 ml-3" rows="1" placeholder=""></textarea>
+                <input type="text" class="form-control col-sm-8 ml-3" maxlength="10">
             </div>
 
             <div class="form-group row">
                 <label class="control-label ir col-sm-2 mt-1">장소</label>
-                <textarea class="form-control col-sm-8 ml-3" rows="1" placeholder=""></textarea>
+                <input type="text" class="form-control col-sm-8 ml-3" maxlength="10">
             </div>
 
             <div class="form-group row">
                 <label class="control-label ir col-sm-2 mt-1">설명</label>
-                <textarea class="form-control col-sm-8 ml-3" rows="1" placeholder="내용을 입력해주세요"></textarea>
+                <textarea class="form-control col-sm-8 ml-3" rows="3" placeholder="내용을 입력해주세요"></textarea>
             </div>
         </form>
     </div>

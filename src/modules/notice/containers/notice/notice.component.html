@@ -18,7 +18,7 @@
                             </select>
                             <input type="text" class="form-control col-sm-4 ml-4" name="am_name" id="am_name" maxlength="10">
                             <div class="input-group-append">
-                              <button type="button" class="btn btn-primary btn-flat" onclick="">검색</button>
+                              <button type="button" class="btn btn-dark btn-flat" onclick="">검색</button>
                             </div>
                           </div>
                         </div>
@@ -48,7 +48,7 @@
                 <div class="col-12">
                   <div class="card mb-3">
                     <div class="card-body">
-                      <table class="table col-lg-12 table-bordered">
+                      <table class="table col-lg-12 table-bordered" style="text-align:center">
                         <thead class="table-info">
                           <tr>
                             <th scope="col">번호</th>
@@ -67,9 +67,11 @@
                             <td>알림</td>
                             <td>관리자</td>
                             <td>2021-04-22</td>
-                            <td><button class="btn btn-primary btn-flat" onclick="">다운</button></td>
-                            <td><button class="btn btn-primary btn-flat" onclick="">수정</button>
-                                <button class="btn btn-primary btn-flat" onclick="">다운</button></td>
+                            <td><button class="btn btn-secondary btn-flat" onclick="">다운</button></td>
+                            <td> <div class="col-md-12 align-self-center text-center">
+                              <a href="" class="btn btn-info cus-inbtn mr-2" style="display: inline-block;">수정</a>
+                              <button type="button" class="btn btn-secondary btn-flat" onclick="">다운</button>
+                            </div></td>
                           </tr>
                           <tr>
                             <th scope="row">2</th>
@@ -78,8 +80,10 @@
                             <td>관리자</td>
                             <td>2021-05-05</td>
                             <td>없음</td>
-                            <td><button class="btn btn-primary btn-flat" onclick="">수정</button>
-                                <button class="btn btn-primary btn-flat" onclick="">다운</button></td>
+                            <td> <div class="col-md-12 align-self-center text-center">
+                              <a href="" class="btn btn-info cus-inbtn mr-2" style="display: inline-block;">수정</a>
+                              <button type="button" class="btn btn-secondary btn-flat" onclick="">다운</button>
+                            </div></td>
                           </tr>
                         </tbody>
                       </table>
@@ -97,3 +101,4 @@
 
 
 </sb-layout-dashboard>
+

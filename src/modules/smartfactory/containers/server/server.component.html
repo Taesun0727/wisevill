@@ -27,7 +27,7 @@
                         <option>선택</option>
                       </select>
                       <input type="text" class="form-control col-sm-2 ml-2" name="am_name" id="am_name" maxlength="10">
-                      <button type="button" class="btn btn-primary">검색</button>
+                      <button type="button" class="btn btn-dark">검색</button>
                     </div>
                   </div>
                 </div>
@@ -74,13 +74,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row"><input type="checkbox" aria-label="Checkbox for following text input"></th>
-                <td>와이즈빌</td>
-                <td>테스트용</td>
-                <td>forj.wisevill.co.kr</td>
-                <td>192.168.0.1</td>
-                <td>NGINX</td>
+              <tr *ngFor="let server of servers; index as i">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{server.name}}</td>
+                <td>{{server.type}}</td>
+                <td>{{server.domain}}</td>
+                <td>{{server.ip}}</td>
+                <td>{{server.webtype}}</td>
                 <td><button type="button" class="btn btn-success btn-sm">가동중</button></td>
                 <td><button type="button" class="btn btn-secondary btn-sm">바로가기</button></td>
                 <td><button type="button" class="btn btn-secondary btn-sm">보기</button></td>
