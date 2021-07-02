@@ -30,7 +30,7 @@
                   <div class="form-group row">
                     <div class="col-sm-12">
                       <div class="custom-file" id="inputFile">
-                          <input name="file" type="file" class="custom-file-input" id="customFile">
+                          <input name="file" type="file" class="custom-file-input" id="customFile" (chnage)="handleFileInput($event.target.files)">
                           <label class="custom-file-label" for="customFile">파일을 선택해 주세요.</label>
                       </div>
                     </div>
