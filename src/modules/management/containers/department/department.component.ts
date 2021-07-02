@@ -1,5 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { Department } from 'modules/management/models/department'
+
+let DEPARTMENTS : Department[] = [
+  {
+    company: "와이즈빌",
+    department: "개발팀",
+    abb: "개발",
+    use: "사용",
+    checked: false
+  },
+  {
+    company: "와이즈빌",
+    department: "설비팀",
+    abb: "설비",
+    use: "사용",
+    checked: false
+  },
+]
 
 @Component({
   selector: 'sb-department',
@@ -9,6 +27,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 export class DepartmentComponent implements OnInit {
   closeResult = '';
   constructor(private modalService: NgbModal) { }
+  departments = DEPARTMENTS
 
   ngOnInit(): void {
   }
@@ -29,5 +48,13 @@ export class DepartmentComponent implements OnInit {
     } else {
       return `with: ${reason}`;
     }
+  }
+
+  checkAllCheckBox(ev:any) {
+    this.departments.forEach(x => x.checked = ev.target.checked)
+  }
+
+  isAllCheckBoxChecked() {
+    return this.departments.every(p => p.checked);
   }
 }
