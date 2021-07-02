@@ -1,97 +1,105 @@
 <sb-layout-dashboard>
-  <sb-dashboard-head title="IOT 기기 관리" [hideBreadcrumbs]="false"></sb-dashboard-head>
+    <sb-dashboard-head title="IOT 기기 관리" [hideBreadcrumbs]="false"></sb-dashboard-head>
 
-  <div class="container-fluid">
+    <div class="container-fluid">
 
-    <div class="row">
-      <div class="col-12">
-        <div class="card">
-          <div class="card-body">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
 
-            <form class="form-horizontal" name="" method="get">
-              <div class="form-body">
+                        <form class="form-horizontal" name="" method="get">
+                            <div class="form-body">
 
-                <div class="form-group row">
-                  <div class="col-sm-12">
-                    <div class="row">
-                      <select class="form-control col-sm-2 ml-2">
-                        <option>가동상태</option>
-                      </select>
-                      <select class="form-control col-sm-2 ml-2">
-                        <option>타입</option>
-                      </select>
-                      <select class="form-control col-sm-2 ml-2">
-                        <option>선택</option>
-                      </select>
-                      <input type="text" class="form-control col-sm-2 ml-2" name="" id="" maxlength="10">
-                      <button type="button" class="btn btn-dark">검색</button>
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <select class="form-control col-sm-2 ml-2">
+                                                <option>가동상태</option>
+                                            </select>
+                                            <select class="form-control col-sm-2 ml-2">
+                                                <option>타입</option>
+                                            </select>
+                                            <select class="form-control col-sm-2 ml-2">
+                                                <option>선택</option>
+                                            </select>
+                                            <input type="text" class="form-control col-sm-2 ml-2" name="" id=""
+                                                maxlength="10">
+                                            <button type="button" class="btn btn-dark">검색</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+
                     </div>
-                  </div>
                 </div>
+            </div>
+        </div>
 
-              </div>
-            </form>
+        <div class="row mb-3 mt-3">
+            <div class="col-md-4 align-self-center">
+                <a href="" class="btn btn-xs btn-secondary" onclick="">검색초기화</a>
+                Total
+                <span class="">0</span>
+                건
+                <span class="">0</span>
+                /
+                <span class="">0</span>
+                Page
+            </div>
+            <div class="col-8 align-self-center text-right cbtn-wrap"><a href="/smartfactory/iot/createiot"
+                    class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt"
+                    style="display: inline-block;">기기등록</a>
+                <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록
+                    삭제</button>
+            </div>
+        </div>
 
+        <div class="row">
+            <div class="card mb-3 col-12">
+                <div class="card-body">
+                    <table class="table col-lg-12 table-bordered" style="text-align:center">
+                        <thead class="table-info">
+                            <tr>
+                                <th scope="col"><input type="checkbox" [checked]="isAllCheckBoxChecked()"
+                                        (change)="checkAllCheckBox($event)" class="mr-1"
+                                        aria-label="Checkbox for following text input">전체선택</th>
+                                <th scope="col">회사명</th>
+                                <th scope="col">기기명</th>
+                                <th scope="col">타입</th>
+                                <th scope="col">내용</th>
+                                <th scope="col">RSSI</th>
+                                <th scope="col">가동상태</th>
+                                <th scope="col">상세보기</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let iot of iots;, index as i">
+                                <td scope="row"><input type="checkbox" value="{{iot.id}}" [(ngModel)]="iot.checked"
+                                        aria-label="Checkbox for following text input"></td>
+                                <td>{{ iot.cname }}</td>
+                                <td>{{ iot.name }}</td>
+                                <td>{{ iot.type }}</td>
+                                <td>{{ iot.content }}</td>
+                                <td>{{ iot.rssi }}</td>
+                                <td><button type="button" class="btn btn-success btn-sm">{{ iot.status }}</button></td>
+                                <td><button type="button" class="btn btn-secondary btn-sm">보기</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-12 align-self-center text-right cbtn-wrap"><a href="/smartfactory/iot/createiot"
+                  class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt"
+                  style="display: inline-block;">기기등록</a>
+              <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록 삭제</button>
           </div>
-        </div>
       </div>
     </div>
-
-    <div class="row mb-3 mt-3">
-      <div class="col-md-4 align-self-center">
-        <a href="" class="btn btn-xs btn-secondary" onclick="">검색초기화</a>
-         Total 
-        <span class="">0</span>
-         건
-        <span class="">0</span>
-         /
-        <span class="">0</span>
-         Page
-      </div>
-      <div class="col-md-8 align-self-center text-right">
-        <a href="/smartfactory/iot/createiot" class="btn btn-primary cus-inbtn" style="display: inline-block;">기기추가</a>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="card mb-3 col-12">
-        <div class="card-body">
-          <table class="table col-lg-12 table-bordered" style="text-align:center">
-            <thead class="table-info">
-              <tr>
-                <th scope="col">NO</th>
-                <th scope="col">회사명</th>
-                <th scope="col">기기명</th>
-                <th scope="col">타입</th>
-                <th scope="col">내용</th>
-                <th scope="col">RSSI</th>
-                <th scope="col">가동상태</th>
-                <th scope="col">상세보기</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let iot of iots;, index as i">
-                <th scope="row">{{i + 1}}</th>
-                <td>{{ iot.cname }}</td>
-                <td>{{ iot.name }}</td>
-                <td>{{ iot.type }}</td>
-                <td>{{ iot.content }}</td>
-                <td>{{ iot.rssi }}</td>
-                <td><button type="button" class="btn btn-success btn-sm">{{ iot.status }}</button></td>
-                <td><button type="button" class="btn btn-secondary btn-sm">보기</button></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      
-    </div>
-
-    <div class="row">
-      <div class="col-md-12 align-self-center text-right">
-        <a href="/smartfactory/iot/createiot" class="btn btn-primary cus-inbtn" style="display: inline-block;">기기추가</a>
-      </div>
-    </div>
-
-  </div>
 </sb-layout-dashboard>

@@ -8,7 +8,8 @@ const IOT: Iot[] = [
     type: 'P',
     content: '충진기',
     rssi: '-59',
-    status: true
+    status: true,
+    checked: false,
   },
   {
     cname: '포제이',
@@ -16,7 +17,8 @@ const IOT: Iot[] = [
     type: 'P',
     content: '충진기',
     rssi: '-59',
-    status: true
+    status: true,
+    checked: false,
   },
 ]
 
@@ -33,6 +35,13 @@ export class IotComponent implements OnInit {
 
   ngOnInit(): void {
 
+  }
+  checkAllCheckBox(ev:any) {
+    this.iots.forEach(x => x.checked = ev.target.checked)
+  }
+
+  isAllCheckBoxChecked() {
+    return this.iots.every(p => p.checked);
   }
 
 }

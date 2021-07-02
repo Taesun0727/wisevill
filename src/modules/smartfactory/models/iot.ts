@@ -5,4 +5,5 @@ export interface Iot {
   content: string;
   rssi: string;
   status: boolean;
+  checked?: boolean;
 }
