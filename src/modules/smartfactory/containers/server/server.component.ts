@@ -32,5 +32,12 @@ export class ServerComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  checkAllCheckBox(ev:any) {
+    this.servers.forEach(x => x.checked = ev.target.checked)
+  }
+
+  isAllCheckBoxChecked() {
+    return this.servers.every(p => p.checked);
+  }
 
 }
