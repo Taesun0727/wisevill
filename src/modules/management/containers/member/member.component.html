@@ -1,6 +1,6 @@
 <sb-layout-dashboard>
     <sb-dashboard-head title="사원관리" [hideBreadcrumbs]="false"></sb-dashboard-head>
-    <div class="content">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
     
@@ -13,10 +13,10 @@
                           <div class="form-group row col-sm-12">
                             <label class="control-label ir"></label>
                             <select class="form-control col-sm-2 mr-2">
-                              <option>소속</option>
+                              <option selected disabled hidden>::소속::</option>
                             </select>
                             <select class="form-control col-sm-2">
-                              <option>부서</option>
+                              <option selected disabled hidden>::부서::</option>
                             </select>
                             <input type="text" class="form-control col-sm-4 ml-4" name="am_name" id="am_name" maxlength="10">
                             <div class="input-group-append">
