@@ -14,7 +14,10 @@
                         <div class="form-body">
                           <div class="form-group row col-sm-12">
                             <select class="form-control col-sm-1">
-                              <option>1</option>
+                              <option selected disabled hidden>::구분::</option>
+                              <option>내용</option>
+                              <option>제목</option>
+                              <option>글쓴이</option>
                             </select>
                             <input type="text" class="form-control col-sm-4 ml-4" name="am_name" id="am_name" maxlength="10">
                             <div class="input-group-append">
@@ -40,7 +43,8 @@
                    Page
                 </div>
                 <div class="col-md-8 align-self-center text-right">
-                  <a href="notice/createnotice" class="btn btn-primary cus-inbtn" style="display: inline-block;">공지사항 등록</a>
+                  <a href="notice/createnotice" class="btn btn-primary cus-inbtn mr-2" style="display: inline-block;">공지사항 등록</a>
+                  <button type="button" class="btn btn-danger btn-flat" onclick="">삭제</button>
                 </div>
               </div>
 
@@ -51,7 +55,7 @@
                       <table class="table col-lg-12 table-bordered" style="text-align:center">
                         <thead class="table-info">
                           <tr>
-                            <th scope="col">번호</th>
+                            <th scope="col"><input type="checkbox" [checked]="isAllCheckBoxChecked()" (change)="checkAllCheckBox($event)" class="mr-1" aria-label="Checkbox for following text input">전체선택</th>
                             <th scope="col">분류</th>
                             <th scope="col">제목</th>
                             <th scope="col">작성자</th>
@@ -62,28 +66,18 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <th scope="row">1</th>
-                            <td>기타</td>
-                            <td>알림</td>
-                            <td>관리자</td>
-                            <td>2021-04-22</td>
+                            <tr *ngFor="let notice of notices">
+                            <td scope="row"><input type="checkbox" value="{{notice.id}}" [(ngModel)]="notice.checked" aria-label="Checkbox for following text input"></td>
+                            <td>{{notice.type}}</td>
+                            <td>{{notice.title}}</td>
+                            <td>{{notice.writer}}</td>
+                            <td>{{notice.date}}</td>
                             <td><button class="btn btn-secondary btn-flat" onclick="">다운</button></td>
-                            <td> <div class="col-md-12 align-self-center text-center">
-                              <a href="" class="btn btn-info cus-inbtn mr-2" style="display: inline-block;">수정</a>
-                              <button type="button" class="btn btn-secondary btn-flat" onclick="">다운</button>
-                            </div></td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>알림</td>
-                            <td>긴급</td>
-                            <td>관리자</td>
-                            <td>2021-05-05</td>
-                            <td>없음</td>
-                            <td> <div class="col-md-12 align-self-center text-center">
-                              <a href="" class="btn btn-info cus-inbtn mr-2" style="display: inline-block;">수정</a>
-                              <button type="button" class="btn btn-secondary btn-flat" onclick="">다운</button>
-                            </div></td>
+                            <td>
+                              <div class="col-md-12 align-self-center text-center">
+                                <a href="" class="btn btn-info cus-inbtn mr-2" style="display: inline-block;">수정</a>
+                              </div>
+                            </td>
                           </tr>
                         </tbody>
                       </table>
@@ -94,7 +88,8 @@
 
           </div>
           <div class="col-md-12 align-self-center text-right">
-            <a href="notice/createnotice" class="btn btn-primary cus-inbtn" style="display: inline-block;">공지사항 등록</a>
+            <a href="notice/createnotice" class="btn btn-primary cus-inbtn mr-2" style="display: inline-block;">공지사항 등록</a>
+            <button type="button" class="btn btn-danger btn-flat" onclick="">삭제</button>
           </div>
       </div>
   </div>
