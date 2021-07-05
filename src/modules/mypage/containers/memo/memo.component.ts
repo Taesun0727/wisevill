@@ -95,6 +95,17 @@ export class MemoComponent implements OnInit {
   
 
   //ddsfadfs
+  Checks: Array<any> = [
+		{ name: '확인메시지', details: [  '내용','보낸사람', ] },
+		{ name: '미확인메시지', details: [  '내용','보낸사람',  ] }
+	];
+    
+	details: Array<any> | undefined; 
+
+	changeCheck(check: any) { 
+		
+		this.details = this.Checks.find((chk: any) => chk.name == check).details; //Angular 11
+	}
 
 
 
