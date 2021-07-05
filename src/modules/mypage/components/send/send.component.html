@@ -19,18 +19,20 @@
                 <label class="col col-12 col-sm-2 col-md-1 control-label ir"></label>
                 <div class="col col-12 col-sm-10 col-md-11 sc_type_wrap">
                     <div class="row">
-                        <div class="col-6 col-sm-6 col-md-4 sc_type_1"><select id="sc_type_1"
-                                name="sc_type_1" class="form-control " style="width: 100%;">
-                                <option value="">:: 선택 ::</option>
-                                <option value="SCH001">확인메시지</option>
-                                <option value="SCH002">미확인메시지</option>
-                            </select></div>
-                        <div class="col-6 col-sm-6 col-md-4 sc_type_2"><select id="sc_type_2"
-                                name="sc_type_2" class="form-control " style="width: 100%;">
-                                <option value="">:: 선택 ::</option>
-                                <option value="SCH001001">내용</option>
-                                <option value="SCH001002">보낸사람</option>
-                            </select></div>
+                      <div class="col-6 col-sm-6 col-md-4 sc_type_1" >
+                        <select id="sc_type_1"
+                        name="sc_type_1" class="form-control " style="width: 100%;" (change)="changeCheck($event.target.value)">
+                            <option selected disabled hidden>::선택::</option>
+                            <option *ngFor="let check of Checks">{{check.name}} </option>
+                        </select></div>
+                    <div class="col-6 col-sm-6 col-md-4 sc_type_2">
+                        <select placeholder="detail"  id="sc_type_2"
+                        name="sc_type_2" class="form-control "  style="width: 100%;">
+                            <option selected disabled hidden>::선택::</option>
+                            <option *ngFor="let detail of details">{{detail}} </option>
+                        </select></div>
+                        <input type="text" class="form-control col-sm-2 ml-2" name="am_name" id="am_name" maxlength="10">
+                <button type="button" class="btn btn-dark">검색</button>
                     </div>
                 </div>
             </div>
