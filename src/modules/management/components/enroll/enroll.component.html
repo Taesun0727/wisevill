@@ -33,9 +33,7 @@
                             <div class="col-sm-6 row">
                                 <label class="col-sm-3 control-label ir">입/퇴사일</label>
                                 <div class="col-sm-8">
-                                    <sb-range-date-picker [Gfromdate]="Gfromdate" [Gtodate]="Gtodate"
-                                        (newItemEvent)="Gfromdatechange($event)" (ItemEvent)="Gtodatechange($event)">
-                                    </sb-range-date-picker>
+                                    <sb-range-date-picker></sb-range-date-picker>
                                 </div>
                             </div>
                             <div class="col-sm-6 row">
@@ -56,7 +54,7 @@
                             <div class="col-sm-6 row">
                                 <label class="col-sm-3 control-label ir">생년원일</label>
                                 <div class="col-sm-6">
-                                    <sb-my-date-picker [item]="bdate" (datechange)="changedate($event)">
+                                    <sb-my-date-picker>
                                     </sb-my-date-picker>
                                 </div>
                             </div>
