@@ -16,7 +16,6 @@ export class MyprofileComponent implements OnInit{
   constructor() { }
 
   ngOnInit() {
-    (document.getElementById("am_working") as HTMLInputElement).innerHTML = "재직중",
     this.Gfromdate = {
       "year": 2021,
       "month": 10,

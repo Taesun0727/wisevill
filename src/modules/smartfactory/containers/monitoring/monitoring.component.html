@@ -1,3 +1,81 @@
 <sb-layout-dashboard>
-  <sb-dashboard-head title="근무기록" [hideBreadcrumbs]="false"></sb-dashboard-head>
+  <sb-dashboard-head title="모니터링" [hideBreadcrumbs]="false"></sb-dashboard-head>
+
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+
+            <form class="form-horizontal" name="" method="get">
+              <div class="form-body">
+
+                <div class="form-group row">
+                  <h5 class="ml-3">회사 검색</h5>
+                  <div class="col-sm-12">
+                    <div class="row">
+                      <input type="text" class="form-control col-sm-2 ml-2" name="" id="" maxlength="10">
+                      <button type="button" class="btn btn-dark">검색</button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="card mb-3 col-12">
+        <div class="card-body">
+          <table class="table col-lg-12 table-bordered" style="text-align:center">
+            <thead class="table-info">
+              <tr>
+                <th scope="col">NO</th>
+                <th scope="col">회사명</th>
+                <th scope="col">구분</th>
+                <th scope="col">연결서버</th>
+                <th scope="col">DB명</th>
+                <th scope="col">DB호스트</th>
+                <th scope="col">포트</th>
+                <th scope="col">종류</th>
+                <th scope="col">연결서버</th>
+                <th scope="col">관리</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><input type="checkbox" aria-label="Checkbox for following text input"></th>
+                <td>와이즈빌</td>
+                <td>테스트용</td>
+                <td>forj.wisevill.co.kr</td>
+                <td>testdb1</td>
+                <td>192.168.0.1</td>
+                <td>3306</td>
+                <td>Oracle</td>
+                <td><button type="button" class="btn btn-secondary btn-sm">바로가기</button></td>
+                <td><button type="button" class="btn btn-secondary btn-sm">보기</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="row">
+      <div class="col-12 align-self-center text-right cbtn-wrap"><a href="/smartfactory/db/createdb"
+              class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt"
+              style="display: inline-block;">DB등록</a>
+          <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록 삭제</button>
+      </div>
+    </div>
+
+  </div>
 </sb-layout-dashboard>
