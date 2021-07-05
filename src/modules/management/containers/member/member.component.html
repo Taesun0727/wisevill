@@ -3,93 +3,97 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-    
-              <div class="card">
-                <div class="card-body">
-    
-                    <form class="form-horizontal" name="dataFrm" method="get">
-    
-                        <div class="form-body">
-                          <div class="form-group row col-sm-12">
-                            <label class="control-label ir"></label>
-                            <select class="form-control col-sm-2 mr-2">
-                              <option selected disabled hidden>::소속::</option>
-                            </select>
-                            <select class="form-control col-sm-2">
-                              <option selected disabled hidden>::부서::</option>
-                            </select>
-                            <input type="text" class="form-control col-sm-4 ml-4" name="am_name" id="am_name" maxlength="10">
-                            <div class="input-group-append">
-                              <button type="button" class="btn btn-dark btn-flat" onclick="">검색</button>
-                            </div>
-                          </div>
-                        </div>
-                    </form>
-    
-                </div>
-              </div>
-    <div class="row mb-3 mt-3">
-        <div class="col-md-4 align-self-center">
-            <a href="" class="btn btn-xs btn-secondary" onclick="">검색초기화</a>
-            Total
-            <span class="">0</span>
-            건
-            <span class="">0</span>
-            /
-            <span class="">0</span>
-            Page
-        </div>
-        <div class="col-8 align-self-center text-right cbtn-wrap"><a href="./management/member/enroll"
-                class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt"
-                style="display: inline-block;">사원등록</a>
-            <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록 삭제</button>
-        </div>
 
-    </div>
-    
-              <div class="row">
-                <div class="card mb-3 col-sm-12">
-                  <div class="card-body">
-                    <table class="table col-lg-12 table-bordered" style="text-align:center">
-                      <thead class="table-info">
-                        <tr>
-                          <th scope="col"><input type="checkbox" [checked]="isAllCheckBoxChecked()" (change)="checkAllCheckBox($event)" class="mr-1" aria-label="Checkbox for following text input">전체선택</th>
-                          <th scope="col">소속</th>
-                          <th scope="col">부서</th>
-                          <th scope="col">직급</th>
-                          <th scope="col">사원명</th>
-                          <th scope="col">담당업무</th>
-                          <th scope="col">권한</th>
-                          <th scope="col">관리</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr *ngFor="let member of members">
-                          <td scope="row"><input type="checkbox" value="{{member.id}}" [(ngModel)]="member.checked" aria-label="Checkbox for following text input"></td>
-                          <td>{{member.company}}</td>
-                          <td>{{member.department}}</td>
-                          <td>{{member.rank}}</td>
-                          <td>{{member.name}}</td>
-                          <td>{{member.task}}</td>
-                          <td>{{member.auth}}</td>
-                          <td><a href="" class="btn btn-secondary">보기</a></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+                <div class="card">
+                    <div class="card-body">
+
+                        <form class="form-horizontal" name="dataFrm" method="get">
+
+                            <div class="form-body">
+                                <div class="form-group row col-sm-12">
+                                    <label class="control-label ir"></label>
+                                    <select class="form-control col-sm-2 mr-2">
+                                        <option selected disabled hidden>::소속::</option>
+                                    </select>
+                                    <select class="form-control col-sm-2">
+                                        <option selected disabled hidden>::부서::</option>
+                                    </select>
+                                    <input type="text" class="form-control col-sm-4 ml-4" name="am_name" id="am_name"
+                                        maxlength="10">
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-dark btn-flat" onclick="">검색</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
                 </div>
-              </div>
-    
+                <div class="row mb-3 mt-3">
+                    <div class="col-md-4 align-self-center">
+                        <a href="" class="btn btn-xs btn-secondary" onclick="">검색초기화</a>
+                        Total
+                        <span class="">0</span>
+                        건
+                        <span class="">0</span>
+                        /
+                        <span class="">0</span>
+                        Page
+                    </div>
+                    <div class="col-8 align-self-center text-right cbtn-wrap"><a href="./management/member/enroll"
+                            class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt"
+                            style="display: inline-block;">사원등록</a>
+                        <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록
+                            삭제</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="card mb-3 col-sm-12">
+                        <div class="card-body">
+                            <table class="table col-lg-12 table-bordered" style="text-align:center">
+                                <thead class="table-info">
+                                    <tr>
+                                        <th scope="col"><input type="checkbox" [checked]="isAllCheckBoxChecked()"
+                                                (change)="checkAllCheckBox($event)" class="mr-1"
+                                                aria-label="Checkbox for following text input">전체선택</th>
+                                        <th scope="col">소속</th>
+                                        <th scope="col">부서</th>
+                                        <th scope="col">직급</th>
+                                        <th scope="col">사원명</th>
+                                        <th scope="col">담당업무</th>
+                                        <th scope="col">권한</th>
+                                        <th scope="col">관리</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let member of members">
+                                        <td scope="row"><input type="checkbox" value="{{member.id}}"
+                                                [(ngModel)]="member.checked"
+                                                aria-label="Checkbox for following text input"></td>
+                                        <td>{{member.company}}</td>
+                                        <td>{{member.department}}</td>
+                                        <td>{{member.rank}}</td>
+                                        <td>{{member.name}}</td>
+                                        <td>{{member.task}}</td>
+                                        <td>{{member.auth}}</td>
+                                        <td><a href="" class="btn btn-secondary">보기</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-          </div>
-            <div class="row">
-              <div class="col-12 align-self-center text-right cbtn-wrap"><a href="./management/member/enroll"
-                      class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt"
-                      style="display: inline-block;">사원등록</a>
-                  <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록 삭제</button>
-              </div>
-          </div>
-    
-        
-      </div>
+        </div>
+        <div class="row">
+            <div class="col-12 align-self-center text-right cbtn-wrap"><a href="./management/member/enroll"
+                    class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt"
+                    style="display: inline-block;">사원등록</a>
+                <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록
+                    삭제</button>
+            </div>
+        </div>
+    </div>
 </sb-layout-dashboard>

@@ -64,7 +64,7 @@
           <table class="table col-lg-12 table-bordered" style="text-align:center">
             <thead class="table-info">
               <tr>
-                <th scope="col">NO</th>
+                <th scope="col"><input type="checkbox" [checked]="isAllCheckBoxChecked()" (change)="checkAllCheckBox($event)" class="mr-1" aria-label="Checkbox for following text input">전체선택</th>
                 <th scope="col">회사명</th>
                 <th scope="col">구분</th>
                 <th scope="col">연결서버</th>
@@ -77,22 +77,27 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row"><input type="checkbox" aria-label="Checkbox for following text input"></th>
-                <td>와이즈빌</td>
-                <td>테스트용</td>
-                <td>forj.wisevill.co.kr</td>
-                <td>testdb1</td>
-                <td>192.168.0.1</td>
-                <td>3306</td>
-                <td>Oracle</td>
+              <tr *ngFor="let db of dbs">
+                <td scope="row"><input type="checkbox" value="{{db.id}}" [(ngModel)]="db.checked" aria-label="Checkbox for following text input"></td>
+                <td>{{db.company}}</td>
+                <td>{{db.type}}</td>
+                <td>{{db.cnserver}}</td>
+                <td>{{db.name}}</td>
+                <td>{{db.host}}</td>
+                <td>{{db.port}}</td>
+                <td>{{db.kind}}</td>
                 <td><button type="button" class="btn btn-secondary btn-sm">바로가기</button></td>
                 <td><button type="button" class="btn btn-secondary btn-sm">보기</button></td>
               </tr>
             </tbody>
           </table>
+          <div class="d-flex justify-content-between p-2">
+            <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshCountries()">
+            </ngb-pagination>
+          </div>
         </div>
       </div>
+
       
     </div>
 
@@ -102,7 +107,7 @@
               style="display: inline-block;">DB등록</a>
           <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록 삭제</button>
       </div>
-  </div>
+    </div>
 
   </div>
 </sb-layout-dashboard>
