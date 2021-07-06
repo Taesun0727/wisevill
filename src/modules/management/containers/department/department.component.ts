@@ -26,8 +26,14 @@ let DEPARTMENTS : Department[] = [
 })
 export class DepartmentComponent implements OnInit {
   closeResult = '';
-  constructor(private modalService: NgbModal) { }
   departments = DEPARTMENTS
+  page = 1;
+  pageSize = 4;
+  collectionSize = DEPARTMENTS.length;
+
+  constructor(private modalService: NgbModal) {
+    this.refreshCountries();
+   }
 
   ngOnInit(): void {
   }
@@ -56,5 +62,11 @@ export class DepartmentComponent implements OnInit {
 
   isAllCheckBoxChecked() {
     return this.departments.every(p => p.checked);
+  }
+
+  refreshCountries() {
+    this.departments = DEPARTMENTS
+      .map((department, i) => ({id: i + 1, ...department}))
+      .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
 }

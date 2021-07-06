@@ -26,8 +26,12 @@ let SERVER: server[] = [
 })
 export class ServerComponent implements OnInit {
   servers = SERVER;
+  page = 1;
+  pageSize = 4;
+  collectionSize = SERVER.length;
 
   constructor() {
+    this.refreshCountries();
   }
 
   ngOnInit(): void {
@@ -38,6 +42,12 @@ export class ServerComponent implements OnInit {
 
   isAllCheckBoxChecked() {
     return this.servers.every(p => p.checked);
+  }
+
+  refreshCountries() {
+    this.servers = SERVER
+      .map((server, i) => ({id: i + 1, ...server}))
+      .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
 
 }

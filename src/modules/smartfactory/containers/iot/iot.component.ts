@@ -30,8 +30,13 @@ const IOT: Iot[] = [
 export class IotComponent implements OnInit {
 
   iots = IOT;
+  page = 1;
+  pageSize = 4;
+  collectionSize = IOT.length;
 
-  constructor() { }
+  constructor() { 
+    this.refreshCountries();
+  }
 
   ngOnInit(): void {
 
@@ -42,6 +47,12 @@ export class IotComponent implements OnInit {
 
   isAllCheckBoxChecked() {
     return this.iots.every(p => p.checked);
+  }
+
+  refreshCountries() {
+    this.iots = IOT
+      .map((iot, i) => ({id: i + 1, ...iot}))
+      .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
 
 }

@@ -30,8 +30,14 @@ let COMPANIES : Company[] = [
 })
 export class CompanyComponent implements OnInit {
   closeResult = '';
-  constructor(private modalService: NgbModal) { }
   companies = COMPANIES;
+  page = 1;
+  pageSize = 4;
+  collectionSize = COMPANIES.length;
+
+  constructor(private modalService: NgbModal) {
+    this.refreshCountries();
+   }
 
   ngOnInit(): void {
   }
@@ -60,6 +66,12 @@ export class CompanyComponent implements OnInit {
 
   isAllCheckBoxChecked() {
     return this.companies.every(p => p.checked);
+  }
+
+  refreshCountries() {
+    this.companies = COMPANIES
+      .map((company, i) => ({id: i + 1, ...company}))
+      .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
 
 }

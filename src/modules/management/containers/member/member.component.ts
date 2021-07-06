@@ -30,8 +30,13 @@ let MEMBERS: Member[] = [
 export class MemberComponent implements OnInit {
 
   members = MEMBERS
+  page = 1;
+  pageSize = 4;
+  collectionSize = MEMBERS.length;
 
-  constructor() { }
+  constructor() {
+    this.refreshCountries();
+   }
 
   ngOnInit(): void {
   }
@@ -42,5 +47,11 @@ export class MemberComponent implements OnInit {
 
   isAllCheckBoxChecked() {
     return this.members.every(p => p.checked);
+  }
+  
+  refreshCountries() {
+    this.members = MEMBERS
+      .map((member, i) => ({id: i + 1, ...member}))
+      .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
 }

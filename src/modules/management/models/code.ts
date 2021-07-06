@@ -1,5 +1,5 @@
 export interface Code {
-  id: string;
+  colid: string;
   typename: string;
   datailcode: string;
   codename: string;

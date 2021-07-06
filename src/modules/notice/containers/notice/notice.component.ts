@@ -29,10 +29,14 @@ let NOTICES: Notice[] = [
 })
 export class NoticeComponent implements OnInit {
   notices = NOTICES
+  page = 1;
+  pageSize = 4;
+  collectionSize = NOTICES.length;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.refreshCountries();
   }
 
   checkAllCheckBox(ev:any) {
@@ -41,6 +45,12 @@ export class NoticeComponent implements OnInit {
 
   isAllCheckBoxChecked() {
     return this.notices.every(p => p.checked);
+  }
+
+  refreshCountries() {
+    this.notices = NOTICES
+      .map((notice, i) => ({id: i + 1, ...notice}))
+      .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
 
 }

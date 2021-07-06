@@ -31,11 +31,16 @@ let WORKS : Work[] = [
 })
 export class WorkComponent implements OnInit {
   closeResult = '';
+  page = 1;
+  pageSize = 4;
+  collectionSize = WORKS.length;
+  works = WORKS;
+ 
   constructor(private modalService: NgbModal, config: NgbTimepickerConfig) { 
     config.seconds = false;
     config.spinners = false;
   }
-  works = WORKS;
+
 
   ngOnInit(): void {
   }
@@ -64,5 +69,11 @@ export class WorkComponent implements OnInit {
 
   isAllCheckBoxChecked() {
     return this.works.every(p => p.checked);
+  }
+
+  refreshCountries() {
+    this.works = WORKS
+      .map((work, i) => ({id: i + 1, ...work}))
+      .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
 }
