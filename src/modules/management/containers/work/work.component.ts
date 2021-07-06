@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { Work } from 'modules/management/models/work'
+import {NgbTimepickerConfig} from '@ng-bootstrap/ng-bootstrap';
+import {NgbTimeStruct} from '@ng-bootstrap/ng-bootstrap';
 
 let WORKS : Work[] = [
   {
@@ -29,14 +31,16 @@ let WORKS : Work[] = [
 })
 export class WorkComponent implements OnInit {
   closeResult = '';
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, config: NgbTimepickerConfig) { 
+    config.seconds = false;
+    config.spinners = false;
+  }
   works = WORKS;
 
   ngOnInit(): void {
   }
 
   open(content : any) {
-    console.log(content)
     this.modalService.open(content, {ariaDescribedBy: 'modal-basic-title', centered: true}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {

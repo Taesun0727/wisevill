@@ -17,15 +17,15 @@
                         <div class="form-group row">
                             <div class="col-sm-6 row">
                                 <label class="col-sm-3 control-label ir">근무상태</label>
-																<div class="col-sm-6">
-																	<input type="text" class="form-control" name="am_num" id="am_num" maxlength="10">
-																</div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" name="am_num" id="am_num" maxlength="10">
+                                </div>
                             </div>
                             <div class="col-sm-6 row">
                                 <label class="col-sm-3 control-label ir">기본/추가연차</label>
-																<div class="col-sm-6">
-																	<input type="text" class="form-control" name="am_num" id="am_num" maxlength="10">
-																</div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" name="am_num" id="am_num" maxlength="10">
+                                </div>
                             </div>
                         </div>
 
@@ -40,25 +40,26 @@
                             </div>
                             <div class="col-sm-6 row">
                                 <label class="col-sm-3 control-label ir">소속</label>
-																<div class="col-sm-6">
-																	<input type="text" class="form-control" name="am_num" id="am_num" maxlength="10">
-																</div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" name="am_num" id="am_num" maxlength="10">
+                                </div>
                             </div>
                         </div>
 
                         <div class="form-group row">
-													<div class="col-sm-6 row">
-                            <label class="col-sm-3 control-label ir">사원명</label>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control" name="am_name" id="am_name" maxlength="10">
+                            <div class="col-sm-6 row">
+                                <label class="col-sm-3 control-label ir">사원명</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" name="am_name" id="am_name" maxlength="10">
+                                </div>
                             </div>
-													</div>
-													<div class="col-sm-6 row">
-                            <label class="col-sm-3 control-label ir">생년원일</label>
-                            <div class="col-sm-6">
-                                <sb-my-date-picker [item]="bdate" (datechange)="changedate($event)"></sb-my-date-picker>
+                            <div class="col-sm-6 row">
+                                <label class="col-sm-3 control-label ir">생년원일</label>
+                                <div class="col-sm-6">
+                                    <sb-my-date-picker [item]="bdate" (datechange)="changedate($event)">
+                                    </sb-my-date-picker>
+                                </div>
                             </div>
-													</div>
                         </div>
 
                         <div class="form-group row">
@@ -77,50 +78,52 @@
                         </div>
 
                         <div class="form-group row">
-													<div class="col-sm-6 row">
-                            <label class="col-sm-3 control-label ir">직급</label>
-														<div class="col-sm-6">
-															<input type="text" class="form-control" name="am_num" id="am_num" maxlength="10">
-														</div>
-													</div>
-													<div class="col-sm-6 row">
-                            <label class="col-sm-3 control-label ir">내선번호</label>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control" name="am_extension" id="am_extension"
-                                    maxlength="10">
+                            <div class="col-sm-6 row">
+                                <label class="col-sm-3 control-label ir">직급</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" name="am_num" id="am_num" maxlength="10">
+                                </div>
                             </div>
-													</div>
+                            <div class="col-sm-6 row">
+                                <label class="col-sm-3 control-label ir">내선번호</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" name="am_extension" id="am_extension"
+                                        maxlength="10">
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-group row">
-													<div class="col-sm-6 row">
-                            <label class="col-sm-3 control-label ir">출입카드</label>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control" name="am_card_num" id="am_card_num"
-                                    maxlength="10">
+                            <div class="col-sm-6 row">
+                                <label class="col-sm-3 control-label ir">출입카드</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" name="am_card_num" id="am_card_num"
+                                        maxlength="10">
+                                </div>
                             </div>
-													</div>
-													<div class="col-sm-6 row">
-                            <label class="col-sm-3 control-label ir">핸드폰</label>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control" name="am_phone" id="am_phone" maxlength="10">
+                            <div class="col-sm-6 row">
+                                <label class="col-sm-3 control-label ir">핸드폰</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" name="am_phone" id="am_phone"
+                                        maxlength="10">
+                                </div>
                             </div>
-													</div>
                         </div>
 
                         <div class="form-group row">
-													<div class="col-sm-6 row">
-                            <label class="col-sm-3 control-label ir">이메일</label>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control" name="am_email" id="am_email" maxlength="10">
+                            <div class="col-sm-6 row">
+                                <label class="col-sm-3 control-label ir">이메일</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" name="am_email" id="am_email"
+                                        maxlength="10">
+                                </div>
                             </div>
-													</div>
-													<div class="col-sm-6 row">
-                            <label class="col-sm-3 control-label ir">전화번호</label>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control" name="am_tel" id="am_tel" maxlength="10">
+                            <div class="col-sm-6 row">
+                                <label class="col-sm-3 control-label ir">전화번호</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" name="am_tel" id="am_tel" maxlength="10">
+                                </div>
                             </div>
-													</div>
                         </div>
 
                         <hr class="m-t-0 m-b-40">
@@ -131,26 +134,26 @@
 
 
                         <div class="form-group row">
-													<div class="col-sm-6 row">
-                            <label class="col-sm-3 control-label ir ">사진</label>
-                            <div class="col-sm-6 ">
-                                <div class="input-group">
-                                    <div class="custom-file" id="inputFile">
-                                        <input type="file" class="form-control file " name="wr_files_1"
-                                            data-upflag="sign " id="wr_files_1 ">
+                            <div class="col-sm-6 row">
+                                <label class="col-sm-3 control-label ir ">사진</label>
+                                <div class="col-sm-6 ">
+                                    <div class="input-group">
+                                        <div class="custom-file" id="inputFile">
+                                            <input type="file" class="form-control file " name="wr_files_1"
+                                                data-upflag="sign " id="wr_files_1 ">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-													</div>
-													<div class="col-sm-6 row">
-                            <label class="col-sm-3 control-label ir">싸인</label>
-                            <div class="col-sm-6">
-                                <div tabindex="10" class="custom-file" id="inputFile">
-                                    <input type="file" class="form-control file" name="wr_files_1" data-upflag="sign"
-                                        id="wr_files_1">
+                            <div class="col-sm-6 row">
+                                <label class="col-sm-3 control-label ir">싸인</label>
+                                <div class="col-sm-6">
+                                    <div tabindex="10" class="custom-file" id="inputFile">
+                                        <input type="file" class="form-control file" name="wr_files_1"
+                                            data-upflag="sign" id="wr_files_1">
+                                    </div>
                                 </div>
                             </div>
-													</div>
 
                         </div>
                     </div>
