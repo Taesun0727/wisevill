@@ -87,7 +87,7 @@ export class CompanyComponent implements OnInit {
 
   refreshCountries() {
     this.companies = COMPANIES
-      .map((country, i) => ({id: i + 1, ...country}))
+      .map((company, i) => ({id: i + 1, ...company}))
       .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
 

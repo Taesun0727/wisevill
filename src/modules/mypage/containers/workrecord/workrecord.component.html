@@ -16,7 +16,7 @@
                             <label class="col-sm-1 col-form-label">근무일 :</label>
                             <sb-range-date-picker>
                             </sb-range-date-picker>
-                            <button type="button" class="btn btn-dark btn-flat" onclick="">검색</button>
+                            <button type="button" class="btn btn-dark btn-flat" (click)="search()">검색</button>
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
             <div class="card mb-3 col-12">
                 <div class="card-body">
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">총 근무시간 : </label>
+                        <label class="col-sm-3 col-form-label" ([ngModel])="totalwork">총 근무시간 : {{totalwork}}시간</label>
                     </div>
                     <table class="table col-lg-12 table-bordered" style="text-align:center">
                         <thead class="table-info">
@@ -44,11 +44,15 @@
                                 <td>{{ workrecord.date }}</td>
                                 <td>{{ workrecord.start }}</td>
                                 <td>{{ workrecord.end }}</td>
-                                <td>{{ workrecord.workroad }}</td>
+                                <td>{{ workrecord.workroad }}시간</td>
                                 <td>{{ workrecord.check }}</td>
                             </tr>
                         </tbody>
                     </table>
+                    <div class="d-flex justify-content-between p-2">
+                        <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshCountries()">
+                        </ngb-pagination>
+                    </div>
                 </div>
             </div>
         </div>
