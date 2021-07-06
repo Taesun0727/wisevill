@@ -37,7 +37,13 @@ export class ProjectComponent implements OnInit {
 
   model: NgbDateStruct | undefined;
   model1: NgbDateStruct | undefined;
-  constructor() { }
+
+  page = 1;
+  pageSize = 4;
+  collectionSize = PROJECTS.length;
+  constructor() { 
+    this.refreshCountries();
+  }
 
   ngOnInit(): void {
   }
@@ -48,6 +54,12 @@ export class ProjectComponent implements OnInit {
 
   isAllCheckBoxChecked() {
     return this.projects.every(p => p.checked);
+  }
+
+  refreshCountries() {
+    this.projects = PROJECTS
+      .map((project, i) => ({id: i + 1, ...project}))
+      .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
 
 }

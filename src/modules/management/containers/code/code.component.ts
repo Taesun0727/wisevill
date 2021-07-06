@@ -3,7 +3,7 @@ import { Code } from 'modules/management/models/code'
 
 let CODES: Code[] = [
   {
-    id: "인턴",
+    colid: "인턴",
     typename: "권한코드",
     datailcode: "dlsxjs",
     codename: "INTERN",
@@ -11,7 +11,7 @@ let CODES: Code[] = [
     checked: false
   },
   {
-    id: "관리자",
+    colid: "관리자",
     typename: "권한코드",
     datailcode: "rhksflwk",
     codename: "ADMIN",
@@ -27,7 +27,13 @@ let CODES: Code[] = [
 })
 export class CodeComponent implements OnInit {
   codes = CODES
-  constructor() { }
+  page = 1;
+  pageSize = 4;
+  collectionSize = CODES.length;
+
+  constructor() {
+    this.refreshCountries();
+   }
 
   ngOnInit(): void {
   }
@@ -39,6 +45,12 @@ export class CodeComponent implements OnInit {
 
   isAllCheckBoxChecked() {
     return this.codes.every(p => p.checked);
+  }
+
+  refreshCountries() {
+    this.codes = CODES
+      .map((code, i) => ({id: i + 1, ...code}))
+      .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
 
 }
