@@ -1,150 +1,153 @@
 <sb-layout-dashboard>
-  <sb-dashboard-head title="쪽지함" [hideBreadcrumbs]="true"></sb-dashboard-head>
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item "><a href="#">마이페이지</a></li>
-                <li class="breadcrumb-item active " aria-current="page">쪽지</li>
-            </ol>
-          </nav>
-              <div class="card-header p-0 border-bottom-0">
-                  <ul class="nav nav-tabs" id="custom-tabs-four-tab">
-                      <li class="nav-item">
-                          <a class="nav-link active" href="./mypage/memo">받은쪽지</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="./mypage/memo/send">보낸쪽지</a>
-                      </li>
-                  </ul>
+    <sb-dashboard-head title="쪽지함" [hideBreadcrumbs]="true"></sb-dashboard-head>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item "><a href="#">마이페이지</a></li>
+            <li class="breadcrumb-item active " aria-current="page">쪽지</li>
+        </ol>
+    </nav>
+    <div class="card-header p-0 border-bottom-0">
+        <ul class="nav nav-tabs" id="custom-tabs-four-tab">
+            <li class="nav-item">
+                <a class="nav-link active" href="./mypage/memo">받은쪽지</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./mypage/memo/send">보낸쪽지</a>
+            </li>
+        </ul>
 
-                  <label class="col col-12 col-sm-2 col-md-1 control-label ir"></label>
-                  <div class="col col-12 col-sm-10 col-md-11 sc_type_wrap">
-                      <div class="row">
-                          <div class="col-6 col-sm-6 col-md-4 sc_type_1" >
-                              <select id="sc_type_1"
-                              name="sc_type_1" class="form-control " style="width: 100%;" (change)="changeCheck($event.target.value)">
-                                  <option selected disabled hidden>::선택::</option>
-                                  <option *ngFor="let check of Checks">{{check.name}} </option>
-                              </select></div>
-                          <div class="col-6 col-sm-6 col-md-4 sc_type_2">
-                              <select placeholder="detail"  id="sc_type_2"
-                              name="sc_type_2" class="form-control "  style="width: 100%;">
-                                  <option selected disabled hidden>::선택::</option>
-                                  <option *ngFor="let detail of details">{{detail}} </option>
-                              </select></div>
-                              <input type="text" class="form-control col-sm-2 ml-2" name="am_name" id="am_name" maxlength="10">
-                      <button type="button" class="btn btn-dark">검색</button>
-                      </div>
-                  </div>
-              </div>
-           
-             <!--한 줄 띄기-->
-     <div class="form-group d-flex align-items-center justify-content-between mt-5 mb-0"></div>
+        <label class="col col-12 col-sm-2 col-md-1 control-label ir"></label>
+        <div class="col col-12 col-sm-10 col-md-11 sc_type_wrap">
+            <div class="row">
+                <div class="col-6 col-sm-6 col-md-4 sc_type_1">
+                    <select id="sc_type_1" name="sc_type_1" class="form-control " style="width: 100%;"
+                        (change)="changeCheck($event.target.value)">
+                        <option selected disabled hidden>::선택::</option>
+                        <option *ngFor="let check of Checks">{{check.name}} </option>
+                    </select></div>
+                <div class="col-6 col-sm-6 col-md-4 sc_type_2">
+                    <select placeholder="detail" id="sc_type_2" name="sc_type_2" class="form-control "
+                        style="width: 100%;">
+                        <option selected disabled hidden>::선택::</option>
+                        <option *ngFor="let detail of details">{{detail}} </option>
+                    </select></div>
+                <input type="text" class="form-control col-sm-2 ml-2" name="am_name" id="am_name" maxlength="10">
+                <button type="button" class="btn btn-dark">검색</button>
+            </div>
+        </div>
+    </div>
 
-     <div class="row mb-2">
-         <div class="col-8 align-self-center">Total <span class="data_cnt">0</span>건 <span
-                 class="data_page_num">1</span> / <span class="data_page_num_t">0</span> page</div>
-         <div class="col-4 align-self-center text-right cbtn-wrap"><a 
-                 class="btn btn-primary btn-flat btn-sm bg-gradient-info"(click)="open(content)">쪽지보내기</a>
-                 <button type="button" class="btn btn-danger btn-sm ml-1"
-                 onclick="listDelSubmit('list','')">선택목록 삭제</button></div>
-     </div>
-     <div class="row datalist_tb">
-         <div class="col-12">
-             <div class="card">
-                 <div class="card-body table-responsive text-center">
-                     <table class="table table-bordered table-hover cus-table text-nowrap" id="memo-list">
-                         <thead>
-                             <tr>
-                              <th scope="col"><input type="checkbox" [checked]="isAllCheckBoxChecked()" (change)="checkAllCheckBox($event)" class="mr-1" aria-label="Checkbox for following text input">전체선택</th>
-                              <th scope="col">내용</th>
-                              <th scope="col">보낸사람</th>
-                              <th scope="col">날짜</th>
-                              <th scope="col">관리</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                          <tr *ngFor="let memo of memos">
-                            <td scope="row"><input type="checkbox" value="{{memo.id}}" [(ngModel)]="memo.checked" aria-label="Checkbox for following text input"></td>
-                            <td>{{ memo.content }}</td>
-                            <td>{{ memo.send }}</td>
-                            <td>{{ memo.date }}</td>
-                            <td><button type="button" class="btn btn-secondary btn-sm">보기</button></td>
-                          </tr>
+    <!--한 줄 띄기-->
+    <div class="form-group d-flex align-items-center justify-content-between mt-5 mb-0"></div>
+
+    <div class="row mb-2">
+        <div class="col-8 align-self-center">Total <span class="data_cnt">0</span>건 <span class="data_page_num">1</span>
+            / <span class="data_page_num_t">0</span> page</div>
+        <div class="col-4 align-self-center text-right cbtn-wrap"><a
+                class="btn btn-primary btn-flat btn-sm bg-gradient-info" (click)="open(content)">쪽지보내기</a>
+            <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록 삭제</button>
+        </div>
+    </div>
+    <div class="row datalist_tb">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body table-responsive text-center">
+                    <table class="table table-bordered table-hover cus-table text-nowrap" id="memo-list">
+                        <thead>
+                            <tr>
+                                <th scope="col"><input type="checkbox" [checked]="isAllCheckBoxChecked()"
+                                        (change)="checkAllCheckBox($event)" class="mr-1"
+                                        aria-label="Checkbox for following text input">전체선택</th>
+                                <th scope="col">내용</th>
+                                <th scope="col">보낸사람</th>
+                                <th scope="col">날짜</th>
+                                <th scope="col">관리</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let memo of memos">
+                                <td scope="row"><input type="checkbox" value="{{memo.id}}" [(ngModel)]="memo.checked"
+                                        aria-label="Checkbox for following text input"></td>
+                                <td>{{ memo.content }}</td>
+                                <td>{{ memo.send }}</td>
+                                <td>{{ memo.date }}</td>
+                                <td><button type="button" class="btn btn-secondary btn-sm">보기</button></td>
+                            </tr>
                         </tbody>
                         <!---->
-                         <tfoot>
-                             <tr></tr>
-                         </tfoot>
-                     </table>
-                 </div>
-             </div>
-         </div>
-     </div>
-     
-     <div class="row mt-2 mb-0">
-         <div class="col-8" id="page"></div>
-         <div class="col-4 text-right cbtn-wrap"><a class="btn btn-primary btn-flat btn-sm bg-gradient-info" (click)="open(content)">쪽지보내기</a><button
-                 type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록 삭제</button>
-         </div>
-     </div>
-    
-        </sb-layout-dashboard>
-
-
-
-        <ng-template #content let-modal>
-            <div class="modal-header">
-              <h4 class="modal-title" id="modal-basic-title">쪽지보내기</h4>
-              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-                <span aria-hidden="true">&times;</span>
-              </button>
+                        <tfoot>
+                            <tr></tr>
+                        </tfoot>
+                    </table>
+                </div>
             </div>
+        </div>
+    </div>
 
-            <div class="modal-body">
-              <form class="form-horizontal ml-4" method="POST">
-                <div class="form-group row">
-                    <div class="col-sm-12">
+    <div class="row mt-2 mb-0">
+        <div class="col-8" id="page"></div>
+        <div class="col-4 text-right cbtn-wrap"><a class="btn btn-primary btn-flat btn-sm bg-gradient-info"
+                (click)="open(content)">쪽지보내기</a><button type="button" class="btn btn-danger btn-sm ml-1"
+                onclick="listDelSubmit('list','')">선택목록 삭제</button>
+        </div>
+    </div>
+
+</sb-layout-dashboard>
+
+
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">쪽지보내기</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        <form class="form-horizontal ml-4" method="POST">
+            <div class="form-group row">
+                <div class="col-sm-12">
                     <div class="row">
                         <label class="control-label ir col-sm-2 mt-2">소속</label>
                         <select class="form-control col-sm-3 ml-3">
-                          <option>::선택::</option>
-                          <option>와이즈빌1</option>
-                          <option>와이즈빌2</option>
-                          <option>와이즈빌3</option>
+                            <option>::선택::</option>
+                            <option>와이즈빌1</option>
+                            <option>와이즈빌2</option>
+                            <option>와이즈빌3</option>
                         </select>
                         <label class="control-label ir col-sm-2 mt-2">부서</label>
                         <select class="form-control col-sm-3 ml-3">
-                          <option>::선택::</option>
-                          <option>영업팀</option>
-                          <option>회계팀</option>
-                          <option>개발팀</option>
+                            <option>::선택::</option>
+                            <option>영업팀</option>
+                            <option>회계팀</option>
+                            <option>개발팀</option>
                         </select>
-                      </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="form-group row">
-                  <label class="control-label ir col-sm-2 mt-1">받는 사람</label>
-                  <select class="form-control col-sm-3 ml-3">
+            <div class="form-group row">
+                <label class="control-label ir col-sm-2 mt-1">받는 사람</label>
+                <select class="form-control col-sm-3 ml-3">
                     <option>::선택::</option>
                     <option>000</option>
                     <option>000</option>
                     <option>000</option>
-                  </select>
-                  <div class="col-sm-5">
-                  <div class="icheck-primary d-inline"><input type="checkbox" name="memo_check_all"
-                    id="memo_check_all"
-                    onchange="checkBoxAllChkFunc('memo_check_all','memo_check')"><label
-                    for="memo_check_all"></label>전체보내기(소속선택기준)</div>
-                  </div>
-                  </div>
-                
-                <div class="form-group row">
-                  <textarea class="form-control col-sm-11" rows="20" placeholder="쪽지내용"></textarea>
+                </select>
+                <div class="col-sm-5">
+                    <div class="icheck-primary d-inline"><input type="checkbox" name="memo_check_all"
+                            id="memo_check_all" onchange="checkBoxAllChkFunc('memo_check_all','memo_check')"><label
+                            for="memo_check_all"></label>전체보내기(소속선택기준)</div>
                 </div>
-              </form>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">보내기</button>
+
+            <div class="form-group row">
+                <textarea class="form-control col-sm-11" rows="20" placeholder="쪽지내용"></textarea>
             </div>
-          </ng-template>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">보내기</button>
+    </div>
+</ng-template>
