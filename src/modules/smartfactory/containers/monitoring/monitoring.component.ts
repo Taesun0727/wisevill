@@ -8,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class MonitoringComponent implements OnInit {
 
   constructor() { }
+  company: any
 
   ngOnInit(): void {
+    this.company = history.state.company;
+    this.searchmonitor();
+  }
+
+  searchmonitor() {
+    console.log(this.company);
   }
 
 }

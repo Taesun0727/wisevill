@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { company, device } from '@modules/dashboard/models/dashcard.model';
 
 let COMPANIES: company[] = [
@@ -84,7 +85,7 @@ export class SmartfactoryCardComponent implements OnInit {
   pageSize = 4;
   collectionSize = COMPANIES.length;
 
-	constructor() { 
+	constructor(public router: Router) { 
 		this.refreshCountries();
 	}
 
@@ -97,5 +98,9 @@ export class SmartfactoryCardComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+	gomonitor(company: any) {
+		this.router.navigateByUrl('/smartfactory/monitoring', {state: {company}})
+	}
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Member } from 'modules/management/models/member'
 
 let MEMBERS: Member[] = [
@@ -34,7 +35,7 @@ export class MemberComponent implements OnInit {
   pageSize = 4;
   collectionSize = MEMBERS.length;
 
-  constructor() {
+  constructor(public router: Router) {
     this.refreshCountries();
    }
 
@@ -53,5 +54,9 @@ export class MemberComponent implements OnInit {
     this.members = MEMBERS
       .map((member, i) => ({id: i + 1, ...member}))
       .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
+  }
+
+  createmember() {
+    this.router.navigateByUrl('/management/member/enroll')
   }
 }

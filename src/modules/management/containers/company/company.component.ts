@@ -12,13 +12,13 @@ let COMPANIES : Company[] = [
   {
     company: "와이즈빌",
     ceo: "홍길동",
-    number: "000-0000-0000",
+    number: "000-0000-0001",
     checked: false
   },
   {
     company: "와이즈빌",
     ceo: "홍길동",
-    number: "000-0000-0000",
+    number: "000-0000-0002",
     checked: false
   }
 ]
@@ -34,6 +34,7 @@ export class CompanyComponent implements OnInit {
   page = 1;
   pageSize = 4;
   collectionSize = COMPANIES.length;
+  modifycompany = ''
 
   constructor(private modalService: NgbModal) {
     this.refreshCountries();
@@ -48,6 +49,16 @@ export class CompanyComponent implements OnInit {
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     })
+  }
+
+  tableopen(modify : any, data : any) {
+    this.modalService.open(modify, {ariaDescribedBy: 'modal-basic-title', centered: true}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    })
+    console.log(data)
+    this.modifycompany = data.company
   }
 
   private getDismissReason(reason : any): string {

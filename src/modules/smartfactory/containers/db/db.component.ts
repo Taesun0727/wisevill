@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Db } from '@modules/smartfactory/models/db';
 
 let DBS: Db[] = [
@@ -27,7 +28,7 @@ export class DbComponent implements OnInit {
   pageSize = 4;
   collectionSize = DBS.length;
 
-  constructor() { 
+  constructor(public router: Router) { 
     this.refreshCountries();
   }
 
@@ -46,6 +47,10 @@ export class DbComponent implements OnInit {
     this.dbs = DBS
       .map((db, i) => ({id: i + 1, ...db}))
       .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
+  }
+
+  createdb() {
+    this.router.navigateByUrl('/smartfactory/db/createdb')
   }
 
 }

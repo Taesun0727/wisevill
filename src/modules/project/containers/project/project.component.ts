@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import { Pjtable } from 'modules/project/models/project'
 
@@ -41,7 +42,7 @@ export class ProjectComponent implements OnInit {
   page = 1;
   pageSize = 4;
   collectionSize = PROJECTS.length;
-  constructor() { 
+  constructor(public router: Router) { 
     this.refreshCountries();
   }
 
@@ -60,6 +61,10 @@ export class ProjectComponent implements OnInit {
     this.projects = PROJECTS
       .map((project, i) => ({id: i + 1, ...project}))
       .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
+  }
+
+  createproject() {
+    this.router.navigateByUrl('project/createproject')
   }
 
 }

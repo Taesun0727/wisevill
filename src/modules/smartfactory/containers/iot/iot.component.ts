@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Iot } from 'modules/smartfactory/models/iot'
 
 const IOT: Iot[] = [
@@ -34,7 +35,7 @@ export class IotComponent implements OnInit {
   pageSize = 4;
   collectionSize = IOT.length;
 
-  constructor() { 
+  constructor(public router: Router) { 
     this.refreshCountries();
   }
 
@@ -53,6 +54,10 @@ export class IotComponent implements OnInit {
     this.iots = IOT
       .map((iot, i) => ({id: i + 1, ...iot}))
       .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
+  }
+
+  createiot() {
+    this.router.navigateByUrl('/smartfactory/iot/createiot')
   }
 
 }

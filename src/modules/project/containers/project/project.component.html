@@ -64,11 +64,9 @@
                         <span class="">0</span>
                         Page
                     </div>
-                    <div class="col-8 align-self-center text-right cbtn-wrap"><a href="project/createproject"
-                            class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt"
-                            style="display: inline-block;">프로젝트등록</a>
-                        <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록
-                            삭제</button>
+                    <div class="col-8 align-self-center text-right cbtn-wrap">
+                        <button type="button" class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt" (click)="createproject()">프로젝트등록</button>
+                        <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록삭제</button>
                     </div>
                 </div>
 
@@ -113,7 +111,7 @@
                                       <option [ngValue]="4">4 items per page</option>
                                       <option [ngValue]="6">6 items per page</option>
                                     </select>
-                                  </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -123,11 +121,9 @@
         </div>
 
         <div class="row">
-            <div class="col-12 align-self-center text-right cbtn-wrap"><a href="project/createproject"
-                    class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt"
-                    style="display: inline-block;">프로젝트등록</a>
-                <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록
-                    삭제</button>
+            <div class="col-12 align-self-center text-right cbtn-wrap">
+                <button type="button" class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt" (click)="createproject()">프로젝트등록</button>
+                <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록삭제</button>
             </div>
         </div>
     </div>

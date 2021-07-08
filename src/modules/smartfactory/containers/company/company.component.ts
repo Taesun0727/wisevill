@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Company } from 'modules/smartfactory/models/company'
 
 let COMPANIES: Company[] = [
@@ -70,7 +71,7 @@ export class CompanyComponent implements OnInit {
   collectionSize = COMPANIES.length;
 
   
-  constructor() {
+  constructor(public router: Router) {
     this.refreshCountries();
    }
 
@@ -89,6 +90,10 @@ export class CompanyComponent implements OnInit {
     this.companies = COMPANIES
       .map((company, i) => ({id: i + 1, ...company}))
       .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
+  }
+
+  createfactory() {
+    this.router.navigateByUrl('/smartfactory/company/createcompany')
   }
 
 }

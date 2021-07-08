@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Notice } from 'modules/notice/models/notice'
 
 let NOTICES: Notice[] = [
@@ -33,7 +34,7 @@ export class NoticeComponent implements OnInit {
   pageSize = 4;
   collectionSize = NOTICES.length;
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
     this.refreshCountries();
@@ -53,4 +54,7 @@ export class NoticeComponent implements OnInit {
       .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
 
+  createnotice() {
+    this.router.navigateByUrl('/notice/createnotice')
+  }
 }

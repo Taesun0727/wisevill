@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { server } from '@modules/smartfactory/models/server';
 
 let SERVER: server[] = [
@@ -30,7 +31,7 @@ export class ServerComponent implements OnInit {
   pageSize = 4;
   collectionSize = SERVER.length;
 
-  constructor() {
+  constructor(public router: Router) {
     this.refreshCountries();
   }
 
@@ -48,6 +49,10 @@ export class ServerComponent implements OnInit {
     this.servers = SERVER
       .map((server, i) => ({id: i + 1, ...server}))
       .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
+  }
+
+  createserver() {
+    this.router.navigateByUrl('/smartfactory/server/createserver')
   }
 
 }
