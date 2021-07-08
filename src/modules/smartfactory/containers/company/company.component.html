@@ -43,9 +43,8 @@
          Page
       </div>
       
-        <div class="col-8 align-self-center text-right cbtn-wrap"><a href="/smartfactory/company/createcompany"
-                class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt"
-                style="display: inline-block;">스마트팩토리등록</a>
+        <div class="col-8 align-self-center text-right cbtn-wrap">
+          <button type="button" class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt" (click)="createfactory()">스마트팩토리등록</button>
             <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록 삭제</button>
         </div>
         </div>
@@ -101,10 +100,9 @@
     </div>
 
     <div class="row">
-        <div class="col-12 align-self-center text-right cbtn-wrap"><a href="/smartfactory/company/createcompany"
-                class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt"
-                style="display: inline-block;">스마트팩토리등록</a>
-            <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록 삭제</button>
+        <div class="col-12 align-self-center text-right cbtn-wrap">
+          <button type="button" class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt" (click)="createfactory()">스마트팩토리등록</button>
+          <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록 삭제</button>
         </div>
     </div>
 

@@ -40,9 +40,8 @@
                         <span class="">0</span>
                         Page
                     </div>
-                    <div class="col-8 align-self-center text-right cbtn-wrap"><a href="./management/member/enroll"
-                            class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt"
-                            style="display: inline-block;">사원등록</a>
+                    <div class="col-8 align-self-center text-right cbtn-wrap">
+                        <button type="button" class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt" (click)="createmember()">사원등록</button>
                         <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록
                             삭제</button>
                     </div>
@@ -77,7 +76,7 @@
                                         <td>{{member.name}}</td>
                                         <td>{{member.task}}</td>
                                         <td>{{member.auth}}</td>
-                                        <td><a href="" class="btn btn-secondary">보기</a></td>
+                                        <td><a href="http://localhost:4200/mypage/myprofile" class="btn btn-secondary">보기</a></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -90,7 +89,7 @@
                                   <option [ngValue]="4">4 items per page</option>
                                   <option [ngValue]="6">6 items per page</option>
                                 </select>
-                              </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -98,9 +97,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 align-self-center text-right cbtn-wrap"><a href="./management/member/enroll"
-                    class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt"
-                    style="display: inline-block;">사원등록</a>
+            <div class="col-12 align-self-center text-right cbtn-wrap">
+                <button type="button" class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt" (click)="createmember()">사원등록</button>
                 <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록
                     삭제</button>
             </div>

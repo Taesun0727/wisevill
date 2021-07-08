@@ -9,14 +9,13 @@
             <div class="card-body">
 
                 <form class="form-horizontal" name="dataFrm" method="get">
-
                     <div class="form-body">
                       <div class="form-group row col-sm-12">
                         <label class="control-label ir"></label>
                         <select class="form-control col-sm-2">
                           <option selected disabled hidden>::소속::</option>
                         </select>
-                        <input type="text" class="form-control col-sm-4 ml-4" name="am_name" id="am_name" maxlength="10">
+                        <input type="text" class="form-control col-sm-4 ml-4" maxlength="10">
                         <div class="input-group-append">
                           <button type="button" class="btn btn-dark btn-flat" onclick="">검색</button>
                         </div>
@@ -64,7 +63,8 @@
                         <td>{{company.company}}</td>
                         <td>{{company.ceo}}</td>
                         <td>{{company.number}}</td>
-                        <td><a href="" class="btn btn-secondary">보기</a></td>
+                        <td><button type="button" class="btn btn-secondary" (click)="tableopen(modify,company)">소속등록</button></td>
+
                       </tr>
                     </tbody>
                   </table>
@@ -77,7 +77,7 @@
                       <option [ngValue]="4">4 items per page</option>
                       <option [ngValue]="6">6 items per page</option>
                     </select>
-                </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -118,5 +118,33 @@
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
+
+<ng-template #modify let-modal2>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">소속 수정</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal2.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="form-horizontal ml-4" method="POST">
+      <div class="form-group row">
+        <label class="control-label ir col-sm-3 mt-2">소속</label>
+        <input type="text" class="form-control col-sm-6 ml-2" maxlength="10" [(ngModel)]="modifycompany" name="modifycompany">
+      </div>
+      <div class="form-group row">
+        <label class="control-label ir col-sm-3 mt-2">회사대표</label>
+        <input type="text" class="form-control col-sm-6 ml-2" maxlength="10">
+      </div>
+      <div class="form-group row">
+        <label class="control-label ir col-sm-3 mt-2">회사번호</label>
+        <input type="text" class="form-control col-sm-6 ml-2" maxlength="15">
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal2.close('Save click')">수정</button>
   </div>
 </ng-template>
