@@ -8,12 +8,13 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppCommonModule } from '@common/app-common.module';
 import { NavigationModule } from '@modules/navigation/navigation.module';
 import { UtilityModule } from '../utility/utility.module'
-
+import { ChartsModule } from '../charts/charts.module'
 /* Components */
 import * as smartfactoryComponents from './components';
 
 /* Containers */
 import * as smartfactoryContainers from './containers';
+
 
 /* Guards */
 
@@ -30,9 +31,10 @@ import * as smartfactoryContainers from './containers';
       AppCommonModule,
       NavigationModule,
       UtilityModule,
+      ChartsModule,
   ],
   providers: [],
-  declarations: [...smartfactoryContainers.containers, ...smartfactoryComponents.components],
+  declarations: [...smartfactoryContainers.containers, ...smartfactoryComponents.components,],
   exports: [...smartfactoryContainers.containers,],
 })
 export class SmartfactoryModule { }
