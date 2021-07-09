@@ -1,20 +1,35 @@
-<li class="nav-item dropdown dropdown-user no-caret" >
-    <a class="nav-link dropdown-toggle" href="./mypage/memo" id="userDropdown" type="button">
+<li class="nav-item dropdown dropdown-user no-caret" ngbDropdown placement="bottom-right" display="dynamic">
+    <a class="nav-link dropdown-toggle" id="userDropdown" ngbDropdownToggle data-cy="userMenu" role="button"
+        aria-haspopup="true" aria-expanded="false">
         <fa-icon [icon]='["fas", "envelope"]'></fa-icon>
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            99+</span>
+            1</span>
     </a>
-    </li>
-    
-    
-    <!--
-
-
-
-<button type="button" class="btn btn-dark position-relative">
-    <fa-icon [icon]='["fas", "envelope"]'></fa-icon>
-    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-      99+
-     <span class="visually-hidden">unread messages</span>
-    </span>
-  </button>-->
+    <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu aria-labelledby="dropdownUser">
+        <h6 class="dropdown-header">
+            <div class="dropdown-user-details" ([ngModel])="memotext">
+                <h5>{{memotext}}</h5>
+            </div>
+        </h6>
+        <div class="dropdown-divider"></div>
+        <div style="overflow: visible;">
+            <div class= "pre-scrollable">
+            <button type="button" class="dropdown-item btn" *ngFor="let memo of memos">
+                <div class="col-sm-12 row">
+                    <div class="col-sm-3">
+                        <fa-icon [icon]='["fas", "user"]'></fa-icon>
+                    </div>
+                    <div class="col-sm-9">
+                        <li>{{memo.name}}</li>
+                        <li>{{memo.content}}</li>
+                        <li>{{memo.time}}</li>
+                    </div>
+                </div>
+            </button>
+        </div>
+        </div>
+        <div class="dropdown-divider"></div>
+        <button type="button" class="dropdown-item btn text-center" (click)="gomemo()">전체보기</button>
+    </div>
+    <div data-spy="scroll" data-target="#navbar-example2" data-offset="0" class="scrollspy-example"></div>
+</li>
