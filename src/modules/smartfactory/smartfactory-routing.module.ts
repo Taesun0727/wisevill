@@ -151,6 +151,22 @@ export const ROUTES: Routes = [
     } as SBRouteData,
   },
   {
+    path: 'detail',
+    component: smartfactoryComponents.DetailComponent,
+    data: {
+      title: 'Tables - SB Admin Angular',
+      breadcrumbs: [
+          {
+              text: '모니터링',
+          },
+          {
+              text: '더보기',
+              active: true,
+          },
+      ],
+    } as SBRouteData,
+  },
+  {
     path: 'iot',
     children: [
       {
