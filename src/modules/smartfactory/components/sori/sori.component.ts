@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
-  
   ElementRef,
-
   ViewChild,
 } from '@angular/core';
 import { Chart } from 'chart.js';

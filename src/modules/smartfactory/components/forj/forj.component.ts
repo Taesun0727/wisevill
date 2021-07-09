@@ -1,18 +1,16 @@
 import { ElementRef } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import Chart from 'chart.js';
+import {Chart} from 'chart.js';
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
-
- 
 } from '@angular/core';
 
 @Component({
   selector: 'sb-forj',
   templateUrl: './forj.component.html',
- 
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./forj.component.scss']
 })
 export class ForjComponent implements OnInit, AfterViewInit{
