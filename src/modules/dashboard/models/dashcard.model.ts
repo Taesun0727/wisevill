@@ -15,3 +15,20 @@ export interface device {
   ex : string, //기기에서 뱉는 데이터값 이름 대충 지음 나중에 수정
   status : boolean,
 }
+
+export interface Notice {
+  name: string,
+  title: string,
+}
+
+export interface Eventlog {
+  date: string,
+  time: string,
+  company: string,
+  log: string,
+}
+
+export interface Servervalidity {
+  company: string,
+  title: string,
+}

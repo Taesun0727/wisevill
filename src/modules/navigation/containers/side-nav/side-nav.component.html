@@ -3,9 +3,9 @@
         <div class="row">
             <div class="col text-center">
                 <img src="../../../../assets/img/1.jpg" class="img-thumbnail" style="width:191px; height:191px" alt="userimg">
-                <span *ngIf="userService.user$ | async as user">{{user.firstName}} {{user.lastName}}</span>
-                <div class="small">출근중</div>
-                <button class="btn btn-primary btn-sm" type="submit">Button</button>
+                <span *ngIf="userService.user$ | async as user">홍길동님 환영합니다</span>
+                <div class="small mt-1">출근중</div>
+                <button class="btn btn-primary btn-sm mt-2" type="submit">Button</button>
             </div>
         </div>
     </div>

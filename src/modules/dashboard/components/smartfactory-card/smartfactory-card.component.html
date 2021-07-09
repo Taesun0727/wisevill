@@ -10,13 +10,13 @@
               <label class="col-sm-4 control-label ir">주 서버:</label>
               <button type="button" class="btn btn-primary col-sm-3">Primary</button>
               <div class="col-sm-1"></div>
-              <a href="" class="btn btn-secondary col-sm-3" style="display: inline-block;">바로가기</a>
+              <button type="button" class="btn btn-secondary col-sm-3" (click)="goserver(company.name, 1)">바로가기</button>
             </div>
             <div class="form-group row">
               <label class="col-sm-4 control-label ir">테스트 서버:</label>
               <button type="button" class="btn btn-primary col-sm-3">Primary</button>
               <div class="col-sm-1"></div>
-              <a href="" class="btn btn-secondary col-sm-3" style="display: inline-block;">바로가기</a>
+              <button type="button" class="btn btn-secondary col-sm-3" (click)="goserver(company.name, 2)">바로가기</button>
             </div>
             <div class="form-group row">
               <label class="col-sm-4 control-label ir">작동중:</label>
