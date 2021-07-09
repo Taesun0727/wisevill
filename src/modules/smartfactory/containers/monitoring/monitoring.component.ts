@@ -1,9 +1,4 @@
-
 import { Component, OnInit } from '@angular/core';
-
-
-
-
 
 @Component({
   selector: 'sb-monitoring',
@@ -11,9 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./monitoring.component.scss']
 })
 export class MonitoringComponent implements OnInit {
-
-
- 
 
   constructor() {}
   ngOnInit() {}

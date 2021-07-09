@@ -26,16 +26,23 @@ let SERVER: server[] = [
   styleUrls: ['./server.component.scss']
 })
 export class ServerComponent implements OnInit {
+  searchdata = 'asdasdsa'
   servers = SERVER;
   page = 1;
   pageSize = 4;
   collectionSize = SERVER.length;
+  statedata: any;
+  statetype: any;
 
   constructor(public router: Router) {
     this.refreshCountries();
   }
 
   ngOnInit(): void {
+    this.statedata = history.state.server;
+    this.statetype = history.state.type;
+    this.searchdata = this.statedata
+
   }
   checkAllCheckBox(ev:any) {
     this.servers.forEach(x => x.checked = ev.target.checked)

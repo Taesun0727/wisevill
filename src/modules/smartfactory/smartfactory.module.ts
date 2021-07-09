@@ -14,8 +14,6 @@ import * as smartfactoryComponents from './components';
 
 /* Containers */
 import * as smartfactoryContainers from './containers';
-import { ForjComponent } from './components/forj/forj.component';
-import { SoriComponent } from './components/sori/sori.component';
 
 /* Guards */
 
@@ -34,7 +32,7 @@ import { SoriComponent } from './components/sori/sori.component';
       UtilityModule,
   ],
   providers: [],
-  declarations: [...smartfactoryContainers.containers, ...smartfactoryComponents.components, ForjComponent, SoriComponent,],
+  declarations: [...smartfactoryContainers.containers, ...smartfactoryComponents.components],
   exports: [...smartfactoryContainers.containers,],
 })
 export class SmartfactoryModule { }

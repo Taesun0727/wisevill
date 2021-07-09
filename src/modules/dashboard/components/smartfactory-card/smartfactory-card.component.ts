@@ -1,3 +1,4 @@
+import { state } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { company, device } from '@modules/dashboard/models/dashcard.model';
@@ -101,6 +102,11 @@ export class SmartfactoryCardComponent implements OnInit {
 
 	gomonitor(company: any) {
 		this.router.navigateByUrl('/smartfactory/monitoring', {state: {company}})
+		console.log(company)
+	}
+
+	goserver(server: any, type: number) {
+		this.router.navigateByUrl('/smartfactory/server', {state: {server, type}})
 	}
 
 }
