@@ -1,130 +1,46 @@
 <sb-layout-dashboard>
-  <sb-dashboard-head title="모니터링" [hideBreadcrumbs]="false"></sb-dashboard-head>
+    <sb-dashboard-head title="모니터링" [hideBreadcrumbs]="false"></sb-dashboard-head>
 
-  <div class="container-fluid">
+    <div class="container-fluid">
 
-      <div class="row">
-          <div class="col-12">
-              <div class="card">
-                  <div class="card-body">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
 
-                      <form class="form-horizontal" name="" method="get">
-                          <div class="form-body">
+                        <form class="form-horizontal" name="" method="get">
+                            <div class="form-body">
 
-                              <div class="form-group row">
-                                  <h5 class="ml-3">회사 검색</h5>
-                                  <div class="col-sm-12">
-                                      <div class="form-group row">
-                                          <input type="text" class="form-control col-sm-2 ml-2" name="" id=""
-                                              maxlength="10">
-                                          <button type="button" class="btn btn-dark">검색</button>
-                                      </div>
-                                  </div>
-                              </div>
-
-                          </div>
-                      </form>
-
-                  </div>
-
-              </div>
-          </div>
-      </div>
-   
-    
-      <div class="row">
-          <div class="col-lg-3">
-              <sb-card>
-                  <div class="card-header">
-                      <fa-icon class="mr-1" [icon]='["fas", "chart-bar"]'></fa-icon>포제이 컴퍼니
-                  </div>
-                  <div class="card-body">
-
-                  </div>
-                  <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-              </sb-card>
-          </div>
-          <div class="col-lg-3">
-              <sb-card>
-                  <div class="card-header">
-                      <fa-icon class="mr-1" [icon]='["fas", "chart-area"]'></fa-icon>지프라임
-                  </div>
-                  <div class="card-body">
-                    
-                  </div>
-                  <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-              </sb-card>
-          </div>
-          <div class="col-lg-3">
-            <sb-card>
-                <div class="card-header">
-                    <fa-icon class="mr-1" [icon]='["fas", "chart-bar"]'></fa-icon>해피독스
+                                <div class="form-group row">
+                                    <h5 class="ml-3">회사 검색</h5>
+                                    <div class="col-sm-12">
+                                        <div class="form-group row">
+                                            <input type="text" class="form-control col-sm-2 ml-2" name="" id=""
+                                                maxlength="10">
+                                            <button type="button" class="btn btn-dark">검색</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="card-body">
-                   
-                </div>
-                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-            </sb-card>
-        </div>
-        <div class="col-lg-3">
-          <sb-card>
-              <div class="card-header">
-                  <fa-icon class="mr-1" [icon]='["fas", "chart-pie"]'></fa-icon>본즈화학
-              </div>
-              <div class="card-body">
-                 
-              </div>
-              <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-          </sb-card>
-      </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-3">
-            <sb-card>
-                <div class="card-header">
-                    <fa-icon class="mr-1" [icon]='["fas", "chart-bar"]'></fa-icon>우드미공업
-                </div>
-                <div class="card-body">
-                    
-                </div>
-                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-            </sb-card>
-        </div>
-        <div class="col-lg-3">
-            <sb-card>
-                <div class="card-header">
-                    <fa-icon class="mr-1" [icon]='["fas", "chart-pie"]'></fa-icon>소리마음화학
-                </div>
-                <div class="card-body">
-                </div>
-                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-            </sb-card>
-        </div>
-        <div class="col-lg-3">
-          <sb-card>
-              <div class="card-header">
-                  <fa-icon class="mr-1" [icon]='["fas", "chart-pie"]'></fa-icon>우노전자
-              </div>
-              <div class="card-body">
-                
-              </div>
-              <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-          </sb-card>
-      </div>
-      <div class="col-lg-3">
-        <sb-card>
-            <div class="card-header">
-                <fa-icon class="mr-1" [icon]='["fas", "chart-area"]'></fa-icon>롤리폴리피자
             </div>
-            <div class="card-body">
-            
-            </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-        </sb-card>
-    </div>
-    </div>
-   
-    
+        </div>
 
-  </div>
+        <div class="row">
+            <div class="col-lg-3" *ngFor="let company of companies">
+                <sb-card>
+                    <div class="card-header"> <button type="button" id="upbtn" (click)="detail()" class="btn btn-flat btn-sm float-right cus-upbtn"
+                        style="display:inline-block">더보기></button>
+                        <fa-icon class="mr-1" [icon]='["fas", "chart-bar"]'></fa-icon>{{company.name}}
+                    </div>
+                    <div class="card-body">
+                        <sb-charts-bar></sb-charts-bar>
+                    </div>
+                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+                </sb-card>
+            </div>
+        </div>
+    </div>
 </sb-layout-dashboard>
