@@ -15,7 +15,11 @@
                   <div class="col-sm-12">
                     <div class="row">
                       <select class="form-control col-sm-1 ml-2">
-                        <option>구분</option>
+                        <option selected disabled hidden>::구분::</option>
+                        <option>회사명</option>
+                        <option>대표</option>
+                        <option>담당자</option>
+                        <option>주소</option>
                       </select>
                       <input type="text" class="form-control col-sm-2 ml-2" name="am_name" id="am_name" maxlength="10">
                       <button type="button" class="btn btn-dark">검색</button>
@@ -33,7 +37,7 @@
 
     <div class="row mb-3 mt-3">
       <div class="col-md-4 align-self-center">
-        <a href="" class="btn btn-xs btn-secondary" onclick="">검색초기화</a>
+        <button type="button" class="btn btn-secondary btn-xs">검색초기화</button>
          Total 
         <span class="">0</span>
          건
@@ -70,14 +74,14 @@
             <tbody>
               <tr *ngFor="let company of companies">
                 <td scope="row"><input type="checkbox" value="{{company.id}}" [(ngModel)]="company.checked" aria-label="Checkbox for following text input"></td>
-                <td>{{ company.id }}</td>
                 <td>{{ company.name }}</td>
                 <td>{{ company.boss }}</td>
                 <td>{{ company.address }}</td>
                 <td>{{ company.rname }}</td>
                 <td>{{ company.contact }}</td>
                 <td>{{ company.businpariod }}</td>
-                <td><button type="button" class="btn btn-secondary btn-sm">바로가기</button></td>
+                <td><button type="button" class="btn btn-secondary btn-sm" (click)="goserver(company.name)">바로가기</button></td>
+                <td><button type="button" class="btn btn-secondary btn-sm" (click)="godb(company.name)">바로가기</button></td>
                 <td><button type="button" class="btn btn-secondary btn-sm">바로가기</button></td>
               </tr>
             </tbody>

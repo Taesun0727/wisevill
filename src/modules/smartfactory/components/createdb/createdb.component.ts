@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'sb-createdb',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreatedbComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  golist() {
+    this.router.navigateByUrl('/smartfactory/db')
+  }
+
+  save() {
+    this.router.navigateByUrl('/smartfactory/db')
   }
 
 }

@@ -67,4 +67,8 @@ export class ProjectComponent implements OnInit {
     this.router.navigateByUrl('project/createproject')
   }
 
+  buttonclick(event:any) {
+    console.log(event)
+  }
+
 }

@@ -16,11 +16,11 @@
 
                                     <label class="col-sm-1 control-label">진행상태</label>
                                     <div class="col-sm-3">
-                                        <div class="btn-group" role="group" id="">
-                                            <button type="button" class="btn btn-secondary" onclick="">전체</button>
-                                            <button type="button" class="btn btn-secondary" onclick="">진행중</button>
-                                            <button type="button" class="btn btn-secondary" onclick="">완료</button>
-                                            <button type="button" class="btn btn-secondary" onclick="">취소</button>
+                                        <div class="btn-group" role="group" (click)="buttonclick($event.target)">
+                                            <button type="button" class="btn btn-success">전체</button>
+                                            <button type="button" class="btn btn-secondary">진행중</button>
+                                            <button type="button" class="btn btn-secondary">완료</button>
+                                            <button type="button" class="btn btn-secondary">취소</button>
                                         </div>
                                     </div>
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FileUploadService } from 'modules/notice/services/file-upload.service'
 
 @Component({
@@ -9,7 +10,7 @@ import { FileUploadService } from 'modules/notice/services/file-upload.service'
 export class CreatenoticeComponent implements OnInit {
   fileToUpload: File | any;
 
-  constructor(public fileToUploadService: FileUploadService) { }
+  constructor(public fileToUploadService: FileUploadService, public router: Router) { }
 
   ngOnInit(): void {
   }
@@ -24,6 +25,14 @@ export class CreatenoticeComponent implements OnInit {
     }, (error: any) => {
       console.log(error);
     })
+  }
+
+  golist() {
+    this.router.navigateByUrl('/notice')
+  }
+
+  save() {
+    this.router.navigateByUrl('/notice')
   }
 
 }
