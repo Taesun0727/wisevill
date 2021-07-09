@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -10,7 +11,7 @@ export class CreateprojectComponent implements OnInit {
 
   closeResult = '';
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, public router: Router) { }
 
   ngOnInit(): void {
   }
@@ -31,6 +32,14 @@ export class CreateprojectComponent implements OnInit {
     } else {
       return `with: ${reason}`;
     }
+  }
+
+  golist() {
+    this.router.navigateByUrl('/project')
+  }
+
+  save() {
+    this.router.navigateByUrl('/project')
   }
 
 }

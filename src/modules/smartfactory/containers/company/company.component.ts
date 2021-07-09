@@ -96,4 +96,12 @@ export class CompanyComponent implements OnInit {
     this.router.navigateByUrl('/smartfactory/company/createcompany')
   }
 
+  goserver(company: any) {
+    this.router.navigateByUrl('/smartfactory/server', {state: company})
+  }
+
+  godb(company: any) {
+    this.router.navigateByUrl('/smartfactory/db', {state: company})
+  }
+
 }

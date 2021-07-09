@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'sb-createserver',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateserverComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  golist() {
+    this.router.navigateByUrl('/smartfactory/server')
+  }
+
+  save() {
+    this.router.navigateByUrl('/smartfactory/server')
   }
 
 }

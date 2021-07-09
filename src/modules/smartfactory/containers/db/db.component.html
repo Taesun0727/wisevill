@@ -15,13 +15,24 @@
                   <div class="col-sm-12">
                     <div class="row">
                       <select class="form-control col-sm-1 ml-2">
-                        <option>구분</option>
+                        <option selected disabled hidden>::구분::</option>
+                        <option>테스트용</option>
+                        <option>사용자용</option>
                       </select>
                       <select class="form-control col-sm-2 ml-2">
-                        <option>종류</option>
+                        <option selected disabled hidden>::종류::</option>
+                        <option>MySQL</option>
+                        <option>MariaDB</option>
+                        <option>Oracle</option>
+                        <option>SQLite</option>
+                        <option>Firebase</option>
                       </select>
                       <select class="form-control col-sm-2 ml-2">
-                        <option>선택</option>
+                        <option selected disabled hidden>::선택::</option>
+                        <option>회사명</option>
+                        <option>DB이름</option>
+                        <option>서버호스트</option>
+                        <option>연결서버</option>
                       </select>
                       <input type="text" class="form-control col-sm-2 ml-2" name="" id="" maxlength="10">
                       <button type="button" class="btn btn-dark">검색</button>
@@ -106,7 +117,7 @@
     </div>
 
     <div class="row">
-      <div class="col-12 align-self-center text-right cbtn-wrap">\
+      <div class="col-12 align-self-center text-right cbtn-wrap">
         <button type="button" class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt" (click)="createdb()">DB등록</button>
         <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록 삭제</button>
       </div>

@@ -15,16 +15,29 @@
                                     <div class="col-sm-12">
                                         <div class="row">
                                             <select class="form-control col-sm-1 ml-2">
-                                                <option>구분</option>
+                                                <option selected disabled hidden>구분</option>
+                                                <option>테스트용</option>
+                                                <option>사용자용</option>
                                             </select>
                                             <select class="form-control col-sm-2 ml-2">
-                                                <option>종류</option>
+                                                <option selected disabled hidden>종류</option>
+                                                <option>nginx</option>
+                                                <option>apache</option>
+                                                <option>aws</option>
+                                                <option>lis</option>
                                             </select>
                                             <select class="form-control col-sm-1 ml-2">
-                                                <option>상태</option>
+                                                <option selected disabled hidden>상태</option>
+                                                <option>가동중</option>
+                                                <option>중단</option>
+                                                <option>준비중</option>
                                             </select>
                                             <select class="form-control col-sm-2 ml-2">
-                                                <option>선택</option>
+                                                <option selected disabled hidden>선택</option>
+                                                <option>회사명</option>
+                                                <option>서버이름</option>
+                                                <option>도메인</option>
+                                                <option>ip</option>
                                             </select>
                                             <input type="text" class="form-control col-sm-2 ml-2" [(ngModel)]="searchdata" name="searchdata" maxlength="10">
                                             <button type="button" class="btn btn-dark">검색</button>
