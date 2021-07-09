@@ -1,73 +1,89 @@
 <div class="row mb-4">
-  <div class="col-sm-12">
-    <div class="card">
-      <div class="card-body">
+    <div class="col-sm-12">
+
 
         <form class="form-horizontal" name="dataFrm" method="get">
-          <div class="form-body">
-            <div class="form-group row">
+            <div class="form-body">
+                <div class="form-group row">
 
-              <div class="col-sm-4">
-                <label class="col-sm-12 control-label text-center">진행상태</label>
-                <table class="table col-lg-12 table-bordered text-center">
-                  <thead class="table-info">
-                    <tr>
-                      <th scope="col">작성자</th>
-                      <th scope="col">제목</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>알림</td>
-                      <td>2021-04-22~2021.04.22</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                    <table class="table col-lg-12 text-center table-bordered">
+                        <tbody>
+                            <tr>
+                                <th scope="col" class="col-sm-4">
 
-              <div class="col-sm-4">
-                <label class="col-sm-12 control-label text-center">이벤트 로그</label>
-                <table class="table col-lg-12 text-center">
-                  <tbody>
-                    <tr>
-                      <td>2021.3.4</td>
-                      <td>12:31:10</td>
-                      <td>포제이</td>
-                      <td>수신감도이상</td>
-                    </tr>
-                    <tr>
-                      <td>2021.3.4</td>
-                      <td>12:31:10</td>
-                      <td>포제이</td>
-                      <td>수신감도이상</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                                    <div class="col-sm-12">
+                                        <label class="col-sm-12 control-label text-center">
+                                            <h3>공지사항</h3>
+                                        </label>
+                                        <hr>
+                                        <table class="table col-lg-12 table-bordered text-center table-sm">
+                                            <thead class="table-info">
+                                                <tr>
+                                                    <th scope="col" style="width: 20%;">작성자</th>
+                                                    <th scope="col">제목</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let notice of notices">
+                                                    <td>{{notice.name}}</td>
+                                                    <td>{{notice.title}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </th>
 
-              <div class="col-sm-4">
-                <label class="col-sm-12 control-label text-center">서버결제유효기간</label>
-                <table class="table col-lg-12 table-bordered text-center">
-                  <thead class="table-info">
-                    <tr>
-                      <th scope="col">회사명</th>
-                      <th scope="col">제목</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>알림</td>
-                      <td>2021-04-22~2021.04.22</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                                <th scope="col" class="col-sm-4">
+                                    <div class="col-sm-12">
+                                        <label class="col-sm-12 control-label text-center">
+                                            <h3>이벤트로그</h3>
+                                        </label>
+                                        <hr>
+                                        <table class="table col-lg-12 text-center table-sm">
+                                            <tbody>
+                                                <tr *ngFor="let eventlog of eventlogs">
+                                                    <td>{{eventlog.date}}</td>
+                                                    <td>{{eventlog.time}}</td>
+                                                    <td>{{eventlog.company}}</td>
+                                                    <td>{{eventlog.log}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </th>
 
+                                <th scope="col" class="col-sm-4">
+                                    <div class="col-sm-12">
+                                        <label class="col-sm-12 control-label text-center">
+                                            <h3>서버결제유효기간</h3>
+                                        </label>
+                                        <hr>
+                                        <table class="table col-lg-12 table-bordered text-center table-sm">
+                                            <thead class="table-info">
+                                                <tr>
+                                                    <th scope="col" style="width: 20%;">회사명</th>
+                                                    <th scope="col">제목</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let serverv of servervs">
+                                                    <td>{{serverv.company}}</td>
+                                                    <td>{{serverv.title}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </th>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
             </div>
-          </div>
         </form>
 
-      </div>
+
     </div>
-  </div>
 </div>
