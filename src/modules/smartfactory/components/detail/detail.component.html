@@ -6,27 +6,46 @@
             <li class="breadcrumb-item active " aria-current="page">모니터링</li>
         </ol>
     </nav>
-    
-    <div class="card text-center">
-        <div class="card-header">
-          <ul class="nav nav-tabs card-header-tabs">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="true" href="#">Active</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
+
+    <h3>포제이 컴퍼니</h3>
+
+    <div class="row" *ngFor="let company of companies">
+        <div class="col-lg-4">
+        <sb-card>
+            <div class="card-header">
+                <fa-icon class="mr-1" [icon]='["fas", "chart-area"]'></fa-icon>Area Chart Example
+            </div>
+            <div class="card-body">
+                <sb-charts-area></sb-charts-area>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+        </sb-card>
+    </div>
+
+        <div class="col-lg-4">
+            <sb-card>
+                <div class="card-header">
+                    <fa-icon class="mr-1" [icon]='["fas", "chart-bar"]'></fa-icon>Bar Chart Example
+                </div>
+                <div class="card-body">
+                    <sb-charts-bar></sb-charts-bar>
+                </div>
+                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            </sb-card>
         </div>
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text"><sb-charts-bar></sb-charts-bar></p>
-          <a href="#" class="btn-flat btn-sm btn btn-info">바로가기</a>
+
+
+        <div class="col-lg-4">
+            <sb-card>
+                <div class="card-header">
+                    <fa-icon class="mr-1" [icon]='["fas", "chart-pie"]'></fa-icon>Pie Chart Example
+                </div>
+                <div class="card-body">
+                    <sb-charts-pie></sb-charts-pie>
+                </div>
+                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            </sb-card>
         </div>
-      </div>
-      
+    </div>
 
 </sb-layout-dashboard>
