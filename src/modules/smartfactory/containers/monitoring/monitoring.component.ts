@@ -3,46 +3,59 @@ import { Mcompany } from '../../models/mcompany';
 import { Router } from '@angular/router';
 
 let MCOMPANIES: Mcompany[] = [
-  {
-    name: "포제이",
-    
+      {
+      name: "포제이",
+      gowhere : "http://forj-mes.com/pages/wv_factory/login/",
+      
+     
+    },
+    {
+      name: "지프라임",
+      gowhere :"",
    
-  },
-  {
-    name: "지프라임",
- 
+     
+    },
+    {
+      name: "해피독스",
+      gowhere :"",
    
-  },
-  {
-    name: "해피독스",
- 
    
-  },
-  {
-    name: "본즈화학",
-
-  },
-  {
-    name: "우드미",
- 
+     
+    },
+    {
+      name: "본즈화학",
+      gowhere :"",
    
-  },
-  {
-    name: "포제이",
- 
-   
-  },
-  {
-    name: "포제이",
- 
-   
-  },
-  {
-    name: "포제이",
   
+    },
+    {
+      name: "우드미",
+      gowhere :"",
    
-  },
-
+   
+     
+    },
+    {
+      name: "포제이",
+      gowhere :"",
+   
+   
+     
+    },
+    {
+      name: "포제이",
+      gowhere :"",
+   
+   
+     
+    },
+    {
+      name: "포제이",
+      gowhere :"",
+   
+    
+     
+    },
 ]
 
 
