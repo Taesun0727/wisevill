@@ -33,7 +33,7 @@ let PROJECTS: Pjtable[] = [
   styleUrls: ['./project.component.scss']
 })
 export class ProjectComponent implements OnInit {
-
+  pgstatus = '';
   projects = PROJECTS
 
   model: NgbDateStruct | undefined;
@@ -42,6 +42,7 @@ export class ProjectComponent implements OnInit {
   page = 1;
   pageSize = 4;
   collectionSize = PROJECTS.length;
+
   constructor(public router: Router) { 
     this.refreshCountries();
   }
@@ -65,10 +66,6 @@ export class ProjectComponent implements OnInit {
 
   createproject() {
     this.router.navigateByUrl('project/createproject')
-  }
-
-  buttonclick(event:any) {
-    console.log(event)
   }
 
 }

@@ -30,18 +30,28 @@
 
                   <div class="col-sm-6">
                     <label class="control-label ir">조회기간</label>
-                    <div class="row">
-                      <div class="btn-group ml-3" role="group" id="">
-                        <button type="button" class="btn btn-secondary">이번주</button>
-                        <button type="button" class="btn btn-secondary">지난주</button>
-                        <button type="button" class="btn btn-secondary">이번달</button>
-                        <button type="button" class="btn btn-secondary">지난달</button>
+                    <div>
+                      <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
+                        [(ngModel)]="pgstatus">
+                        <label ngbButtonLabel class="btn-secondary">
+                            <input ngbButton type="radio" value="every">이번주
+                        </label>
+                        <label ngbButtonLabel class="btn-secondary">
+                            <input ngbButton type="radio" value="progress">지난주
+                        </label>
+                        <label ngbButtonLabel class="btn-secondary">
+                            <input ngbButton type="radio" value="success">이번달
+                        </label>
+                        <label ngbButtonLabel class="btn-secondary">
+                            <input ngbButton type="radio" value="cancle">지난달
+                        </label>
                       </div>
                     </div>
                     <div class="row ml-1 mt-3">
                       <sb-range-date-picker></sb-range-date-picker>
                     </div>
                   </div>
+
                 </div>
 
               </div>

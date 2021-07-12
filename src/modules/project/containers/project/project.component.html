@@ -16,12 +16,22 @@
 
                                     <label class="col-sm-1 control-label">진행상태</label>
                                     <div class="col-sm-3">
-                                        <div class="btn-group" role="group" (click)="buttonclick($event.target)">
-                                            <button type="button" class="btn btn-success">전체</button>
-                                            <button type="button" class="btn btn-secondary">진행중</button>
-                                            <button type="button" class="btn btn-secondary">완료</button>
-                                            <button type="button" class="btn btn-secondary">취소</button>
+                                        <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
+                                            [(ngModel)]="pgstatus">
+                                            <label ngbButtonLabel class="btn-secondary">
+                                                <input ngbButton type="radio" value="every">전체
+																						</label>
+                                            <label ngbButtonLabel class="btn-secondary">
+                                                <input ngbButton type="radio" value="progress">진행중
+                                            </label>
+                                            <label ngbButtonLabel class="btn-secondary">
+                                                <input ngbButton type="radio" value="success">완료
+                                            </label>
+                                            <label ngbButtonLabel class="btn-secondary">
+                                                <input ngbButton type="radio" value="cancle">취소
+                                            </label>
                                         </div>
+                                        <pre>{{pgstatus}}</pre>
                                     </div>
 
                                     <label class="col-sm-1 control-label">기간</label>
@@ -65,8 +75,10 @@
                         Page
                     </div>
                     <div class="col-8 align-self-center text-right cbtn-wrap">
-                        <button type="button" class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt" (click)="createproject()">프로젝트등록</button>
-                        <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록삭제</button>
+                        <button type="button" class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt"
+                            (click)="createproject()">프로젝트등록</button>
+                        <button type="button" class="btn btn-danger btn-sm ml-1"
+                            onclick="listDelSubmit('list','')">선택목록삭제</button>
                     </div>
                 </div>
 
@@ -103,13 +115,15 @@
                                     </tbody>
                                 </table>
                                 <div class="d-flex justify-content-between p-2">
-                                    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshCountries()">
+                                    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page"
+                                        [pageSize]="pageSize" (pageChange)="refreshCountries()">
                                     </ngb-pagination>
-                                  
-                                    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshCountries()">
-                                      <option [ngValue]="2">2 items per page</option>
-                                      <option [ngValue]="4">4 items per page</option>
-                                      <option [ngValue]="6">6 items per page</option>
+
+                                    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize"
+                                        (ngModelChange)="refreshCountries()">
+                                        <option [ngValue]="2">2 items per page</option>
+                                        <option [ngValue]="4">4 items per page</option>
+                                        <option [ngValue]="6">6 items per page</option>
                                     </select>
                                 </div>
                             </div>
@@ -122,8 +136,10 @@
 
         <div class="row">
             <div class="col-12 align-self-center text-right cbtn-wrap">
-                <button type="button" class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt" (click)="createproject()">프로젝트등록</button>
-                <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록삭제</button>
+                <button type="button" class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt"
+                    (click)="createproject()">프로젝트등록</button>
+                <button type="button" class="btn btn-danger btn-sm ml-1"
+                    onclick="listDelSubmit('list','')">선택목록삭제</button>
             </div>
         </div>
     </div>
