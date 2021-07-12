@@ -31,7 +31,7 @@
         <div class="row">
             <div class="col-lg-3" *ngFor="let company of companies">
                 <sb-card>
-                    <div class="card-header"> <button type="button" id="upbtn" (click)="detail()" class="btn btn-flat btn-sm float-right cus-upbtn"
+                    <div class="card-header"> <button type="button" id="upbtn" (click)="detail()" class="btn btn-outline-secondary btn-flat btn-sm float-right cus-upbtn"
                         style="display:inline-block">더보기></button>
                         <fa-icon class="mr-1" [icon]='["fas", "chart-bar"]'></fa-icon>{{company.name}}
                     </div>
