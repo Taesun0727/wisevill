@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { Memo } from 'modules/mypage/models/memo';
 
@@ -57,7 +58,8 @@ export class MemoComponent implements OnInit {
 
   
   closeResult = '';
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal,public router: Router) { }
+  
   
 
 
@@ -82,6 +84,10 @@ export class MemoComponent implements OnInit {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     })
   }
+  detail(memo: any) {
+		this.router.navigateByUrl('./memo/send', {state: {memo}})
+	}
+
 
   private getDismissReason(reason : any): string {
     if (reason === ModalDismissReasons.ESC) {
