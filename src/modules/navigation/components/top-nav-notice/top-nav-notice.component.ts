@@ -44,9 +44,6 @@ export class TopNavNoticeComponent implements OnInit {
       this.noticetext = "읽지않은 공지가 있습니다."
     }
   }
-  gonotice() {
-    this.router.navigateByUrl('../notice')
-  }
 
 
 }
