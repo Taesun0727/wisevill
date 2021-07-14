@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Memo } from 'modules/navigation/models/memo'
 
 let MEMOS: Memo[] = [
@@ -33,7 +34,7 @@ export class TopNavMemoComponent implements OnInit {
   memotext = ''
   memos = MEMOS
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
     if(MEMOS.length == 0) {
@@ -41,6 +42,9 @@ export class TopNavMemoComponent implements OnInit {
     } else {
       this.memotext = "읽지않은 쪽지가 있습니다."
     }
+  }
+  gomemo() {
+    this.router.navigateByUrl('./mypage/container/memo')
   }
 
 }
