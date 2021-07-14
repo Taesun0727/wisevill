@@ -43,8 +43,6 @@ export class TopNavMemoComponent implements OnInit {
       this.memotext = "읽지않은 쪽지가 있습니다."
     }
   }
-  gomemo() {
-    this.router.navigateByUrl('./mypage/container/memo')
-  }
+  
 
 }
