@@ -56,17 +56,31 @@ export class MemoComponent implements OnInit {
 
   memos = MEMOS;
 
+    
   
+  page = 1;
+  pageSize = 4;
+  collectionSize = MEMOS.length;
+
   closeResult = '';
-  constructor(private modalService: NgbModal,public router: Router) { }
+  constructor(private modalService: NgbModal,public router: Router) { this.refreshCountries();}
   
+
   
+ 
+   
+   
 
 
  
   
 
   ngOnInit(): void {
+  }
+  refreshCountries() {
+    this.memos = MEMOS
+      .map((memo, i) => ({id: i + 1, ...memo}))
+      .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
   checkAllCheckBox(ev:any) {
     this.memos.forEach(x => x.checked = ev.target.checked)
@@ -112,6 +126,8 @@ export class MemoComponent implements OnInit {
 		
 		this.details = this.Checks.find((chk: any) => chk.name == check).details; //Angular 11
 	}
+
+
 
 
 
