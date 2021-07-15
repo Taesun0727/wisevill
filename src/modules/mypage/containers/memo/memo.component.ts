@@ -55,25 +55,12 @@ let MEMOS: Memo[] = [
 export class MemoComponent implements OnInit {
 
   memos = MEMOS;
-
-    
-  
   page = 1;
   pageSize = 4;
   collectionSize = MEMOS.length;
 
   closeResult = '';
   constructor(private modalService: NgbModal,public router: Router) { this.refreshCountries();}
-  
-
-  
- 
-   
-   
-
-
- 
-  
 
   ngOnInit(): void {
   }
@@ -112,9 +99,7 @@ export class MemoComponent implements OnInit {
       return `with: ${reason}`;
     }
   }
-  
 
-  //ddsfadfs
   Checks: Array<any> = [
 		{ name: '확인메시지', details: [  '내용','보낸사람', ] },
 		{ name: '미확인메시지', details: [  '내용','보낸사람',  ] }
@@ -126,10 +111,4 @@ export class MemoComponent implements OnInit {
 		
 		this.details = this.Checks.find((chk: any) => chk.name == check).details; //Angular 11
 	}
-
-
-
-
-
-
 }
