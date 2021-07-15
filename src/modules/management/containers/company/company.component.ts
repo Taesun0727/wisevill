@@ -1,26 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { Company } from 'modules/management/models/company'
+import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
 
 let COMPANIES : Company[] = [
-  {
-    company: "와이즈빌",
-    ceo: "홍길동",
-    number: "000-0000-0000",
-    checked: false
-  },
-  {
-    company: "와이즈빌",
-    ceo: "홍길동",
-    number: "000-0000-0001",
-    checked: false
-  },
-  {
-    company: "와이즈빌",
-    ceo: "홍길동",
-    number: "000-0000-0002",
-    checked: false
-  }
 ]
 
 @Component({

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { FileUploadService } from 'modules/notice/services/file-upload.service'
+import { NoticeService } from '../../services/notice.service';
 
 @Component({
   selector: 'sb-createnotice',
@@ -8,23 +9,46 @@ import { FileUploadService } from 'modules/notice/services/file-upload.service'
   styleUrls: ['./createnotice.component.scss']
 })
 export class CreatenoticeComponent implements OnInit {
-  fileToUpload: File | any;
+  public noticeForm: FormGroup | any
 
-  constructor(public fileToUploadService: FileUploadService, public router: Router) { }
+  constructor(public router: Router,public noticecrud: NoticeService, public fb: FormBuilder,) { }
 
   ngOnInit(): void {
+    this.noticForm();
+    console.log(this.noticecrud.getAll())
   }
 
-  handleFileInput(files: FileList) {
-    this.fileToUpload = files.item(0);
-  }
-
-  uploadFileToActivity() {
-    this.fileToUploadService.postFile(this.fileToUpload)
-    .subscribe(data => { 
-    }, (error: any) => {
-      console.log(error);
+  noticForm() {
+    this.noticeForm = this.fb.group({
+      type: [''],
+      title: [''],
+      writer: [''],
+      date: [''],
+      content: [''],
+      addfile: [''],
+      modify: [''],
+      checked: [''],
     })
+  }
+
+  get writer() {
+    return this.noticeForm.get('writer')
+  }
+
+  get title() {
+    return this.noticeForm.get('title')
+  }
+
+  get content() {
+    return this.noticeForm.get('content')
+  }
+  
+  get addfile() {
+    return this.noticeForm.get('addfile')
+  }
+
+  ResetForm() {
+    this.noticeForm.reset();
   }
 
   golist() {
@@ -32,6 +56,7 @@ export class CreatenoticeComponent implements OnInit {
   }
 
   save() {
+    this.noticecrud.AddNotice(this.noticeForm.value);
     this.router.navigateByUrl('/notice')
   }
 

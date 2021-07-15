@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Member } from 'modules/management/models/member'
+import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
 
 @Component({
   selector: 'sb-enroll',
@@ -8,6 +9,8 @@ import { Member } from 'modules/management/models/member'
   styleUrls: ['./enroll.component.scss']
 })
 export class EnrollComponent implements OnInit {
+  studentsRef: AngularFireList<any> | undefined;
+  studentRef: AngularFireObject<any> | undefined;
 
   constructor(public router: Router) { }
 
@@ -26,6 +29,10 @@ export class EnrollComponent implements OnInit {
 	}
   cnlth() {
     this.router.navigateByUrl('/managements/member')
+  }
+
+  AddStudent(student: Member) {
+
   }
 
 }
