@@ -1,26 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Notice } from 'modules/notice/models/notice'
-
+import { NoticeService } from 'modules/notice/services/notice.service'
+import { map } from 'rxjs/operators';
 let NOTICES: Notice[] = [
-  {
-    type: "기타",
-    title: "알림",
-    writer: "관리자",
-    date: "2021-04-22",
-    url: "http:asdasdasdsad",
-    modify: "http:dsadsadasd",
-    checked: false
-  },
-  {
-    type: "알림",
-    title: "긴급",
-    writer: "관리자",
-    date: "2021-05-20",
-    url: "http:asdasdasdsad",
-    modify: "http:dsadsadasd",
-    checked: false
-  },
 ]
 
 @Component({
@@ -32,12 +15,26 @@ export class NoticeComponent implements OnInit {
   notices = NOTICES
   page = 1;
   pageSize = 4;
-  collectionSize = NOTICES.length;
+  collectionSize = 0;
 
-  constructor(public router: Router) { }
+  constructor(public router: Router, public ns: NoticeService) { }
 
   ngOnInit(): void {
     this.refreshCountries();
+    this.retrieveNotices();
+  }
+
+  retrieveNotices(): void {
+    this.ns.getAll().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({id: c.payload.doc.id, ... c.payload.doc.data()})
+          )
+        )
+    ).subscribe(data => {
+      this.notices = data;
+      this.collectionSize = data.length
+    })
   }
 
   checkAllCheckBox(ev:any) {
