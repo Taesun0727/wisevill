@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Member } from 'modules/management/models/member'
+
 @Component({
   selector: 'sb-enroll',
   templateUrl: './enroll.component.html',
@@ -7,7 +9,7 @@ import { Member } from 'modules/management/models/member'
 })
 export class EnrollComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
   }
@@ -22,5 +24,8 @@ export class EnrollComponent implements OnInit {
 		
 		this.details = this.Checks.find((chk: any) => chk.name == check).details; //Angular 11
 	}
+  cnlth() {
+    this.router.navigateByUrl('/managements/member')
+  }
 
 }
