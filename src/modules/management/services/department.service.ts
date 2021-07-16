@@ -6,7 +6,7 @@ import { Department } from 'modules/management/models/department'
 })
 export class DepartmentService {
   departmentsRef: AngularFirestoreCollection<any>;
-
+ 
 
   dbPath = '/department';
 
