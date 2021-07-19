@@ -24,101 +24,34 @@ export class EnrollComponent implements OnInit {
  
   memberForm() {
     this.membersForm = this.fb.group({
-      number: [''],
-      name: [''],
-      working: [''],
-      work_sdate: [''],
-      work_edate: [''],
-      birth_date: [''],
-      break_cnt: [''],
-      break_cnt2: [''],
-      position: [''],
-      extension: [''],
-      card_num: [''],
-      tel: [''],
-      phone: [''],
-      email: [''],
-      post: [''],
-      addr1: [''],
-      addr2: [''],
-      img: [''],
-      comment: [''],
-      sign_img: [''],
-      level:[''],
-      modify: [''],
-      checked: [''],
+      company:[''],
+      department:[''],
+       position:[''],
+       name:[''],
+      task:[''],
+       level:[''],
+       control:[''],
+       checked: [''],
     })
   }
-  get number() {
-    return this.membersForm.get('number')
+  get company() {
+    return this.membersForm.get('company')
   }
-
-  get name() {
-    return this.membersForm.get('name')
+  get department() {
+    return this.membersForm.get('department')
   }
-
-  get working() {
-    return this.membersForm.get('working')
-  }
-  get work_sdate() {
-    return this.membersForm.get('work_sdate')
-  }
-
-  get work_edate() {
-    return this.membersForm.get('work_edate')
-  }
-
-  get birth_date() {
-    return this.membersForm.get('birth_date')
-  }
-  get break_cnt() {
-    return this.membersForm.get('break_cnt')
-  }
-
   get position() {
     return this.membersForm.get('position')
   }
-
-  get extension() {
-    return this.membersForm.get('extension')
+  get name() {
+    return this.membersForm.get('name')
   }
-  get card_num() {
-    return this.membersForm.get('card_num')
-  }
-  get tel() {
-    return this.membersForm.get('tel')
-  }
-
-  get phone() {
-    return this.membersForm.get('phone')
-  }
-
-  get email() {
-    return this.membersForm.get('email')
-  }
-  get post() {
-    return this.membersForm.get('post')
-  }
-  get addr1() {
-    return this.membersForm.get('addr1')
-  }
-  get addr2() {
-    return this.membersForm.get('addr2')
-  }
-
-  get img() {
-    return this.membersForm.get('img')
-  }
-
-  get comment() {
-    return this.membersForm.get('comment')
-  }
-  get sign_img() {
-    return this.membersForm.get('sign_img')
+  get task() {
+    return this.membersForm.get('task')
   }
   get level() {
     return this.membersForm.get('level')
-  }
+  }  
  
   ResetForm() {
     this.membersForm.reset();

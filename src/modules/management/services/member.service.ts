@@ -29,29 +29,14 @@ export class MemberService {
 
   UpdateMember(member: Member) {
     this.membersRef?.update({
-      number: member.number,
-      name: member.name,
-      working: member.working,
-      work_sdate: member.work_sdate,
-      work_edate: member.work_edate,
-      birth_date: member.birth_date,
-      break_cnt: member.break_cnt,
-      break_cnt2: member.break_cnt2,
+      company:member.company,
+      department:member.department,
       position: member.position,
-      extension: member.extension,
-      card_num: member.card_num,
-      tel: member.tel,
-      phone: member.phone,
-      email: member.email,
-      post: member.post,
-      addr1: member.addr1,
-      addr2: member.addr2,
-      img: member.img,
-      comment: member.comment,
-      sign_img: member.sign_img,
+      name: member.name,
+      task: member.task,
       level:member.level,
-      modify: member.modify,
-      checked: member.checked
+      control:member.control,
+      checked: member.checked,
   })
   }
 }
