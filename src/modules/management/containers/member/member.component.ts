@@ -31,9 +31,9 @@ export class MemberComponent implements OnInit {
     this.ns.getAll().snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
-          ({ id: c.payload.doc.id, ...c.payload.doc.data() })
+          ({id: c.payload.doc.id, ... c.payload.doc.data()})
+          )
         )
-      )
     ).subscribe(data => {
       this.members = data;
       this.collectionSize = data.length
@@ -55,7 +55,7 @@ export class MemberComponent implements OnInit {
   }
 
   enroll() {
-    this.router.navigateByUrl('/management/enroll')
+    this.router.navigateByUrl('/management/member/enroll')
   }
   Checks: Array<any> = [
 		{ name: '와이즈빌1', details: [  '개발팀','영업팀', ] },
