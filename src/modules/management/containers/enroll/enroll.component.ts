@@ -63,7 +63,7 @@ export class EnrollComponent implements OnInit {
 
   save() {
     this.membercrud.AddMember(this.membersForm.value);
-    this.router.navigateByUrl('/member')
+    this.router.navigateByUrl('/management/member')
   }
 
   Checks: Array<any> = [
