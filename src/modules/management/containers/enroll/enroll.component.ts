@@ -44,7 +44,6 @@ export class EnrollComponent implements OnInit {
       img: [''],
       comment: [''],
       sign_img: [''],
-      break_use_cnt: [''],
       level:[''],
       modify: [''],
       checked: [''],
@@ -116,9 +115,6 @@ export class EnrollComponent implements OnInit {
   }
   get sign_img() {
     return this.membersForm.get('sign_img')
-  }
-  get break_use_cnt() {
-    return this.membersForm.get('break_use_cnt')
   }
   get level() {
     return this.membersForm.get('level')
