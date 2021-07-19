@@ -26,12 +26,12 @@ export class EnrollComponent implements OnInit {
     this.membersForm = this.fb.group({
       company:[''],
       department:[''],
-       position:[''],
-       name:[''],
+      rank:[''],
+      name:[''],
       task:[''],
-       level:[''],
-       control:[''],
-       checked: [''],
+      auth:[''],
+      control:[''],
+      checked: [''],
     })
   }
   get company() {
@@ -40,8 +40,8 @@ export class EnrollComponent implements OnInit {
   get department() {
     return this.membersForm.get('department')
   }
-  get position() {
-    return this.membersForm.get('position')
+  get rank() {
+    return this.membersForm.get('rank')
   }
   get name() {
     return this.membersForm.get('name')
@@ -49,8 +49,8 @@ export class EnrollComponent implements OnInit {
   get task() {
     return this.membersForm.get('task')
   }
-  get level() {
-    return this.membersForm.get('level')
+  get auth() {
+    return this.membersForm.get('auth')
   }  
  
   ResetForm() {
