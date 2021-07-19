@@ -1,10 +1,10 @@
 export interface Member {
   company:any,
   department:any,
-  position:any,
+  rank:any,
   name:any,
   task:any,
-  level:any,
+  auth:any,
   control:any,
   checked?: boolean,
 }

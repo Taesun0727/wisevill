@@ -31,9 +31,9 @@ export class MemberComponent implements OnInit {
     this.ns.getAll().snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
-          ({id: c.payload.doc.id, ... c.payload.doc.data()})
-          )
+          ({ id: c.payload.doc.id, ...c.payload.doc.data() })
         )
+      )
     ).subscribe(data => {
       this.members = data;
       this.collectionSize = data.length
@@ -54,8 +54,8 @@ export class MemberComponent implements OnInit {
       .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
 
-  createmember() {
-    this.router.navigateByUrl('/management/member/enroll')
+  enroll() {
+    this.router.navigateByUrl('/management/enroll')
   }
   Checks: Array<any> = [
 		{ name: '와이즈빌1', details: [  '개발팀','영업팀', ] },
@@ -68,7 +68,5 @@ export class MemberComponent implements OnInit {
 		
 		this.details = this.Checks.find((chk: any) => chk.name == check).details; //Angular 11
 	}
-  enroll() {
-    this.router.navigateByUrl('/management/enroll')
-  }
+
 }

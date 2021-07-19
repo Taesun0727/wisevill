@@ -31,10 +31,10 @@ export class MemberService {
     this.membersRef?.update({
       company:member.company,
       department:member.department,
-      position: member.position,
+      rank: member.rank,
       name: member.name,
       task: member.task,
-      level:member.level,
+      auth:member.auth,
       control:member.control,
       checked: member.checked,
   })
