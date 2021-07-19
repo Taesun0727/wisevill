@@ -27,8 +27,8 @@ export interface Member {
   company: string       // 회사
   department: string    // 부서
   rank: string          //?
-  name: string          //?
-  task: string          //?
+  name: string          // 사원명
+  task: string          // 담당업무
   auth: string          // 권한
   checked?: boolean;
 }

@@ -49,7 +49,6 @@ export class MemberService {
       img: member.img,
       comment: member.comment,
       sign_img: member.sign_img,
-      break_use_cnt: member.break_use_cnt,
       level:member.level,
       modify: member.modify,
       checked: member.checked
