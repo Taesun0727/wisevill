@@ -57,10 +57,6 @@ export class EnrollComponent implements OnInit {
     this.membersForm.reset();
   }
 
-  golist() {
-    this.router.navigateByUrl('/member')
-  }
-
   save() {
     this.membercrud.AddMember(this.membersForm.value);
     this.router.navigateByUrl('/management/member')
@@ -77,8 +73,8 @@ export class EnrollComponent implements OnInit {
 		
 		this.details = this.Checks.find((chk: any) => chk.name == check).details; //Angular 11
 	}
-  cnlth() {
-    this.router.navigateByUrl('/managements/member')
+  golist() {
+    this.router.navigateByUrl('/management/member')
   }
 
   AddStudent(student: Member) {
