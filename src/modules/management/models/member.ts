@@ -1,4 +1,30 @@
 export interface Member {
+  number: any;
+  working: any;
+  work_sdate: any;
+  work_edate: any;
+  birth_date: any;
+  break_cnt: any;
+  break_cnt2: any;
+  position: any;
+  extension: any;
+  card_num: any;
+  tel: any;
+  phone: any;
+  email: any;
+  post: any;
+  addr1: any;
+  addr2: any;
+  img: any;
+  comment: any;
+  sign_img: any;
+  break_use_cnt: any;
+  level: any;
+  modify: any;
+  date: any;
+  writer: any;
+  title: any;
+  type: any;
   company: string
   department: string
   rank: string

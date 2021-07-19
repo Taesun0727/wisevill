@@ -8,8 +8,8 @@ import { ManagementModule } from './management.module';
 
 /* Containers */
 import * as authContainers from './containers';
-import { EnrollComponent } from './components';
-import { MemberComponent } from './containers';
+
+import * as MemberContainers from './containers';
 
 /* Guards */
 
@@ -43,7 +43,7 @@ export const ROUTES: Routes = [
       },
         {
           path: 'enroll',
-          component: EnrollComponent,
+          component: MemberContainers.EnrollComponent,
           data: {
             title: 'Tables - SB Admin Angular',
             breadcrumbs: [
