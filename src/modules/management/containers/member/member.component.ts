@@ -1,26 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Member } from 'modules/management/models/member'
+import { MemberService } from 'modules/management/services/member.service'
+import { map } from 'rxjs/operators';
 
 let MEMBERS: Member[] = [
-  {
-    company: "와이즈빌",
-    department: "개발팀",
-    rank: "사원",
-    name: "홍길동",
-    task: "개발",
-    auth: "관리자",
-    checked: false  
-  },
-  {
-    company: "와이즈빌",
-    department: "개발팀",
-    rank: "인턴",
-    name: "홍길동",
-    task: "개발",
-    auth: "관리자",
-    checked: false  
-  },
 ]
 
 @Component({
@@ -33,13 +17,27 @@ export class MemberComponent implements OnInit {
   members = MEMBERS
   page = 1;
   pageSize = 4;
-  collectionSize = MEMBERS.length;
+  collectionSize = 0;
 
-  constructor(public router: Router) {
-    this.refreshCountries();
+  constructor(public router: Router,public ns: MemberService) {
+   
    }
 
   ngOnInit(): void {
+    this.refreshCountries();
+    this.retrieveMembers();
+  }
+  retrieveMembers(): void {
+    this.ns.getAll().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({id: c.payload.doc.id, ... c.payload.doc.data()})
+          )
+        )
+    ).subscribe(data => {
+      this.members = data;
+      this.collectionSize = data.length
+    })
   }
 
   checkAllCheckBox(ev:any) {
@@ -70,4 +68,7 @@ export class MemberComponent implements OnInit {
 		
 		this.details = this.Checks.find((chk: any) => chk.name == check).details; //Angular 11
 	}
+  enroll() {
+    this.router.navigateByUrl('/management/enroll')
+  }
 }

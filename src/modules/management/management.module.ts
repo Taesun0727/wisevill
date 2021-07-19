@@ -11,7 +11,7 @@ import { UtilityModule } from '../utility/utility.module'
 
 /* Components */
 
-import * as ManagementComponents from './components';
+
 /* Containers */
 import * as ManagementContaines from './containers';
 
@@ -33,7 +33,7 @@ import * as ManagementContaines from './containers';
         UtilityModule,
     ],
     providers: [],
-    declarations: [...ManagementContaines.containers,...ManagementComponents.components,],
+    declarations: [...ManagementContaines.containers,],
     exports:[...ManagementContaines.containers],
 })
 export class ManagementModule {}

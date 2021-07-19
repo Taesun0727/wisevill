@@ -1,22 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { Department } from 'modules/management/models/department'
-
+import { DepartmentService } from 'modules/management/services/department.service'
+import { map } from 'rxjs/operators';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 let DEPARTMENTS : Department[] = [
-  {
-    company: "와이즈빌",
-    department: "개발팀",
-    abb: "개발",
-    use: "사용",
-    checked: false
-  },
-  {
-    company: "와이즈빌",
-    department: "설비팀",
-    abb: "설비",
-    use: "사용",
-    checked: false
-  },
+
 ]
 
 @Component({
@@ -29,13 +19,33 @@ export class DepartmentComponent implements OnInit {
   departments = DEPARTMENTS
   page = 1;
   pageSize = 4;
-  collectionSize = DEPARTMENTS.length;
+  collectionSize = 0;
+  public departmentForm: FormGroup | undefined 
 
-  constructor(private modalService: NgbModal) {
+
+  constructor(public router: Router,private modalService: NgbModal,public ns: DepartmentService,public departmentcrud: DepartmentService) {
     this.refreshCountries();
    }
 
-  ngOnInit(): void {
+   ngOnInit(): void {
+    this.refreshCountries();
+    this.retrieveDepartments();
+    
+    console.log(this.departmentcrud.getAll())
+  }
+ 
+
+  retrieveDepartments(): void {
+    this.ns.getAll().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({id: c.payload.doc.id, ... c.payload.doc.data()})
+          )
+        )
+    ).subscribe(data => {
+      this.departments = data;
+      this.collectionSize = data.length
+    })
   }
 
   open(content : any) {
