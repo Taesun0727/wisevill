@@ -39,6 +39,11 @@ export const ROUTES: Routes = [
           ],
         } as SBRouteData,
       },
+    {
+        path: 'updatenotice',
+        canActivate: [],
+        component: Noticecontainers.UpdatenoticeComponent,
+    }
 ];
 
 @NgModule({

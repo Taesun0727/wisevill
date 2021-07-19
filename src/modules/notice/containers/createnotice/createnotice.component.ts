@@ -10,41 +10,25 @@ import { NoticeService } from '../../services/notice.service';
 })
 export class CreatenoticeComponent implements OnInit {
   public noticeForm: FormGroup | any
+  today = new Date();
+  choosenFiles: FileList | undefined;
+  existingFile: File | any;
+  filelabel = '파일을 선택해 주세요.'
 
-  constructor(public router: Router,public noticecrud: NoticeService, public fb: FormBuilder,) { }
-
-  ngOnInit(): void {
-    this.noticForm();
-    console.log(this.noticecrud.getAll())
-  }
-
-  noticForm() {
+  constructor(public router: Router,public ns: NoticeService, public fb: FormBuilder,) {
     this.noticeForm = this.fb.group({
       type: [''],
       title: [''],
       writer: [''],
-      date: [''],
+      date: [this.today.toLocaleString()],
       content: [''],
       addfile: [''],
       modify: [''],
       checked: [''],
     })
-  }
+   }
 
-  get writer() {
-    return this.noticeForm.get('writer')
-  }
-
-  get title() {
-    return this.noticeForm.get('title')
-  }
-
-  get content() {
-    return this.noticeForm.get('content')
-  }
-  
-  get addfile() {
-    return this.noticeForm.get('addfile')
+  ngOnInit(): void {
   }
 
   ResetForm() {
@@ -56,8 +40,19 @@ export class CreatenoticeComponent implements OnInit {
   }
 
   save() {
-    this.noticecrud.AddNotice(this.noticeForm.value);
+    this.ns.AddNotice(this.noticeForm.value);
     this.router.navigateByUrl('/notice')
+  }
+
+  modify() {
+    console.log(this.noticeForm.value);
+  }
+
+  chooseFile(fileInput: any) {
+    this.choosenFiles = fileInput.target.files
+    this.existingFile = this.choosenFiles?.item(0);
+    this.filelabel = this.existingFile.name
+    this.noticeForm.addfile = this.existingFile.name
   }
 
 }
