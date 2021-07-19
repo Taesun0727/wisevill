@@ -43,7 +43,7 @@ export const ROUTES: Routes = [
       },
       {
         path: 'enroll',
-        component: authContainers.EnrollComponent,
+        component: ManagementContainers.EnrollComponent,
         data: {
           title: 'Tables - SB Admin Angular',
           breadcrumbs: [
