@@ -30,8 +30,8 @@
                   <div class="form-group row">
                     <div class="col-sm-12">
                       <div class="custom-file" id="inputFile">
-                          <input name="file" type="file" class="custom-file-input" formControlName="addfile" (change)="chooseFile($event)">
-                          <label class="custom-file-label" for="customFile" ([ngMoel])="filelabel">{{filelabel}}</label>
+                          <input name="file" type="file" class="custom-file-input" formControlName="addfile">
+                          <label class="custom-file-label" for="customFile">파일을 선택해 주세요.</label>
                       </div>
                     </div>
                   </div>
@@ -45,9 +45,7 @@
             <button type="button" (click)="golist()" class="btn btn-secondary"
                 style="display:inline-block">목록</button>
             <button type="button" (click)="save()" class="btn btn-primary float-right cus-upbtn"
-                style="display:inline-block">저장</button>
-                <button type="button" (click)="modify()" class="btn btn-primary float-right cus-upbtn"
-                style="display:inline-block">확인</button>
+                style="display:inline-block">수정</button>
         </div>
       </div>
     </div>

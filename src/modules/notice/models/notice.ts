@@ -1,5 +1,4 @@
 export interface Notice {
-  $key: string
   type: string
   title: string
   writer: string

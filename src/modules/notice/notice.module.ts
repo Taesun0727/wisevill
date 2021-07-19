@@ -25,7 +25,7 @@ import * as Noticecontainers from './containers';
         UtilityModule
     ],
     providers: [],
-    declarations: [...Noticecontainers.containers],
+    declarations: [...Noticecontainers.containers,],
     exports: [...Noticecontainers.containers],
 })
 export class NoticeModule { }
