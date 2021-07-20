@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireObject } from '@angular/fire/database';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Company } from '@modules/management/models/company';
+import { Company } from '@modules/smartfactory/models/company';
 
 @Injectable({
   providedIn: 'root'
