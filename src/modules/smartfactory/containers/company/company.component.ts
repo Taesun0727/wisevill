@@ -3,60 +3,8 @@ import { Router } from '@angular/router';
 import { Company } from 'modules/smartfactory/models/company'
 
 let COMPANIES: Company[] = [
-  {
-    name: "포제이",
-    boss: "홍길동",
-    address: "인천 장수동 남중로 79",
-    rname: "홍길동",
-    contact: "010-0000-0000",
-    businpariod: "2020.01.01 ~ 2022.01.01",
-    checked: false,
-  },
-  {
-    name: "지프라임",
-    boss: "박길동",
-    address: "광주 서구 풍암로24",
-    rname: "홍길동",
-    contact: "010-0000-0000",
-    businpariod: "2020.01.01 ~ 2022.01.01",
-    checked: false,
-  },
-  {
-    name: "지프라임",
-    boss: "박길동",
-    address: "광주 서구 풍암로24",
-    rname: "홍길동",
-    contact: "010-0000-0000",
-    businpariod: "2020.01.01 ~ 2022.01.01",
-    checked: false,
-  },
-  {
-    name: "지프라임",
-    boss: "박길동",
-    address: "광주 서구 풍암로24",
-    rname: "홍길동",
-    contact: "010-0000-0000",
-    businpariod: "2020.01.01 ~ 2022.01.01",
-    checked: false,
-  },
-  {
-    name: "지프라임",
-    boss: "박길동",
-    address: "광주 서구 풍암로24",
-    rname: "홍길동",
-    contact: "010-0000-0000",
-    businpariod: "2020.01.01 ~ 2022.01.01",
-    checked: false,
-  },
-  {
-    name: "지프라임",
-    boss: "박길동",
-    address: "광주 서구 풍암로24",
-    rname: "홍길동",
-    contact: "010-0000-0000",
-    businpariod: "2020.01.01 ~ 2022.01.01",
-    checked: false,
-  },
+  
+
 ]
 
 @Component({
