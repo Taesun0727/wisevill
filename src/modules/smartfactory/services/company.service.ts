@@ -12,7 +12,7 @@ export class CompanyService {
   companysRef: AngularFirestoreCollection<any>|any ;
   companyRef: AngularFireObject<any> | undefined;
 
-  dbPath = '/company';
+  dbPath = '/smartfactorycompany';
 
   constructor(private db: AngularFirestore) {
     this.companysRef = db.collection(this.dbPath);
