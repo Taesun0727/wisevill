@@ -2,22 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Code } from 'modules/management/models/code'
 
 let CODES: Code[] = [
-  {
-    colid: "인턴",
-    typename: "권한코드",
-    datailcode: "dlsxjs",
-    codename: "INTERN",
-    nickname: "인턴코드",
-    checked: false
-  },
-  {
-    colid: "관리자",
-    typename: "권한코드",
-    datailcode: "rhksflwk",
-    codename: "ADMIN",
-    nickname: "관리자코드",
-    checked: false
-  }
+ 
 ]
 
 @Component({

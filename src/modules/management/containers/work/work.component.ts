@@ -5,22 +5,6 @@ import {NgbTimepickerConfig} from '@ng-bootstrap/ng-bootstrap';
 import {NgbTimeStruct} from '@ng-bootstrap/ng-bootstrap';
 
 let WORKS : Work[] = [
-  {
-    date: "2021-04-22",
-    name: "홍길동",
-    department: "개발팀",
-    time: "8시간",
-    remark: "체크",
-    checked: false
-  },
-  {
-    date: "2021-04-23",
-    name: "홍길동",
-    department: "개발팀",
-    time: "8시간",
-    remark: "체크",
-    checked: false
-  },
 
 ]
 
