@@ -47,6 +47,10 @@ export class MemberComponent implements OnInit {
   isAllCheckBoxChecked() {
     return this.members.every(p => p.checked);
   }
+
+  listDelSubmit(){
+    
+  }
   
   refreshCountries() {
     this.members = MEMBERS
