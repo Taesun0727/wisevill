@@ -30,9 +30,6 @@ export class CreatenoticeComponent implements OnInit {
       checked: [''],
     })
   }
-  get type() {
-    return this.noticeForm.get('type')
-  }
 
   get writer() {
     return this.noticeForm.get('writer')
