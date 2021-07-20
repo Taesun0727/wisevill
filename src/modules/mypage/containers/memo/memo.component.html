@@ -22,13 +22,13 @@
                 <div class="col-6 col-sm-6 col-md-4 sc_type_1">
                     <select id="sc_type_1" name="sc_type_1" class="form-control " style="width: 100%;"
                         (change)="changeCheck($event.target.value)">
-                        <option selected disabled hidden>::선택::</option>
+                        <option class="dropdown-item" disabled selected value="undefined">::선택::</option>
                         <option *ngFor="let check of Checks">{{check.name}} </option>
                     </select></div>
                 <div class="col-6 col-sm-6 col-md-4 sc_type_2">
                     <select placeholder="detail" id="sc_type_2" name="sc_type_2" class="form-control "
                         style="width: 100%;">
-                        <option selected disabled hidden>::선택::</option>
+                        <option class="dropdown-item" disabled selected value="undefined">::선택::</option>
                         <option *ngFor="let detail of details">{{detail}} </option>
                     </select></div>
                 <input type="text" class="form-control col-sm-2 ml-2" name="am_name" id="am_name" maxlength="10">
