@@ -88,6 +88,12 @@ export class MemoComponent implements OnInit {
   detail(memo: any) {
 		this.router.navigateByUrl('./memo/send', {state: {memo}})
 	}
+  send() {
+    this.router.navigateByUrl('/mypage/memo/send')
+  }
+  receive(){
+    this.router.navigateByUrl('/mypage/memo')
+  }
 
 
   private getDismissReason(reason : any): string {
