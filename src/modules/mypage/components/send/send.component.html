@@ -9,11 +9,11 @@
         <div class="card-header p-0 border-bottom-0">
             <ul class="nav nav-tabs" id="custom-tabs-four-tab">
               <li class="nav-item">
-                <a class="nav-link" href="./mypage/memo">받은쪽지</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="./mypage/memo/send">보낸쪽지</a>
-              </li>
+                <a class="nav-link active" (click)="receive()">받은쪽지</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="send()">보낸쪽지</a>
+            </li>
             </ul>
             
                 <label class="col col-12 col-sm-2 col-md-1 control-label ir"></label>
@@ -78,9 +78,19 @@
                          </tfoot>
                      </table>
                  </div>
-             </div>
-         </div>
-     </div>
+                  <div class="d-flex justify-content-between p-2">
+              <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshCountries()">
+              </ngb-pagination>
+            
+              <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshCountries()">
+                <option [ngValue]="2">2 items per page</option>
+                <option [ngValue]="4">4 items per page</option>
+                <option [ngValue]="6">6 items per page</option>
+              </select>
+            </div>
+      </div>
+  </div>
+</div>
      
      <div class="row mt-2 mb-0">
          <div class="col-8" id="page"></div>
