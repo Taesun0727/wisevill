@@ -1,29 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
-import { Pjtable } from 'modules/project/models/project'
+import { Project } from 'modules/project/models/project'
 
-let PROJECTS: Pjtable[] = [
-  {
-    title: "알림",
-    stdate: "2021-04-22",
-    eddate: "2021-04-22",
-    department: "개발팀",
-    personnel: "관리자외 5명",
-    rank: "시작",
-    management: "http:sdadasd",
-    checked: false
-  },
-  {
-    title: "알림",
-    stdate: "2021-04-22",
-    eddate: "2021-04-22",
-    department: "개발팀",
-    personnel: "관리자외 5명",
-    rank: "시작",
-    management: "http:sdadasd",
-    checked: false
-  }
+let PROJECTS: Project[] = [
+
 ]
 
 

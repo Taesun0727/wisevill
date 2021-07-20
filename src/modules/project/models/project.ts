@@ -1,4 +1,4 @@
-export interface Pjtable {
+export interface Project {
   title: string;
   stdate: string;
   eddate: string;

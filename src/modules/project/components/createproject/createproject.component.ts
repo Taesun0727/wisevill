@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MemberService } from '@modules/management/services/member.service';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -10,11 +12,11 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 export class CreateprojectComponent implements OnInit {
 
   closeResult = '';
+  public projectsForm: FormGroup|any;
 
-  constructor(private modalService: NgbModal, public router: Router) { }
+  constructor(private modalService: NgbModal, public router: Router,public projectcrud: MemberService, public fb: FormBuilder) { }
 
-  ngOnInit(): void {
-  }
+
 
   open(content : any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', centered: true}).result.then((result) => {
@@ -32,6 +34,49 @@ export class CreateprojectComponent implements OnInit {
     } else {
       return `with: ${reason}`;
     }
+  }
+ 
+
+ 
+
+  ngOnInit(): void {
+    this.projectsForm();
+    console.log(this.projectcrud.getAll())
+  }
+
+  projectForm() {
+    this.projectsForm = this.fb.group({
+      title:[''],
+      stdate:[''],
+      eddate:[''],
+      department:[''],
+      personnel:[''],
+      rank:[''],
+      management:[''],
+      checked: [''],
+    })
+  }
+  get title() {
+    return this.projectsForm.get('title')
+  }
+  get stdate() {
+    return this.projectsForm.get('stdate')
+  }
+  get eddate() {
+    return this.projectsForm.get('eddate')
+  }
+  get department() {
+    return this.projectsForm.get('department')
+  }
+  get personnel() {
+    return this.projectsForm.get('personnel')
+  }
+  get rank() {
+    return this.projectsForm.get('rank')
+  }  
+ 
+  ResetForm() {
+    this.projectsForm.reset();
   }
 
   golist() {
