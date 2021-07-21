@@ -67,7 +67,7 @@
             </div>
             <div class="col-md-8 align-self-center text-right">
                 <button type="button" class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt" (click)="createserver()">서버등록</button>
-                <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록
+                <button type="button" class="btn btn-danger btn-sm ml-1" (click)="listDelSubmit('list')">선택목록
                     삭제</button>
             </div>
         </div>
@@ -92,7 +92,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let server of servers;">
+                            <tr *ngFor="let server of servers; let list=index">
                                 <td scope="row"><input type="checkbox" value="{{server.id}}"
                                         [(ngModel)]="server.checked" aria-label="Checkbox for following text input">
                                 </td>
@@ -127,7 +127,7 @@
         <div class="row">
             <div class="col-12 align-self-center text-right cbtn-wrap">
                 <button type="button" class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt" (click)="createserver()">서버등록</button>
-                <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록
+                <button type="button" class="btn btn-danger btn-sm ml-1" (click)="listDelSubmit('list')">선택목록
                     삭제</button>
             </div>
         </div>
