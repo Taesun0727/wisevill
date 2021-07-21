@@ -75,7 +75,8 @@
       </div>
       <div class="col-8 align-self-center text-right cbtn-wrap">
         <button type="button" class="btn btn-primary btn-flat btn-sm mr-1" (click)="open(content)">근태수정</button>
-        <button type="button" class="btn btn-danger btn-sm ml-1" onclick="">선택목록삭제</button>
+        <button type="button" class="btn btn-danger btn-sm ml-1" (click)="listDelSubmit('list')">선택목록
+          삭제</button>
       </div>
     </div>
 
@@ -94,7 +95,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let work of works">
+              <tr *ngFor="let work of works; let list=index">
                 <td scope="row"><input type="checkbox" value="{{work.id}}" [(ngModel)]="work.checked" aria-label="Checkbox for following text input"></td>
                 <td>{{work.date}}</td>
                 <td>{{work.name}}</td>
@@ -122,7 +123,8 @@
     <div class="row">
       <div class="col-12 align-self-center text-right cbtn-wrap">
         <button type="button" class="btn btn-primary btn-flat btn-sm mr-1" (click)="open(content)">근태수정</button>
-        <button type="button" class="btn btn-danger btn-sm ml-1" onclick="">선택목록삭제</button>
+        <button type="button" class="btn btn-danger btn-sm ml-1" (click)="listDelSubmit('list')">선택목록
+          삭제</button>
       </div>
     </div>
 
