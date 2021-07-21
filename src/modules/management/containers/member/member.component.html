@@ -44,7 +44,7 @@
                     </div>
                     <div class="col-8 align-self-center text-right cbtn-wrap">
                         <button type="button" class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt" (click)="enroll()">사원등록</button>
-                        <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록
+                        <button type="button" class="btn btn-danger btn-sm ml-1" (click)="listDelSubmit('list')">선택목록
                             삭제</button>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let member of members">
+                                    <tr *ngFor="let member of members; let list=index">
                                         <td scope="row"><input type="checkbox" value="{{member.id}}"
                                                 [(ngModel)]="member.checked"
                                                 aria-label="Checkbox for following text input"></td>
@@ -101,7 +101,7 @@
         <div class="row">
             <div class="col-12 align-self-center text-right cbtn-wrap">
                 <button type="button" class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt" (click)="enroll()">사원등록</button>
-                <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록
+                <button type="button" class="btn btn-danger btn-sm ml-1" (click)="listDelSubmit('list')">선택목록
                     삭제</button>
             </div>
         </div>
