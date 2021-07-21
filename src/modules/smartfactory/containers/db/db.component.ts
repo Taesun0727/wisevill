@@ -41,5 +41,9 @@ export class DbComponent implements OnInit {
   createdb() {
     this.router.navigateByUrl('/smartfactory/db/createdb')
   }
+  goserver(db: any) {
+    this.router.navigateByUrl('/smartfactory/server', {state: db})
+  }
+
 
 }

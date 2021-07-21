@@ -11,7 +11,7 @@ export class IotService {
   iotsRef: AngularFirestoreCollection<any>|any ;
   iotRef: AngularFireObject<any> | undefined;
 
-  dbPath = '/iot';
+  dbPath = '/smartfactoryiot';
 
   constructor(private db: AngularFirestore) {
     this.iotsRef = db.collection(this.dbPath);
