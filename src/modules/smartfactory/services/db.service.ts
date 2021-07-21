@@ -11,7 +11,7 @@ export class DbService {
   dbsRef: AngularFirestoreCollection<any>|any ;
   dbRef: AngularFireObject<any> | undefined;
 
-  dbPath = '/smartfactorycompany';
+  dbPath = '/smartfactorydb';
 
   constructor(private db: AngularFirestore) {
     this.dbsRef = db.collection(this.dbPath);
