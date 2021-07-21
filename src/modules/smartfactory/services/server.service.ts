@@ -10,7 +10,7 @@ export class ServerService {
   serversRef: AngularFirestoreCollection<any>|any ;
   serverRef: AngularFireObject<any> | undefined;
 
-  dbPath = '/server';
+  dbPath = '/smartfactoryserver';
 
   constructor(private db: AngularFirestore) {
     this.serversRef = db.collection(this.dbPath);
