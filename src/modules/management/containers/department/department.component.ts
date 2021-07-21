@@ -73,6 +73,11 @@ export class DepartmentComponent implements OnInit {
   isAllCheckBoxChecked() {
     return this.departments.every(p => p.checked);
   }
+  listDelSubmit(x: any){
+    var delBtn = confirm(" Do you want to delete ?");
+    if ( delBtn == true ) {
+      this.departments.splice(x, 1 );
+    }   }
 
   refreshCountries() {
     this.departments = DEPARTMENTS
