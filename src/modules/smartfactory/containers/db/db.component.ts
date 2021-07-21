@@ -31,6 +31,12 @@ export class DbComponent implements OnInit {
   isAllCheckBoxChecked() {
     return this.dbs.every(p => p.checked);
   }
+  listDelSubmit(x: any){
+    var delBtn = confirm(" Do you want to delete ?");
+    if ( delBtn == true ) {
+      this.dbs.splice(x, 1 );
+    }   
+  }
 
   refreshCountries() {
     this.dbs = DBS
