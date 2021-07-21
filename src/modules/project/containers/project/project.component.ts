@@ -44,6 +44,12 @@ export class ProjectComponent implements OnInit {
       .map((project, i) => ({id: i + 1, ...project}))
       .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
+  listDelSubmit(x: any){
+    var delBtn = confirm(" Do you want to delete ?");
+    if ( delBtn == true ) {
+      this.projects.splice(x, 1 );
+    }   
+  }
 
   createproject() {
     this.router.navigateByUrl('project/createproject')
