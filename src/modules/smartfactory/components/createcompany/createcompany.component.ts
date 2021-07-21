@@ -47,10 +47,6 @@ export class CreatecompanyComponent implements OnInit {
   get contact() {
     return this.companysForm.get('contact')
   }
-  get businpariod() {
-    return this.companysForm.get('businpariod')
-  }
- 
   ResetForm() {
     this.companysForm.reset();
   }
@@ -60,6 +56,7 @@ export class CreatecompanyComponent implements OnInit {
   }
 
   save() {
+    this.companycrud.AddCompany(this.companysForm.value);
     this.router.navigateByUrl('/smartfactory/company')
   }
 
