@@ -49,6 +49,12 @@ export class NoticeComponent implements OnInit {
     this.notices = this.notices.map((notice, i) => ({id: i + 1, ...notice}))
     .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
+  listDelSubmit(x: any){
+    var delBtn = confirm(" Do you want to delete ?");
+    if ( delBtn == true ) {
+      this.notices.splice(x,1 );
+    }   
+  }
 
   createnotice() {
     this.router.navigateByUrl('/notice/createnotice')
