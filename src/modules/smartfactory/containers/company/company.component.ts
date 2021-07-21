@@ -33,6 +33,13 @@ export class CompanyComponent implements OnInit {
   isAllCheckBoxChecked() {
     return this.companies.every(p => p.checked);
   }
+  listDelSubmit(x: any){
+    var delBtn = confirm(" Do you want to delete ?");
+    if ( delBtn == true ) {
+      this.companies.splice(x, 1 );
+    }   
+  }
+  
 
   refreshCountries() {
     this.companies = COMPANIES
