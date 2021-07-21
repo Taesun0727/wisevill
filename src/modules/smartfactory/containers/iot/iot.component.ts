@@ -3,24 +3,7 @@ import { Router } from '@angular/router';
 import { Iot } from 'modules/smartfactory/models/iot'
 
 const IOT: Iot[] = [
-  {
-    cname: '포제이',
-    name: 'Forj',
-    type: 'P',
-    content: '충진기',
-    rssi: '-59',
-    status: true,
-    checked: false,
-  },
-  {
-    cname: '포제이',
-    name: 'Forj',
-    type: 'P',
-    content: '충진기',
-    rssi: '-59',
-    status: true,
-    checked: false,
-  },
+
 ]
 
 @Component({
