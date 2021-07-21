@@ -3,18 +3,7 @@ import { Router } from '@angular/router';
 import { Db } from '@modules/smartfactory/models/db';
 
 let DBS: Db[] = [
-  {
-    company: "와이즈빌",
-    type: "테스트용",
-    cnserver: "forj.wisevill.co.kr",
-    name: "testdb1",
-    host: "192.168.0.1",
-    port: "3306",
-    kind: "oracle",
-    shortkut: "http//",
-    manage: "http://",
-    checked: false
-  }
+ 
 ]
 
 @Component({
