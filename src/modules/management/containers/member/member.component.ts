@@ -48,8 +48,11 @@ export class MemberComponent implements OnInit {
     return this.members.every(p => p.checked);
   }
 
-  listDelSubmit(){
-    
+  listDelSubmit(x: any){
+    var delBtn = confirm(" Do you want to delete ?");
+    if ( delBtn == true ) {
+      this.members.splice(x, 1 );
+    }   
   }
   
   refreshCountries() {
