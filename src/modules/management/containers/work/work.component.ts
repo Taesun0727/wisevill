@@ -54,6 +54,12 @@ export class WorkComponent implements OnInit {
   isAllCheckBoxChecked() {
     return this.works.every(p => p.checked);
   }
+  listDelSubmit(x: any){
+    var delBtn = confirm(" Do you want to delete ?");
+    if ( delBtn == true ) {
+      this.works.splice(x, 1 );
+    }   
+  }
 
   refreshCountries() {
     this.works = WORKS
