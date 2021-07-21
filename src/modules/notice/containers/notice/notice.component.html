@@ -45,8 +45,7 @@
                     </div>
                     <div class="col-8 align-self-center text-right cbtn-wrap">
                         <button type="button" class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt" (click)="createnotice()">공지사항등록</button>
-                        <button type="button" class="btn btn-danger btn-sm ml-1" (click)="listDelSubmit('list')">선택목록삭제</button>
-                        
+                        <button type="button" class="btn btn-danger btn-sm ml-1" (click)="delete($event)">선택목록삭제</button>
                     </div>
 
                 </div>
@@ -71,7 +70,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                        <tr *ngFor="let notice of notices; let list=index">
+                                        <tr *ngFor="let notice of notices">
                                             <td scope="row"><input type="checkbox" value="{{notice.id}}"
                                                     [(ngModel)]="notice.checked"
                                                     aria-label="Checkbox for following text input"></td>
@@ -82,8 +81,7 @@
                                             <td><button class="btn btn-secondary btn-flat" onclick="">다운</button></td>
                                             <td>
                                                 <div class="col-md-12 align-self-center text-center">
-                                                    <a href="" class="btn btn-info cus-inbtn mr-2"
-                                                        style="display: inline-block;">수정</a>
+                                                    <button class="btn btn-info btn-flat" (click)="goupdate(notice.id)">수정</button>
                                                 </div>
                                             </td>
                                         </tr>
@@ -111,7 +109,7 @@
         <div class="row">
             <div class="col-12 align-self-center text-right cbtn-wrap">
                 <button type="button" class="btn btn-primary btn-flat btn-sm bg-gradient-info cus-inbt" (click)="createnotice()">공지사항등록</button>
-                <button type="button" class="btn btn-danger btn-sm ml-1" (click)="listDelSubmit('list')">선택목록삭제</button>
+                <button type="button" class="btn btn-danger btn-sm ml-1" (click)="delete($event)">선택목록삭제</button>
             </div>
         </div>
     </div>
