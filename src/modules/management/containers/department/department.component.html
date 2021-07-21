@@ -40,7 +40,7 @@
             </div>
             <div class="col-8 align-self-center text-right cbtn-wrap">
               <button type="button" class="btn btn-primary btn-flat btn-sm mr-1" (click)="open(content)">부서등록</button>
-              <button type="button" class="btn btn-danger btn-sm ml-1" onclick="">선택목록삭제</button>
+              <button type="button" class="btn btn-danger btn-sm ml-1" (click)="listDelSubmit('list')">선택목록삭제</button>
             </div>
           </div>
 
@@ -88,7 +88,7 @@
         </div>
         <div class="col-12 align-self-center text-right cbtn-wrap">
           <button type="button" class="btn btn-primary btn-flat btn-sm mr-1" (click)="open(content)">부서등록</button>
-          <button type="button" class="btn btn-danger btn-sm ml-1" onclick="">선택목록삭제</button>
+          <button type="button" class="btn btn-danger btn-sm ml-1" (click)="listDelSubmit('list')">선택목록삭제</button>
         </div>
     </div>
   </div>
