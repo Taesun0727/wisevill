@@ -101,7 +101,7 @@ export class SmartfactoryCardComponent implements OnInit {
   }
 
 	gomonitor(company: any) {
-		this.router.navigateByUrl('/smartfactory/monitoring', {state: {company}})
+		this.router.navigateByUrl('/smartfactory/detail', {state: {company}})
 		console.log(company)
 	}
 
