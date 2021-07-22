@@ -49,7 +49,7 @@ export class MemberComponent implements OnInit {
   }
 
   listDelSubmit(x: any){
-    var delBtn = confirm(" Do you want to delete ?");
+    var delBtn = confirm(" 삭제하시겠습니까 ?");
     if ( delBtn == true ) {
       this.members.splice(x, 1 );
     }   
