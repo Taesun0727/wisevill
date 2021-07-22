@@ -51,7 +51,7 @@ export class MemoComponent implements OnInit {
     })
   }
   detail(memo: any) {
-		this.router.navigateByUrl('./memo/send', {state: {memo}})
+		this.router.navigateByUrl('./memo', {state: {memo}})
 	}
   send() {
     this.router.navigateByUrl('/mypage/memo/send')
