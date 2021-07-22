@@ -4,48 +4,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { Memo } from 'modules/mypage/models/memo';
 
 let MEMOS: Memo[] = [
-  {
-    content: "알립니다.",
-    send: "와이즈빌",
-    date: "2020.01.01",
-    managemant: "비고",
-    checked: false,
-  },
-  {
-    content: "알립니다.",
-    send: "와이즈빌",
-    date: "2020.01.01",
-    managemant: "비고",
-    checked: false,
-  },
-  {
-    content: "알립니다.",
-    send: "와이즈빌",
-    date: "2020.01.01",
-    managemant: "비고",
-    checked: false,
-  },
-  {
-    content: "알립니다.",
-    send: "와이즈빌",
-    date: "2020.01.01",
-    managemant: "비고",
-    checked: false,
-  },
-  {
-    content: "알립니다.",
-    send: "와이즈빌",
-    date: "2020.01.01",
-    managemant: "비고",
-    checked: false,
-  },
-  {
-    content: "알립니다.",
-    send: "와이즈빌",
-    date: "2020.01.01",
-    managemant: "비고",
-    checked: false,
-  },
+  
 ] 
 @Component({
   selector: 'sb-memo',
