@@ -35,6 +35,12 @@ export class SendComponent implements OnInit {
   isAllCheckBoxChecked() {
     return this.memos.every(p => p.checked);
   }
+  listDelSubmit(x: any){
+    var delBtn = confirm(" 삭제하시겠습니까?");
+    if ( delBtn == true ) {
+      this.memos.splice(x, 1 );
+    }   
+  }
   
   open(content : any) {
     console.log(content)

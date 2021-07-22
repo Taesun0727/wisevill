@@ -45,7 +45,7 @@
             / <span class="data_page_num_t">0</span> page</div>
         <div class="col-4 align-self-center text-right cbtn-wrap"><a
                 class="btn btn-primary btn-flat btn-sm bg-gradient-info" (click)="open(content)">쪽지보내기</a>
-            <button type="button" class="btn btn-danger btn-sm ml-1" onclick="listDelSubmit('list','')">선택목록 삭제</button>
+            <button type="button" class="btn btn-danger btn-sm ml-1" (click)="listDelSubmit('list')">선택목록 삭제</button>
         </div>
     </div>
     <div class="row datalist_tb">
@@ -65,7 +65,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let memo of memos">
+                            <tr *ngFor="let memo of memos; let list=index">
                                 <td scope="row"><input type="checkbox" value="{{memo.id}}" [(ngModel)]="memo.checked"
                                         aria-label="Checkbox for following text input"></td>
                                 <td>{{ memo.content }}</td>
@@ -99,7 +99,7 @@
         <div class="col-8" id="page"></div>
         <div class="col-4 text-right cbtn-wrap"><a class="btn btn-primary btn-flat btn-sm bg-gradient-info"
                 (click)="open(content)">쪽지보내기</a><button type="button" class="btn btn-danger btn-sm ml-1"
-                onclick="listDelSubmit('list','')">선택목록 삭제</button>
+                (click)="listDelSubmit('list')">선택목록 삭제</button>
         </div>
     </div>
 
