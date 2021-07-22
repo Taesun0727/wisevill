@@ -45,7 +45,7 @@ export class ProjectComponent implements OnInit {
       .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
   listDelSubmit(x: any){
-    var delBtn = confirm(" Do you want to delete ?");
+    var delBtn = confirm(" 삭제하시겠습니까?");
     if ( delBtn == true ) {
       this.projects.splice(x, 1 );
     }   
