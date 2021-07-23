@@ -10,16 +10,13 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./enroll.component.scss']
 })
 export class EnrollComponent implements OnInit {
-  studentsRef: AngularFireList<any> | undefined;
-  studentRef: AngularFireObject<any> | undefined;
+
 
   public membersForm: FormGroup|any;
 
   constructor(public router: Router,public membercrud: MemberService, public fb: FormBuilder) { }
 
   ngOnInit(): void {
-    this.memberForm();
-    console.log(this.membercrud.getAll())
   }
  
   memberForm() {
@@ -34,24 +31,6 @@ export class EnrollComponent implements OnInit {
       checked: [''],
     })
   }
-  get company() {
-    return this.membersForm.get('company')
-  }
-  get department() {
-    return this.membersForm.get('department')
-  }
-  get rank() {
-    return this.membersForm.get('rank')
-  }
-  get name() {
-    return this.membersForm.get('name')
-  }
-  get task() {
-    return this.membersForm.get('task')
-  }
-  get auth() {
-    return this.membersForm.get('auth')
-  }  
  
   ResetForm() {
     this.membersForm.reset();
@@ -59,7 +38,7 @@ export class EnrollComponent implements OnInit {
 
   save() {
     this.membercrud.AddMember(this.membersForm.value);
-    this.router.navigateByUrl('/management/member')
+    this.router.navigateByUrl('member')
   }
 
   Checks: Array<any> = [
@@ -74,11 +53,9 @@ export class EnrollComponent implements OnInit {
 		this.details = this.Checks.find((chk: any) => chk.name == check).details; //Angular 11
 	}
   golist() {
-    this.router.navigateByUrl('/management/member')
+    this.router.navigateByUrl('member')
   }
 
-  AddStudent(student: Member) {
 
-  }
 
 }
