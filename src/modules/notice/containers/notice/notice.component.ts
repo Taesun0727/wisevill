@@ -58,6 +58,7 @@ export class NoticeComponent implements OnInit {
     this.router.navigateByUrl('/notice/updatenotice', {state: {id}})
   }
 
+  /*
   delete() {
     this.notices.forEach(x => {
       if (x.checked == true) {
@@ -65,6 +66,7 @@ export class NoticeComponent implements OnInit {
       }
     })
   }
+  */
 
   downloadfile() {
 

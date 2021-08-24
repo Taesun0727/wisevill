@@ -48,4 +48,8 @@ export class UpdatenoticeComponent implements OnInit {
     this.router.navigateByUrl('/notice')
   }
 
+  golist() {
+    this.router.navigateByUrl('/notice')
+  }
+
 }
